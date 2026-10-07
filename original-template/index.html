@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ======================================================================
+       SEO
+       TODO antes de publicar: reemplaza https://www.TU-DOMINIO.com por el
+       dominio real en canonical, og:url, og:image y twitter:image.
+       ====================================================================== -->
+  <title>La Birriería RM | Birria estilo Jalisco, tacos y consomé</title>
+  <meta name="description" content="Birria estilo Jalisco: tacos, quesabirrias, tortas y consomé. Sábados y domingos de 9:00 a 15:00. Pide por WhatsApp y recoge o recibe en casa.">
+  <meta name="keywords" content="birriería, birria estilo Jalisco, tacos de birria, quesabirria, consomé de birria, torta de birria, birriamen, tacos a domicilio">
+  <meta name="author" content="La Birriería RM">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.TU-DOMINIO.com/">
+
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBFBFA">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F0E0D">
+
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="La Birriería RM">
+  <meta property="og:title" content="La Birriería RM | Birria estilo Jalisco, tacos y consomé">
+  <meta property="og:description" content="Tacos, quesabirrias, tortas y consomé. Sábados y domingos de 9:00 a 15:00. Pide por WhatsApp.">
+  <meta property="og:url" content="https://www.TU-DOMINIO.com/">
+  <meta property="og:image" content="https://www.TU-DOMINIO.com/img/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logotipo de La Birriería RM junto a un plato de tacos de birria con consomé">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La Birriería RM | Birria estilo Jalisco">
+  <meta name="twitter:description" content="Tacos, quesabirrias, tortas y consomé. Pide por WhatsApp y recoge o recibe en casa.">
+  <meta name="twitter:image" content="https://www.TU-DOMINIO.com/img/og-cover.jpg">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <!-- Recursos críticos: tipografías propias, logo del loader y foto del hero -->
+  <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/logo-240.webp" as="image" type="image/webp">
+  <link rel="preload" href="img/hero-tacos.webp" as="image" type="image/webp" fetchpriority="high">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+  <noscript><style>#loader{display:none}.tabs{display:none}.panel[hidden]{display:block!important}.menu__shot:not(:first-child){display:none}</style></noscript>
+
+  <!-- Datos estructurados (Schema.org). TODO: agregar "address" y "image" (URL absoluta) cuando se tengan. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Birriería RM",
+    "description": "Birriería estilo Jalisco: tacos blandos y dorados, quesabirrias, tortas, consomé, burritos, costras y más. Pedidos por WhatsApp para recoger o envío a domicilio dentro de la zona.",
+    "servesCuisine": ["Birria", "Mexicana", "Estilo Jalisco"],
+    "telephone": ["+524427711594", "+524421158942"],
+    "priceRange": "$",
+    "currenciesAccepted": "MXN",
+    "paymentAccepted": "Efectivo, tarjeta, transferencia",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "15:00"
+      }
+    ],
+    "potentialAction": {
+      "@type": "OrderAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://wa.me/524427711594",
+        "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+      },
+      "deliveryMethod": ["http://purl.org/goodrelations/v1#DeliveryModePickUp", "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"]
+    },
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Menú de La Birriería RM",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Tacos",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Tacos blandos", "offers": { "@type": "Offer", "price": "25", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Tacos dorados", "offers": { "@type": "Offer", "price": "25", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Quesabirria de maíz", "offers": { "@type": "Offer", "price": "30", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Quesabirria de harina", "offers": { "@type": "Offer", "price": "35", "priceCurrency": "MXN" } }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Consomé",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Consomé chico con carne", "description": "Incluye tortillas.", "offers": { "@type": "Offer", "price": "70", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Consomé grande con carne", "description": "Incluye tortillas.", "offers": { "@type": "Offer", "price": "110", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Consomé sin carne", "offers": { "@type": "Offer", "price": "30", "priceCurrency": "MXN" } }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Antojitos",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Torta de birria", "offers": { "@type": "Offer", "price": "60", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Burritos", "description": "Frijol, queso, birria, verdura y guacamole.", "offers": { "@type": "Offer", "price": "70", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Costras", "description": "Incluye guacamole.", "offers": { "@type": "Offer", "price": "70", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Volcán", "offers": { "@type": "Offer", "price": "30", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Birriamen", "offers": { "@type": "Offer", "price": "100", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Birriaquil", "offers": { "@type": "Offer", "price": "120", "priceCurrency": "MXN" } }
+          ]
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Sprite de íconos (Phosphor Icons, licencia MIT). Se inyecta con el script de build. -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-whatsapp" viewBox="0 0 256 256"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol>
+    <symbol id="i-moped" viewBox="0 0 256 256"><path d="M216,128a39.3,39.3,0,0,0-6.27.5L175.49,37.19A8,8,0,0,0,168,32H136a8,8,0,0,0,0,16h26.46l32.3,86.13a40.13,40.13,0,0,0-18,25.87H136.54l-25-66.81A8,8,0,0,0,104,88H24a8,8,0,0,0,0,16h8v13.39A56.12,56.12,0,0,0,0,168a8,8,0,0,0,8,8h8.8a40,40,0,0,0,78.4,0h81.6A40,40,0,1,0,216,128ZM42.67,130.27A8,8,0,0,0,48,122.73V104H98.46l21,56H16.81A40.07,40.07,0,0,1,42.67,130.27ZM56,192a24,24,0,0,1-22.62-16H78.62A24,24,0,0,1,56,192Zm160,0a24,24,0,0,1-15.43-42.36l7.94,21.17a8,8,0,0,0,15-5.62L215.55,144H216a24,24,0,0,1,0,48Z"/></symbol>
+    <symbol id="i-cash" viewBox="0 0 256 256"><path d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM240,56H16a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H240a8,8,0,0,0,8-8V64A8,8,0,0,0,240,56ZM193.65,184H62.35A56.78,56.78,0,0,0,24,145.65v-35.3A56.78,56.78,0,0,0,62.35,72h131.3A56.78,56.78,0,0,0,232,110.35v35.3A56.78,56.78,0,0,0,193.65,184ZM232,93.37A40.81,40.81,0,0,1,210.63,72H232ZM45.37,72A40.81,40.81,0,0,1,24,93.37V72ZM24,162.63A40.81,40.81,0,0,1,45.37,184H24ZM210.63,184A40.81,40.81,0,0,1,232,162.63V184Z"/></symbol>
+    <symbol id="i-card" viewBox="0 0 256 256"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,16V88H32V64Zm0,128H32V104H224v88Zm-16-24a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h32A8,8,0,0,1,208,168Zm-64,0a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h16A8,8,0,0,1,144,168Z"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 256 256"><path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"/></symbol>
+    <symbol id="i-tap" viewBox="0 0 256 256"><path d="M56,76a60,60,0,0,1,120,0,8,8,0,0,1-16,0,44,44,0,0,0-88,0,8,8,0,1,1-16,0Zm140,44a27.9,27.9,0,0,0-13.36,3.39A28,28,0,0,0,144,106.7V76a28,28,0,0,0-56,0v80l-3.82-6.13a28,28,0,0,0-48.41,28.17l29.32,50A8,8,0,1,0,78.89,220L49.6,170a12,12,0,1,1,20.78-12l.14.23,18.68,30A8,8,0,0,0,104,184V76a12,12,0,0,1,24,0v68a8,8,0,1,0,16,0V132a12,12,0,0,1,24,0v20a8,8,0,0,0,16,0v-4a12,12,0,0,1,24,0v36c0,21.61-7.1,36.3-7.16,36.42a8,8,0,0,0,3.58,10.73A7.9,7.9,0,0,0,208,232a8,8,0,0,0,7.16-4.42c.37-.73,8.85-18,8.85-43.58V148A28,28,0,0,0,196,120Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V72H40V56Zm0,144H40V88H216V200Zm-40-88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></symbol>
+    <symbol id="i-warning" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol>
+  </svg>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- ======================================================================
+       LOADER
+       ====================================================================== -->
+  <div class="loader" id="loader" role="status" aria-live="polite" aria-label="Cargando La Birriería RM">
+    <div class="loader__core">
+      <div class="loader__mark">
+        <svg class="loader__ring" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle class="loader__orbit" cx="60" cy="60" r="58"/>
+          <circle class="loader__track" cx="60" cy="60" r="52"/>
+          <circle class="loader__arc" cx="60" cy="60" r="52" pathLength="100"/>
+        </svg>
+        <img class="loader__logo" src="img/logo-240.webp" width="240" height="240" alt="">
+      </div>
+      <p class="loader__count" aria-hidden="true"><span id="loader-num">0</span><small>%</small></p>
+      <p class="loader__label">Calentando el consomé</p>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       HEADER
+       ====================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__bar">
+      <a class="brand" href="#inicio" aria-label="La Birriería RM, ir al inicio">
+        <img class="brand__mark" src="img/logo-240.webp" width="40" height="40" alt="">
+        <span class="brand__name">La Birriería <b>RM</b></span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#como-pedir">Cómo pedir</a></li>
+          <li><a href="#horario">Horario</a></li>
+          <li><a href="#pedido">Tu pedido</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary btn--sm nav__cta" href="https://wa.me/524427711594?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+        Pedir por WhatsApp
+      </a>
+
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" inert>
+    <nav aria-label="Menú móvil">
+      <ul class="mobile-menu__list">
+        <li><a href="#menu">Menú<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></li>
+        <li><a href="#como-pedir">Cómo pedir<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></li>
+        <li><a href="#horario">Horario<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></li>
+        <li><a href="#pedido">Tu pedido<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a class="btn btn--primary btn--block" href="https://wa.me/524427711594?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+        Pedir por WhatsApp
+      </a>
+      <p>Sábados y domingos, 9:00 a 15:00</p>
+    </div>
+  </div>
+
+  <main id="contenido">
+
+    <!-- ====================================================================
+         HERO
+         ==================================================================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="status-chip" data-status data-open="false">
+            <span class="status-chip__dot" aria-hidden="true"></span>
+            <span data-status-text>Sábados y domingos, 9:00 a 15:00</span>
+          </p>
+
+          <h1 class="hero__title" id="hero-title" data-hero-split>Birria estilo <span class="accent">Jalisco.</span></h1>
+
+          <p class="hero__lead">Tacos, quesabirrias y consomé. Pide y recoge, o recibe en casa dentro de la zona.</p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" data-magnetic href="https://wa.me/524427711594?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+              Pedir por WhatsApp
+            </a>
+            <a class="btn btn--ghost" href="#menu">Ver menú</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__parallax">
+            <div class="hero__glow" aria-hidden="true"></div>
+            <div class="hero__tilt">
+              <svg class="hero__ring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+                <defs>
+                  <path id="ring-path" d="M100,100 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0"/>
+                </defs>
+                <text><textPath href="#ring-path" textLength="534" lengthAdjust="spacing">LA BIRRIERÍA RM / DELICIOSA BIRRIA ESTILO JALISCO /&#160;</textPath></text>
+              </svg>
+
+              <div class="hero__plate">
+                <img src="img/hero-tacos.webp" width="1100" height="1100" fetchpriority="high" decoding="async"
+                     alt="Tacos dorados de birria con cebolla, cilantro y rábano, junto a un cuenco de consomé">
+                <div class="steam" aria-hidden="true">
+                  <span style="--dx:14%;--delay:0s"></span>
+                  <span style="--dx:-10%;--delay:-1.3s"></span>
+                  <span style="--dx:18%;--delay:-2.6s"></span>
+                  <span style="--dx:-4%;--delay:-3.8s"></span>
+                </div>
+              </div>
+
+              <div class="hero__mini hero__mini--a">
+                <img src="img/hero-mini-consome.webp" width="380" height="380" decoding="async"
+                     alt="Mano sumergiendo un taco en consomé de birria dentro de una olla de barro">
+              </div>
+              <div class="hero__mini hero__mini--b">
+                <img src="img/hero-mini-quesabirria.webp" width="380" height="380" decoding="async"
+                     alt="Quesabirria dorada con queso derretido sobre la plancha">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MARQUEE (decorativo, único en la página)
+         ==================================================================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <ul class="marquee__group">
+          <li>Tacos blandos</li><li>Tacos dorados</li><li>Quesabirria</li><li>Torta de birria</li><li>Consomé</li>
+          <li>Costras</li><li>Burritos</li><li>Birriamen</li><li>Volcán</li><li>Birriaquil</li>
+        </ul>
+        <ul class="marquee__group">
+          <li>Tacos blandos</li><li>Tacos dorados</li><li>Quesabirria</li><li>Torta de birria</li><li>Consomé</li>
+          <li>Costras</li><li>Burritos</li><li>Birriamen</li><li>Volcán</li><li>Birriaquil</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         DECLARACIÓN
+         ==================================================================== -->
+    <section class="statement" aria-label="Sobre La Birriería RM">
+      <div class="container">
+        <p class="statement__text" data-words><span class="hl">Birria estilo Jalisco</span>, servida en tacos, quesabirrias, tortas y consomé. Todo el sabor del fin de semana, listo para recoger o para recibir en casa.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MENÚ
+         ==================================================================== -->
+    <section class="section menu" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <header class="sec-head">
+          <h2 class="sec-title" id="menu-title" data-split>Elige tu antojo</h2>
+          <p class="sec-lead" data-reveal style="--d:1">Toca + en cada platillo para armar tu pedido. Se envía por WhatsApp ya escrito.</p>
+        </header>
+
+        <div class="menu__layout">
+          <figure class="menu__media" data-reveal="scale">
+            <div class="menu__shot is-active" data-shot="0">
+              <img src="img/menu-quesabirria.webp" width="1400" height="933" loading="lazy" decoding="async" style="object-position:22% 50%"
+                   alt="Quesabirria dorada con queso derretido y birria sobre la plancha caliente">
+            </div>
+            <div class="menu__shot" data-shot="1">
+              <img src="img/menu-consome.webp" width="1000" height="1499" loading="lazy" decoding="async"
+                   alt="Mano sumergiendo un taco en el consomé de birria dentro de una olla de barro">
+            </div>
+            <div class="menu__shot" data-shot="2">
+              <img src="img/menu-charola.webp" width="1400" height="933" loading="lazy" decoding="async" style="object-position:68% 50%"
+                   alt="Tacos de birria en una charola de barro con un cuenco de consomé">
+            </div>
+          </figure>
+
+          <div class="menu__panel" data-reveal style="--d:1">
+            <div class="tabs" role="tablist" aria-label="Categorías del menú">
+              <span class="tabs__indicator" aria-hidden="true"></span>
+              <button class="tabs__tab" role="tab" id="tab-tacos" type="button" aria-selected="true" aria-controls="panel-tacos">Tacos</button>
+              <button class="tabs__tab" role="tab" id="tab-consome" type="button" aria-selected="false" aria-controls="panel-consome" tabindex="-1">Consomé</button>
+              <button class="tabs__tab" role="tab" id="tab-antojitos" type="button" aria-selected="false" aria-controls="panel-antojitos" tabindex="-1">Antojitos</button>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-tacos" aria-labelledby="tab-tacos">
+              <ul class="dishes">
+                <li class="dish" data-id="taco-blando" data-name="Tacos blandos" data-price="25">
+                  <div class="dish__body"><h3 class="dish__name">Tacos blandos</h3><p class="dish__desc">Tortilla suave con birria.</p></div>
+                  <p class="dish__price">$25</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="taco-dorado" data-name="Tacos dorados" data-price="25">
+                  <div class="dish__body"><h3 class="dish__name">Tacos dorados</h3><p class="dish__desc">Tortilla dorada y crujiente con birria.</p></div>
+                  <p class="dish__price">$25</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="quesabirria-maiz" data-name="Quesabirria de maíz" data-price="30">
+                  <div class="dish__body"><h3 class="dish__name">Quesabirria de maíz</h3><p class="dish__desc">Con queso, en tortilla de maíz.</p></div>
+                  <p class="dish__price">$30</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="quesabirria-harina" data-name="Quesabirria de harina" data-price="35">
+                  <div class="dish__body"><h3 class="dish__name">Quesabirria de harina</h3><p class="dish__desc">Con queso, en tortilla de harina.</p></div>
+                  <p class="dish__price">$35</p><div class="qty"></div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-consome" aria-labelledby="tab-consome" hidden>
+              <ul class="dishes">
+                <li class="dish" data-id="consome-chico" data-name="Consomé chico con carne" data-price="70">
+                  <div class="dish__body"><h3 class="dish__name">Consomé chico con carne</h3><p class="dish__desc">Incluye tortillas.</p></div>
+                  <p class="dish__price">$70</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="consome-grande" data-name="Consomé grande con carne" data-price="110">
+                  <div class="dish__body"><h3 class="dish__name">Consomé grande con carne</h3><p class="dish__desc">Incluye tortillas.</p></div>
+                  <p class="dish__price">$110</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="consome-sin-carne" data-name="Consomé sin carne" data-price="30">
+                  <div class="dish__body"><h3 class="dish__name">Consomé sin carne</h3></div>
+                  <p class="dish__price">$30</p><div class="qty"></div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-antojitos" aria-labelledby="tab-antojitos" hidden>
+              <ul class="dishes">
+                <li class="dish" data-id="torta-birria" data-name="Torta de birria" data-price="60">
+                  <div class="dish__body"><h3 class="dish__name">Torta de birria</h3></div>
+                  <p class="dish__price">$60</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="burritos" data-name="Burritos" data-price="70">
+                  <div class="dish__body"><h3 class="dish__name">Burritos</h3><p class="dish__desc">Frijol, queso, birria, verdura y guacamole.</p></div>
+                  <p class="dish__price">$70</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="costras" data-name="Costras" data-price="70">
+                  <div class="dish__body"><h3 class="dish__name">Costras</h3><p class="dish__desc">Incluye guacamole.</p></div>
+                  <p class="dish__price">$70</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="volcan" data-name="Volcán" data-price="30">
+                  <div class="dish__body"><h3 class="dish__name">Volcán</h3></div>
+                  <p class="dish__price">$30</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="birriamen" data-name="Birriamen" data-price="100">
+                  <div class="dish__body"><h3 class="dish__name">Birriamen</h3></div>
+                  <p class="dish__price">$100</p><div class="qty"></div>
+                </li>
+                <li class="dish" data-id="birriaquil" data-name="Birriaquil" data-price="120">
+                  <div class="dish__body"><h3 class="dish__name">Birriaquil</h3></div>
+                  <p class="dish__price">$120</p><div class="qty"></div>
+                </li>
+              </ul>
+            </div>
+
+            <p class="menu__note">Precios en pesos mexicanos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CÓMO PEDIR
+         ==================================================================== -->
+    <section class="section steps" id="como-pedir" aria-labelledby="steps-title">
+      <div class="container">
+        <header class="sec-head">
+          <h2 class="sec-title" id="steps-title" data-split>Así se pide</h2>
+        </header>
+
+        <ol class="steps__list">
+          <li class="step" data-reveal>
+            <span class="step__node" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-tap"/></svg></span>
+            <h3 class="step__verb">Elige</h3>
+            <p class="step__text">Arma tu pedido desde el menú o cuéntanos qué se te antoja.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__node" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-whatsapp"/></svg></span>
+            <h3 class="step__verb">Escríbenos</h3>
+            <p class="step__text">Mándalo por WhatsApp o llámanos a cualquiera de los dos teléfonos.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__node" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-bag"/></svg></span>
+            <h3 class="step__verb">Recoge o recibe</h3>
+            <p class="step__text">Pasa por tu pedido o pide envío a domicilio dentro de la zona de reparto.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         HORARIO, PAGOS Y ENVÍOS (bento de 5 celdas)
+         ==================================================================== -->
+    <section class="section info" id="horario" aria-labelledby="info-title">
+      <div class="container">
+        <header class="sec-head">
+          <h2 class="sec-title" id="info-title" data-split>Horario, pagos y envíos</h2>
+        </header>
+
+        <div class="bento">
+          <article class="cell cell--hours" data-reveal>
+            <div class="cell__top">
+              <svg class="icon icon--lg" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg>
+              <p class="cell__label">Horario</p>
+            </div>
+            <div>
+              <p class="hours__days">Sábados y domingos</p>
+              <p class="hours__time">9:00 a 15:00</p>
+              <p class="status-chip status-chip--on-red" data-status data-open="false">
+                <span class="status-chip__dot" aria-hidden="true"></span>
+                <span data-status-text>Sábados y domingos, 9:00 a 15:00</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="cell cell--drinks" data-reveal style="--d:1">
+            <img class="parallax" src="img/bebidas-torta.webp" width="900" height="1350" loading="lazy" decoding="async"
+                 alt="Torta de birria acompañada de un vaso de agua fresca con rodaja de naranja">
+            <div class="cell__scrim"></div>
+            <div class="cell__over">
+              <h3>Aguas frescas, refrescos y el postre del día.</h3>
+              <p>Pregunta qué hay hoy.</p>
+            </div>
+          </article>
+
+          <article class="cell cell--phone" data-reveal style="--d:1">
+            <div class="cell__top">
+              <svg class="icon icon--lg" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              <p class="cell__label">Pide y recoge</p>
+            </div>
+            <div>
+              <ul class="phones">
+                <li><a href="tel:+524427711594">44 27 71 15 94</a></li>
+                <li><a href="tel:+524421158942">44 21 15 89 42</a></li>
+              </ul>
+              <p class="cell__note">Llama o escribe a cualquiera de los dos.</p>
+            </div>
+          </article>
+
+          <article class="cell cell--delivery" data-reveal style="--d:2">
+            <div class="cell__top">
+              <svg class="icon icon--lg" aria-hidden="true" focusable="false"><use href="#i-moped"/></svg>
+              <p class="cell__label">Envíos a domicilio</p>
+            </div>
+            <div>
+              <h3 class="cell__title">Solo dentro de la zona de reparto.</h3>
+              <p class="cell__note">Escríbenos tu ubicación y te confirmamos.</p>
+            </div>
+          </article>
+
+          <article class="cell cell--pay" data-reveal>
+            <div>
+              <p class="cell__label">Formas de pago</p>
+              <h3 class="cell__title">Efectivo, tarjeta y transferencia.</h3>
+            </div>
+            <ul class="pay">
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-cash"/></svg>Efectivo</li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-card"/></svg>Tarjeta</li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bank"/></svg>Transferencia</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PEDIDO (formulario que termina en WhatsApp)
+         ==================================================================== -->
+    <section class="section order" id="pedido" aria-labelledby="order-title">
+      <div class="container">
+        <header class="sec-head">
+          <h2 class="sec-title" id="order-title" data-split>Haz tu pedido</h2>
+          <p class="sec-lead" data-reveal style="--d:1">Revisa tu orden y mándala por WhatsApp. Ahí te confirmamos.</p>
+        </header>
+
+        <div class="order__card" data-reveal>
+          <aside class="summary" aria-labelledby="summary-title">
+            <div class="summary__head">
+              <h3 id="summary-title">Tu pedido</h3>
+              <button class="link-btn" id="clear-order" type="button" hidden>Vaciar</button>
+            </div>
+
+            <div class="summary__empty" id="summary-empty">
+              <p>Todavía no agregas nada.</p>
+              <p>Elige del menú o escribe tu pedido en los comentarios.</p>
+              <a class="link-btn" href="#menu">Ver menú</a>
+            </div>
+
+            <ul class="summary__list" id="summary-list"></ul>
+
+            <p class="summary__total" id="summary-total-row" hidden>
+              <span>Total estimado</span>
+              <strong id="summary-total">$0</strong>
+            </p>
+
+            <div class="summary__call">
+              <p>¿Prefieres llamar?</p>
+              <div>
+                <a href="tel:+524427711594">44 27 71 15 94</a>
+                <a href="tel:+524421158942">44 21 15 89 42</a>
+              </div>
+            </div>
+          </aside>
+
+          <form class="form" id="order-form" novalidate>
+            <div class="field">
+              <label for="f-name">Tu nombre</label>
+              <input class="input" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-help f-name-err">
+              <p class="field__help" id="f-name-help">Para identificar tu pedido.</p>
+              <p class="field__err" id="f-name-err" role="alert" hidden></p>
+            </div>
+
+            <fieldset class="field field--set">
+              <legend>¿Cómo lo quieres?</legend>
+              <div class="seg">
+                <label class="seg__opt">
+                  <input type="radio" name="mode" value="recoger" checked>
+                  <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>Recoger</span>
+                </label>
+                <label class="seg__opt">
+                  <input type="radio" name="mode" value="domicilio">
+                  <span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moped"/></svg>A domicilio</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field" id="address-field" hidden>
+              <label for="f-address">Dirección y referencias</label>
+              <textarea class="input" id="f-address" name="address" rows="2" autocomplete="street-address" aria-describedby="f-address-help f-address-err"></textarea>
+              <p class="field__help" id="f-address-help">Solo entregamos dentro de la zona de reparto.</p>
+              <p class="field__err" id="f-address-err" role="alert" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="f-notes">Comentarios <span class="opt">(opcional)</span></label>
+              <textarea class="input" id="f-notes" name="notes" rows="3" aria-describedby="f-notes-help"></textarea>
+              <p class="field__help" id="f-notes-help">Por ejemplo: sin cebolla, salsa aparte.</p>
+            </div>
+
+            <p class="field__err field__err--block" id="order-err" role="alert" hidden></p>
+
+            <button class="btn btn--primary btn--block" type="submit" data-magnetic>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+              Pedir por WhatsApp
+            </button>
+            <p class="form__fine">Se abrirá WhatsApp con tu pedido ya escrito. Envíalo para confirmar.</p>
+
+            <p class="form__done" id="order-done" role="status" hidden>
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>
+              <span>Abrimos WhatsApp con tu pedido. Si no se abrió, <a id="order-fallback" href="#" target="_blank" rel="noopener noreferrer">toca aquí</a>.</span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="img/logo-240.webp" width="64" height="64" loading="lazy" decoding="async" alt="Logotipo de La Birriería RM">
+        <div>
+          <p class="footer__name">La Birriería RM</p>
+          <p class="footer__tag">Deliciosa birria estilo Jalisco.</p>
+        </div>
+      </div>
+
+      <nav class="footer__nav" aria-label="Pie de página">
+        <a href="#menu">Menú</a>
+        <a href="#como-pedir">Cómo pedir</a>
+        <a href="#horario">Horario</a>
+        <a href="#pedido">Tu pedido</a>
+      </nav>
+
+      <div class="footer__contact">
+        <p>Sábados y domingos, 9:00 a 15:00</p>
+        <p><a href="tel:+524427711594">44 27 71 15 94</a> / <a href="tel:+524421158942">44 21 15 89 42</a></p>
+        <p>Envíos a domicilio solo dentro de la zona.</p>
+        <!-- TODO: agregar dirección y redes sociales del negocio cuando el cliente las comparta. -->
+      </div>
+    </div>
+
+    <p class="footer__word" aria-hidden="true">La Birriería RM</p>
+
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year">2026</span> La Birriería RM. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Resumen flotante del pedido (aparece al agregar productos) -->
+  <a class="cart-pill" id="cart-pill" href="#pedido" aria-live="polite">
+    <span class="cart-pill__count" id="cart-count">0</span>
+    <span class="cart-pill__text">Ver pedido <strong id="cart-total">$0</strong></span>
+    <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+  </a>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="fab" href="https://wa.me/524427711594?text=Hola%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer" aria-label="Pedir por WhatsApp">
+    <svg class="icon icon--fab" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+  </a>
+
+  <!--
+    Créditos de imágenes (Pexels, licencia de uso libre):
+    hero-tacos 8448332, menu-quesabirria y hero-mini-quesabirria 9993709, menu-consome y hero-mini-consome 8448167,
+    menu-charola 24182334, bebidas-torta 30179627.
+    TODO: reemplazar por fotos reales del negocio cuando las tenga el cliente.
+  -->
+</body>
+</html>

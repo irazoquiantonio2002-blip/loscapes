@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A8795"/>
+      <stop offset="1" stop-color="#083A41"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="32" fill="url(#g)"/>
+  <text x="32" y="29" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="8" letter-spacing="1" fill="#fff" fill-opacity=".85">LOS</text>
+  <text x="32" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="17" fill="#fff">CAPES</text>
+</svg>

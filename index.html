@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="es-MX" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    /* Marca JS activo y bloquea el scroll mientras corre el loader.
+       Failsafe: si main.js no responde, la página se muestra a los 7 s. */
+    (function (d) {
+      d.className = d.className.replace("no-js", "js is-loading");
+      setTimeout(function () { d.classList.add("is-loaded"); d.classList.remove("is-loading"); }, 7000);
+    })(document.documentElement);
+  </script>
+
+  <!-- ======================================================================
+       SEO
+       TODO antes de publicar: reemplaza https://www.TU-DOMINIO.com por el
+       dominio real en canonical, og:url, og:image y twitter:image.
+       ====================================================================== -->
+  <title>Los Capes | Tacos de camarón y pescado capeados desde $35</title>
+  <meta name="description" content="Tacos de camarón y pescado capeados al momento, sencillos o rellenos de queso, desde $35. Promo 2 tacos por $65 únicamente lunes y jueves. Pide por WhatsApp.">
+  <meta name="keywords" content="tacos capeados, tacos de camarón, tacos de pescado, camarón relleno de queso, pescado relleno de queso, tacos de camarón capeado, Los Capes, mariscos, promoción de tacos, pedidos por WhatsApp">
+  <meta name="author" content="Los Capes">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.TU-DOMINIO.com/">
+
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#FFF8EC">
+
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Los Capes">
+  <meta property="og:title" content="Los Capes | Tacos de camarón y pescado capeados al momento">
+  <meta property="og:description" content="Crujientes, capeados y al momento. Sencillos o rellenos de queso, desde $35. Promo 2 por $65 únicamente lunes y jueves.">
+  <meta property="og:url" content="https://www.TU-DOMINIO.com/">
+  <meta property="og:image" content="https://www.TU-DOMINIO.com/img/og-cover-new.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1801">
+  <meta property="og:image:alt" content="Tacos capeados de Los Capes con limón">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Los Capes | Tacos capeados al momento">
+  <meta name="twitter:description" content="Camarón y pescado capeados desde $35. Promo 2 tacos por $65 únicamente lunes y jueves.">
+  <meta name="twitter:image" content="https://www.TU-DOMINIO.com/img/og-cover-new.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <!-- Tipografía: Bricolage Grotesque (títulos) y Geist (texto) se sirven localmente
+       desde /fonts. Bungee (rótulos y precios) y Caveat (notas a mano) desde Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Carga no bloqueante: no detiene el render ni la ejecución de main.js -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bungee&family=Caveat:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Caveat:wght@600;700&display=swap"></noscript>
+  <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Lenis (scroll suave) se carga de forma diferida desde main.js, solo en escritorio. -->
+  <script src="js/main.js" defer></script>
+
+  <!-- Datos estructurados (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": "https://www.TU-DOMINIO.com/#restaurant",
+    "name": "Los Capes",
+    "slogan": "Crujientes. Capeados. Al momento.",
+    "description": "Tacos de camarón y pescado capeados al momento, sencillos o rellenos de queso. Pedidos por WhatsApp a domicilio o para recoger en la taquería.",
+    "url": "https://www.TU-DOMINIO.com/",
+    "image": "https://www.TU-DOMINIO.com/img/og-cover-new.jpg",
+    "logo": "https://www.TU-DOMINIO.com/img/favicon.png",
+    "servesCuisine": ["Mariscos", "Tacos", "Mexicana"],
+    "telephone": "+526683856140",
+    "priceRange": "$",
+    "currenciesAccepted": "MXN",
+    "paymentAccepted": "Efectivo",
+    "acceptsReservations": false,
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "16:00"
+      }
+    ],
+    "potentialAction": {
+      "@type": "OrderAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://wa.me/526683856140",
+        "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+      },
+      "deliveryMethod": ["http://purl.org/goodrelations/v1#DeliveryModePickUp", "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"]
+    },
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Menú de Los Capes",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Tacos capeados",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Taco de camarón capeado", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Taco de camarón relleno de queso", "offers": { "@type": "Offer", "price": "45", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Taco de pescado capeado", "offers": { "@type": "Offer", "price": "35", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Taco de pescado relleno de queso", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Promoción 2 tacos (únicamente lunes y jueves)", "description": "2 tacos sencillos de camarón o pescado por $65. Válida únicamente los lunes y jueves.", "offers": { "@type": "Offer", "price": "65", "priceCurrency": "MXN" } }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Para tomar",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Limonada mineral", "offers": { "@type": "Offer", "price": "30", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Uvola", "offers": { "@type": "Offer", "price": "30", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Coca-Cola", "offers": { "@type": "Offer", "price": "25", "priceCurrency": "MXN" } }
+          ]
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Los Capes hace entregas a domicilio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Al hacer tu pedido eliges si lo quieres a domicilio o para recoger en la taquería. Para domicilio te confirmamos por WhatsApp el costo de envío y el tiempo de entrega." } },
+      { "@type": "Question", "name": "¿Cómo pago mi pedido en Los Capes?", "acceptedAnswer": { "@type": "Answer", "text": "Aceptamos efectivo al recibir o recoger tu pedido." } },
+      { "@type": "Question", "name": "¿Qué tacos entran en la promoción de 2 por $65?", "acceptedAnswer": { "@type": "Answer", "text": "Únicamente los lunes y jueves: 2 tacos sencillos de camarón o pescado por $65. Puedes combinarlos como quieras." } },
+      { "@type": "Question", "name": "¿Qué días cierra Los Capes?", "acceptedAnswer": { "@type": "Answer", "text": "Cerramos los martes. El resto de la semana abrimos de 9:00 a 16:00." } },
+      { "@type": "Question", "name": "¿Cuánto tardan en preparar los tacos?", "acceptedAnswer": { "@type": "Answer", "text": "Capeamos y freímos al momento, así que normalmente tu pedido está listo en minutos. Te confirmamos la hora exacta por WhatsApp." } },
+      { "@type": "Question", "name": "¿Puedo pedir con anticipación?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Escríbenos por WhatsApp a qué hora pasas y lo empezamos a preparar para que esté recién hecho cuando llegues." } }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ======================================================================
+       SPRITE: marca Los Capes + iconos de línea (24x24, trazo)
+       ====================================================================== -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#22A3B2"/>
+        <stop offset=".55" stop-color="#127380"/>
+        <stop offset="1" stop-color="#062F35"/>
+      </linearGradient>
+      <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FFE3A3"/>
+        <stop offset="1" stop-color="#F0A93A"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Insignia completa (loader, footer) -->
+    <symbol id="logo-badge" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="98" fill="url(#g-brand)"/>
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"/>
+      <text x="100" y="54" text-anchor="middle" style="font-family:Bungee,sans-serif" font-weight="500" font-size="8" letter-spacing="3" fill="#fff" fill-opacity=".75">TACOS CAPEADOS</text>
+      <text x="100" y="84" text-anchor="middle" style="font-family:'Bricolage Grotesque',sans-serif" font-weight="600" font-size="15" letter-spacing="4" fill="#fff" fill-opacity=".92">LOS</text>
+      <text x="100" y="126" text-anchor="middle" style="font-family:'Bricolage Grotesque',sans-serif" font-weight="800" font-size="42" letter-spacing="-.5" fill="#fff">CAPES</text>
+      <text x="100" y="152" text-anchor="middle" style="font-family:Bungee,sans-serif" font-weight="500" font-size="8" letter-spacing="2.4" fill="url(#g-gold)">CAMARÓN · PESCADO</text>
+    </symbol>
+
+    <!-- Insignia compacta (header) -->
+    <symbol id="logo-mono" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="98" fill="url(#g-brand)"/>
+      <text x="100" y="90" text-anchor="middle" style="font-family:'Bricolage Grotesque',sans-serif" font-weight="600" font-size="24" letter-spacing="4" fill="#fff" fill-opacity=".9">LOS</text>
+      <text x="100" y="140" text-anchor="middle" style="font-family:'Bricolage Grotesque',sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#fff">CAPES</text>
+    </symbol>
+
+    <symbol id="i-whatsapp" viewBox="0 0 256 256"><path fill="currentColor" stroke="none" d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12.5H6L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3.2 5 5.6 5 10.2a5 5 0 0 1-10 0c0-2.1 1-3.6 2-4.6 0 1.6.8 2.6 2 3.1 0-3 0-5.6 1-8.7Z"/></symbol>
+    <symbol id="i-cash" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.2"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 9.5h.01M17.5 14.5h.01"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9L12 3Z"/><path d="M19 17l.7 1.8 1.8.7-1.8.7L19 22l-.7-1.8-1.8-.7 1.8-.7L19 17Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8L12 2.8Z"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M5 7h5v5c0 3-1.6 5-4.5 6M14 7h5v5c0 3-1.6 5-4.5 6"/></symbol>
+    <symbol id="i-fish" viewBox="0 0 24 24"><path d="M6.5 12c2.5-4 6-6 9-6 3.5 0 6 3 6 6s-2.5 6-6 6c-3 0-6.5-2-9-6Zm0 0L2.5 8.2v7.6L6.5 12Z"/><path d="M16.8 10.6h.01"/></symbol>
+    <symbol id="i-shrimp" viewBox="0 0 24 24"><path d="M18 5C11.5 5 7 8.6 7 14c0 3 2 5 4.6 5 2 0 3.4-1.3 3.4-3 0-1.4-1-2.4-2.4-2.4"/><path d="M18 5c1.7 0 3 1.1 3 2.6S19.7 10.2 18 10.2h-3.2"/><path d="M10 10.2 8 8.4M12.8 8.4l-.9-2.4M15.6 7.4l-.2-2.4"/></symbol>
+    <symbol id="i-cheese" viewBox="0 0 24 24"><path d="M3 18v-7.5L14 5l7 5.5V18H3Z"/><path d="M3 10.5h18"/><circle cx="8" cy="14.2" r="1.3"/><circle cx="15.5" cy="13.6" r="1"/></symbol>
+    <symbol id="i-lemon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5.5"/><path d="M12 6.5v11M6.5 12h11M8.1 8.1l7.8 7.8M15.9 8.1l-7.8 7.8"/></symbol>
+    <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M10 2.5h4v3l1.6 3.2V20a1.5 1.5 0 0 1-1.5 1.5H9.9A1.5 1.5 0 0 1 8.4 20V8.7L10 5.5v-3Z"/><path d="M8.4 12.5h7.2M8.4 16.5h7.2"/></symbol>
+    <symbol id="i-can" viewBox="0 0 24 24"><rect x="6.5" y="3.5" width="11" height="17" rx="2.6"/><path d="M6.5 7.5h11M6.5 16.5h11M10 3.5V2.5h4v1"/></symbol>
+    <symbol id="i-glass" viewBox="0 0 24 24"><path d="M6 4h12l-1.6 16.5H7.6L6 4Z"/><path d="M6.7 10.5h10.6"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L4 20V5Z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="2.5"/><circle cx="18.5" cy="17" r="2.5"/><path d="M8 17h8l-3-7h-3"/><path d="M14.5 6h2.2l2.6 8.4"/><path d="M3 11.5h6.5l1.5 3"/></symbol>
+    <symbol id="i-chile" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.6 7.2c1.5.9 2.1 2.7 1.6 4.6C17.8 17.4 11.4 21.3 4.4 20.2c-.9-.1-1-1.3-.2-1.6 5.2-2.3 9.1-6.1 10.6-10.3.4-1.1 1.6-1.6 2.8-1.1Z"/><path d="M17.6 7.2c.2-1.6 1-2.8 2.6-3.4"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.7 10.7 5 19 5c0 8.3-5.7 14-14 14Z"/><path d="M5 19l8.5-8.5"/></symbol>
+    <!-- Bandera de papel picado (los huecos se recortan con evenodd) -->
+    <symbol id="papel" viewBox="0 0 60 70"><path fill="currentColor" fill-rule="evenodd" d="M0 0H60V62L55 68L50 62L45 68L40 62L35 68L30 62L25 68L20 62L15 68L10 62L5 68L0 62Z M10 7l3 3-3 3-3-3Z M20 7l3 3-3 3-3-3Z M30 7l3 3-3 3-3-3Z M40 7l3 3-3 3-3-3Z M50 7l3 3-3 3-3-3Z M14 35C20 26 32 26 38 35C32 44 20 44 14 35Z M38 35L46 29V41Z M9.5 53a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0Z M21.5 53a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0Z M33.5 53a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0Z M45.5 53a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0Z"/></symbol>
+  </svg>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- ======================================================================
+       LOADER
+       ====================================================================== -->
+  <div class="loader" id="loader" role="status" aria-live="polite" aria-label="Cargando Los Capes">
+    <div class="loader__grid" aria-hidden="true"></div>
+    <div class="loader__glow" aria-hidden="true"></div>
+
+    <div class="loader__core" aria-hidden="true">
+      <div class="loader__orb">
+        <span class="loader__spin loader__spin--a"></span>
+        <span class="loader__spin loader__spin--b"></span>
+        <svg class="loader__ring" viewBox="0 0 120 120">
+          <circle class="loader__track" cx="60" cy="60" r="56"/>
+          <circle class="loader__arc" id="loader-arc" cx="60" cy="60" r="56" pathLength="100"/>
+        </svg>
+        <svg class="loader__logo"><use href="#logo-badge"/></svg>
+      </div>
+
+      <div class="loader__meta">
+        <p class="loader__count"><span id="loader-num">00</span><small>%</small></p>
+        <p class="loader__label" id="loader-label">Calentando el aceite</p>
+      </div>
+    </div>
+
+    <div class="loader__bar" aria-hidden="true"><span id="loader-bar"></span></div>
+    <p class="loader__foot" aria-hidden="true"><span>Los Capes</span><span>Tacos capeados · Camarón y pescado</span></p>
+  </div>
+
+  <!-- Cursor personalizado (solo puntero fino) -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><span class="cursor__label"></span></span></div>
+
+  <!-- ======================================================================
+       HEADER
+       ====================================================================== -->
+  <header class="header" id="header">
+    <div class="header__bar">
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+
+      <a class="brand" href="#inicio" aria-label="Los Capes, ir al inicio">
+        <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#logo-mono"/></svg>
+        <span class="brand__text">
+          <span class="brand__name">Los Capes</span>
+          <span class="brand__tag">Tacos capeados</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#menu">Menú</a></li>
+          <li><a class="nav__link" href="#promo">Promo</a></li>
+          <li><a class="nav__link" href="#proceso">Proceso</a></li>
+          <li><a class="nav__link" href="#galeria">Galería</a></li>
+          <li><a class="nav__link" href="#preguntas">Preguntas</a></li>
+        </ul>
+        <span class="nav__pill" aria-hidden="true"></span>
+      </nav>
+
+      <div class="header__actions">
+        <button class="cart-btn" id="cart-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="cart-drawer" aria-label="Ver mi pedido, 0 productos">
+          <svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+          <span class="cart-btn__badge" id="cart-badge" hidden>0</span>
+        </button>
+
+        <a class="btn btn--primary btn--sm header__cta" data-magnetic href="#menu">
+          <span class="btn__label">Pedir ahora</span>
+          <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+        </a>
+
+      </div>
+    </div>
+    <div class="header__progress" aria-hidden="true"><span id="scroll-progress"></span></div>
+  </header>
+
+  <!-- Menú móvil a pantalla completa -->
+  <div class="mobile-menu" id="mobile-menu" inert>
+    <div class="mobile-menu__bg" aria-hidden="true"></div>
+    <nav class="mobile-menu__nav" aria-label="Menú móvil">
+      <ol class="mobile-menu__list">
+        <li><a href="#menu"><span class="mobile-menu__num">01</span>Menú</a></li>
+        <li><a href="#promo"><span class="mobile-menu__num">02</span>Promo 2×$65</a></li>
+        <li><a href="#proceso"><span class="mobile-menu__num">03</span>Proceso</a></li>
+        <li><a href="#galeria"><span class="mobile-menu__num">04</span>Galería</a></li>
+        <li><a href="#preguntas"><span class="mobile-menu__num">05</span>Preguntas</a></li>
+        <li><a href="#contacto"><span class="mobile-menu__num">06</span>Contacto</a></li>
+      </ol>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a class="btn btn--primary btn--block" href="#menu">
+        <svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+        <span class="btn__label">Quiero hacer mi pedido</span>
+      </a>
+      <p class="status" data-status data-open="false"><span class="status__dot" aria-hidden="true"></span><span data-status-text>Consultando horario</span></p>
+    </div>
+  </div>
+
+  <main id="contenido">
+
+    <!-- ====================================================================
+         HERO
+         ==================================================================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__aurora">
+          <span class="aurora aurora--a"></span>
+          <span class="aurora aurora--b"></span>
+          <span class="aurora aurora--c"></span>
+        </div>
+        <div class="hero__grid"></div>
+        <canvas class="hero__canvas" id="hero-canvas"></canvas>
+        <div class="hero__spot"></div>
+      </div>
+
+      <div class="hero__inner container" data-hero-scrub>
+        <div class="hero__copy">
+          <div class="hero__chips" data-intro="1">
+            <p class="status" data-status data-open="false">
+              <span class="status__dot" aria-hidden="true"></span>
+              <span data-status-text>Consultando horario</span>
+            </p>
+            <p class="chip chip--ghost"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bolt"/></svg>Listo en minutos</p>
+          </div>
+
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__kicker" data-intro="2">Tacos de camarón y pescado capeados</span>
+            <span class="hero__display" data-hero-chars>Crujientes. Capeados.</span>
+            <span class="hero__display hero__display--accent"><em>Al momento.</em></span>
+          </h1>
+
+          <p class="hero__lead" data-intro="4">Capeamos y freímos cada taco justo cuando lo pides: nada recalentado, nada hecho desde temprano. Sencillos o <strong>rellenos de queso</strong>, desde <strong>$35</strong>.</p>
+
+          <div class="hero__cta" data-intro="5">
+            <a class="btn btn--primary btn--lg" data-magnetic href="#menu">
+              <svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+              <span class="btn__label">Quiero mis tacos</span>
+            </a>
+            <a class="btn btn--glass btn--lg" data-magnetic href="#menu">
+              <span class="btn__label">Se me antojó: ver el menú</span>
+              <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+
+          <dl class="hero__metrics" data-intro="6">
+            <div class="metric"><dt>Tacos desde</dt><dd>$<span data-count-to="35">35</span></dd></div>
+            <div class="metric"><dt>Solo lunes y jueves</dt><dd>2×$<span data-count-to="65">65</span></dd></div>
+            <div class="metric"><dt>Días a la semana</dt><dd><span data-count-to="6">6</span></dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#menu" aria-label="Ir al menú">
+        <span class="hero__scroll-mouse" aria-hidden="true"><span></span></span>
+        <span class="hero__scroll-text" aria-hidden="true">Desliza</span>
+      </a>
+    </section>
+
+    <!-- ====================================================================
+         TICKER (decorativo)
+         ==================================================================== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__row" data-ticker>
+        <div class="ticker__track">
+          <span>Camarón capeado</span><i>✦</i><span>Relleno de queso</span><i>✦</i><span>Pescado capeado</span><i>✦</i><span>Promo 2×$65 solo lunes y jueves</span><i>✦</i><span>Limonada mineral</span><i>✦</i><span>Listo en minutos</span><i>✦</i>
+          <span>Camarón capeado</span><i>✦</i><span>Relleno de queso</span><i>✦</i><span>Pescado capeado</span><i>✦</i><span>Promo 2×$65 solo lunes y jueves</span><i>✦</i><span>Limonada mineral</span><i>✦</i><span>Listo en minutos</span><i>✦</i>
+        </div>
+      </div>
+      <div class="ticker__row ticker__row--outline ticker__row--reverse" data-ticker>
+        <div class="ticker__track">
+          <span>Crujiente</span><i>●</i><span>Dorado</span><i>●</i><span>Al momento</span><i>●</i><span>Sin recalentar</span><i>●</i><span>Hecho para ti</span><i>●</i><span>Crujiente</span><i>●</i><span>Dorado</span><i>●</i><span>Al momento</span><i>●</i><span>Sin recalentar</span><i>●</i><span>Hecho para ti</span><i>●</i>
+          <span>Crujiente</span><i>●</i><span>Dorado</span><i>●</i><span>Al momento</span><i>●</i><span>Sin recalentar</span><i>●</i><span>Hecho para ti</span><i>●</i><span>Crujiente</span><i>●</i><span>Dorado</span><i>●</i><span>Al momento</span><i>●</i><span>Sin recalentar</span><i>●</i><span>Hecho para ti</span><i>●</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         MENÚ
+         ==================================================================== -->
+    <section class="section menu" id="menu" aria-labelledby="menu-title">
+      <div class="awning" aria-hidden="true"></div>
+      <div class="container">
+        <header class="sec-head">
+          <p class="eyebrow" data-scramble><span>01</span>Menú</p>
+          <h2 class="sec-title" id="menu-title" data-split>Elige tu taco. Nosotros lo hacemos <em>tronar.</em></h2>
+          <p class="sec-lead" data-reveal>Arma tu pedido aquí mismo y mándalo por WhatsApp ya escrito. Sin apps, sin registros, sin filas.</p>
+        </header>
+
+        <!-- Tacos -->
+        <div class="menu__group">
+          <div class="menu__group-head" data-reveal>
+            <h3 class="menu__group-title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-flame"/></svg>Tacos capeados</h3>
+            <p class="menu__group-note">Sencillos o rellenos de queso</p>
+          </div>
+
+          <div class="menu__grid">
+            <article class="dish" data-reveal data-tilt data-spot>
+              <figure class="dish__media" data-cursor="Ver">
+                <img src="img/gallery-1.jpg" width="1400" height="2100" loading="lazy" decoding="async" style="object-position:50% 60%"
+                     alt="Tacos de camarón capeados y crujientes, servidos sobre tabla de madera">
+                <span class="dish__badge dish__badge--teal"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-shrimp"/></svg>Clásico</span>
+              </figure>
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3 class="dish__name">Taco de camarón</h3>
+                  <p class="dish__price">$<span data-count-to="40">40</span></p>
+                </div>
+                <p class="dish__desc">Camarón capeado y dorado al momento: crujiente por fuera, jugoso por dentro.</p>
+                <ul class="dish__tags"><li>Capeado al momento</li><li>Promo lun y jue</li></ul>
+              </div>
+              <div class="dish__foot"><div class="stepper" data-stepper="camaron"></div></div>
+            </article>
+
+            <article class="dish dish--cheese" data-reveal style="--d:1" data-tilt data-spot>
+              <figure class="dish__media" data-cursor="Ver">
+                <img src="img/taco-camaron.jpg" width="1200" height="800" loading="lazy" decoding="async"
+                     alt="Tacos de camarón relleno de queso, capeados al momento y con queso derretido">
+                <span class="dish__badge"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cheese"/></svg>Relleno de queso</span>
+              </figure>
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3 class="dish__name">Camarón relleno de queso</h3>
+                  <p class="dish__price">$<span data-count-to="45">45</span></p>
+                </div>
+                <p class="dish__desc">El camarón capeado de siempre, ahora con queso derretido por dentro.</p>
+                <ul class="dish__tags"><li>Queso derretido</li><li>Capeado al momento</li></ul>
+              </div>
+              <div class="dish__foot"><div class="stepper" data-stepper="camaron-queso"></div></div>
+            </article>
+
+            <article class="dish" data-reveal style="--d:2" data-tilt data-spot>
+              <figure class="dish__media" data-cursor="Ver">
+                <img src="img/gallery-2.jpg" width="1400" height="933" loading="lazy" decoding="async"
+                     alt="Tacos de pescado capeado con cebolla morada, jitomate y cilantro">
+                <span class="dish__badge dish__badge--teal"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-fish"/></svg>Clásico</span>
+              </figure>
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3 class="dish__name">Taco de pescado</h3>
+                  <p class="dish__price">$<span data-count-to="35">35</span></p>
+                </div>
+                <p class="dish__desc">Pescado capeado ligero y dorado parejo. El clásico de siempre, hecho al momento.</p>
+                <ul class="dish__tags"><li>Capa ligera</li><li>Promo lun y jue</li></ul>
+              </div>
+              <div class="dish__foot"><div class="stepper" data-stepper="pescado"></div></div>
+            </article>
+
+            <article class="dish dish--cheese" data-reveal style="--d:3" data-tilt data-spot>
+              <figure class="dish__media" data-cursor="Ver">
+                <img src="img/taco-pescado.jpg" width="1200" height="1678" loading="lazy" decoding="async"
+                     alt="Taco de pescado capeado relleno de queso con aguacate, jitomate y cilantro">
+                <span class="dish__badge"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cheese"/></svg>Relleno de queso</span>
+              </figure>
+              <div class="dish__body">
+                <div class="dish__row">
+                  <h3 class="dish__name">Pescado relleno de queso</h3>
+                  <p class="dish__price">$<span data-count-to="40">40</span></p>
+                </div>
+                <p class="dish__desc">Filete capeado con queso derretido por dentro. Crujiente, suave y bien dorado.</p>
+                <ul class="dish__tags"><li>Queso derretido</li><li>Dorado parejo</li></ul>
+              </div>
+              <div class="dish__foot"><div class="stepper" data-stepper="pescado-queso"></div></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Bebidas -->
+        <div class="menu__group">
+          <div class="menu__group-head" data-reveal>
+            <h3 class="menu__group-title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-glass"/></svg>Para tomar</h3>
+            <p class="menu__group-note">Bien frías, para acompañar</p>
+          </div>
+
+          <div class="drinks">
+            <article class="drink drink--lime" data-reveal data-tilt data-spot>
+              <div class="drink__visual" aria-hidden="true">
+                <span class="drink__bubbles"><i></i><i></i><i></i><i></i></span>
+                <span class="drink__icon"><svg class="i" focusable="false"><use href="#i-lemon"/></svg></span>
+              </div>
+              <div class="drink__body">
+                <div class="dish__row">
+                  <h3 class="drink__name">Limonada mineral</h3>
+                  <p class="dish__price">$<span data-count-to="30">30</span></p>
+                </div>
+                <p class="drink__desc">Limón con agua mineral, burbujeante y bien fría. La pareja perfecta del capeado.</p>
+              </div>
+              <div class="dish__foot"><div class="stepper" data-stepper="limonada"></div></div>
+            </article>
+
+            <article class="drink drink--grape" data-reveal style="--d:1" data-tilt data-spot>
+              <div class="drink__visual" aria-hidden="true">
+                <span class="drink__bubbles"><i></i><i></i><i></i><i></i></span>
+                <span class="drink__icon"><svg class="i" focusable="false"><use href="#i-bottle"/></svg></span>
+              </div>
+              <div class="drink__body">
+                <div class="dish__row">
+                  <h3 class="drink__name">Uvola</h3>
+                  <p class="dish__price">$<span data-count-to="30">30</span></p>
+                </div>
+                <p class="drink__desc">Bien fría y lista para acompañar tus tacos recién capeados.</p>
+              </div>
+              <div class="dish__foot"><div class="stepper" data-stepper="uvola"></div></div>
+            </article>
+
+            <article class="drink drink--red" data-reveal style="--d:2" data-tilt data-spot>
+              <div class="drink__visual" aria-hidden="true">
+                <span class="drink__bubbles"><i></i><i></i><i></i><i></i></span>
+                <span class="drink__icon"><svg class="i" focusable="false"><use href="#i-can"/></svg></span>
+              </div>
+              <div class="drink__body">
+                <div class="dish__row">
+                  <h3 class="drink__name">Coca-Cola</h3>
+                  <p class="dish__price">$<span data-count-to="25">25</span></p>
+                </div>
+                <p class="drink__desc">La clásica, bien fría. Nunca falla con un taco recién capeado.</p>
+              </div>
+              <div class="dish__foot"><div class="stepper" data-stepper="coca"></div></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Combo destacado -->
+        <article class="combo" data-reveal data-spot>
+          <div class="combo__border" aria-hidden="true"></div>
+          <div class="combo__media">
+            <img src="img/gallery-3.jpg" width="1400" height="933" loading="lazy" decoding="async"
+                 alt="Tacos de camarón con aguacate, jitomate y col morada">
+          </div>
+          <div class="combo__body">
+            <p class="promo-chip" data-promo data-active="false"><span class="promo-chip__dot" aria-hidden="true"></span><span data-promo-text>Solo lunes y jueves</span></p>
+            <h3 class="combo__title">El combo de lunes y jueves: <span class="text-gold">2 tacos por $65</span></h3>
+            <p class="combo__text">Camarón y pescado sencillos, combinados como quieras. Válida únicamente los lunes y jueves; esos días se aplica sola en tu pedido.</p>
+            <div class="combo__actions">
+              <button class="btn btn--gold" type="button" data-add-combo data-magnetic>
+                <svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg>
+                <span class="btn__label">Quiero la promo</span>
+              </button>
+              <span class="combo__save">Ahorras <strong>hasta $15</strong> por cada par</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PROMOCIÓN
+         ==================================================================== -->
+    <section class="promo" id="promo" aria-labelledby="promo-title">
+      <div class="promo__bg" aria-hidden="true">
+        <span class="promo__burst"></span>
+        <span class="promo__rays"></span>
+      </div>
+      <div class="container promo__inner">
+        <div class="promo__figure" aria-hidden="true" data-reveal="scale">
+          <span class="promo__num"><span data-count-to="2">2</span></span>
+          <span class="promo__x">×</span>
+          <span class="promo__price">$<span data-count-to="65">65</span></span>
+          <span class="promo__stamp">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="stamp-path" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+              <text><textPath href="#stamp-path" textLength="270" lengthAdjust="spacing">SOLO LUN Y JUE ✦ AHORRA $15 ✦ </textPath></text>
+            </svg>
+            <b>Promo</b>
+          </span>
+        </div>
+
+        <div class="promo__copy">
+          <p class="promo-chip promo-chip--dark" data-promo data-active="false" data-reveal><span class="promo-chip__dot" aria-hidden="true"></span><span data-promo-text>Solo lunes y jueves</span></p>
+          <h2 class="promo__title" id="promo-title" data-split>Lunes y jueves, el antojo sale mejor: 2 tacos por $65.</h2>
+          <p class="promo__text" data-reveal>Camarón con camarón, pescado con pescado o uno y uno. Tú decides la combinación; nosotros los capeamos al momento.</p>
+          <ul class="promo__list" data-reveal>
+            <li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Válida únicamente los lunes y jueves</li>
+            <li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Aplica en tacos sencillos de camarón o pescado</li>
+            <li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Se aplica sola en tu pedido</li>
+          </ul>
+          <div class="promo__actions" data-reveal>
+            <a class="btn btn--dark btn--lg" data-magnetic href="#menu">
+              <svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+              <span class="btn__label">Aparta mi promo de hoy</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PROCESO (scroll horizontal en escritorio)
+         ==================================================================== -->
+    <section class="process" id="proceso" aria-labelledby="process-title">
+      <div class="process__pin">
+        <div class="process__head container">
+          <p class="eyebrow" data-scramble><span>02</span>Proceso</p>
+          <h2 class="sec-title" id="process-title" data-split>Del aceite a tu mano, <em>en minutos.</em></h2>
+          <div class="process__meter" aria-hidden="true"><span id="process-meter"></span></div>
+        </div>
+
+        <ol class="process__track" id="process-track">
+          <li class="pstep" data-reveal>
+            <div class="pstep__media"><img src="img/gallery-2.jpg" width="1400" height="933" loading="lazy" decoding="async" alt="Tacos de pescado capeado con cebolla morada, cilantro y salsa de piña"></div>
+            <div class="pstep__body">
+              <span class="pstep__num">01</span>
+              <h3 class="pstep__title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>Pides</h3>
+              <p>Arma tu pedido en la página o escríbenos por WhatsApp. Te respondemos y confirmamos la hora.</p>
+            </div>
+          </li>
+          <li class="pstep" data-reveal style="--d:1">
+            <div class="pstep__media"><img src="img/taco-pescado.jpg" width="1200" height="1678" loading="lazy" decoding="async" alt="Pescado recién capeado, dorado y crujiente, sobre tortilla"></div>
+            <div class="pstep__body">
+              <span class="pstep__num">02</span>
+              <h3 class="pstep__title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-sparkle"/></svg>Capeamos</h3>
+              <p>Hasta que llega tu pedido, el camarón y el pescado se pasan por el capeado. Ni un minuto antes.</p>
+            </div>
+          </li>
+          <li class="pstep" data-reveal style="--d:2">
+            <div class="pstep__media"><img src="img/proceso-frito.jpg" width="1400" height="2099" loading="lazy" decoding="async" alt="Camarones capeados recién fritos escurriendo en canasta metálica"></div>
+            <div class="pstep__body">
+              <span class="pstep__num">03</span>
+              <h3 class="pstep__title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-flame"/></svg>Doramos</h3>
+              <p>Fritura pareja hasta ese dorado que truena. Crujiente por fuera, jugoso por dentro.</p>
+            </div>
+          </li>
+          <li class="pstep" data-reveal style="--d:3">
+            <div class="pstep__media"><img src="img/hero-tacos.jpg" width="1600" height="2400" loading="lazy" decoding="async" alt="Mano exprimiendo limón sobre pescado capeado recién servido"></div>
+            <div class="pstep__body">
+              <span class="pstep__num">04</span>
+              <h3 class="pstep__title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>Lo recibes</h3>
+              <p>Pasas por él o te lo llevamos a domicilio, calientito y listo para morder. Pagas en efectivo.</p>
+            </div>
+          </li>
+          <li class="pstep pstep--cta">
+            <div class="pstep__cta">
+              <p class="pstep__cta-kicker">Tu turno</p>
+              <p class="pstep__cta-title">¿Lo armamos?</p>
+              <a class="btn btn--primary btn--lg" data-magnetic href="#menu">
+                <span class="btn__label">Estoy listo, quiero pedir</span>
+                <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+              </a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         GALERÍA
+         ==================================================================== -->
+    <section class="section gallery" id="galeria" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="sec-head sec-head--split">
+          <div>
+            <p class="eyebrow" data-scramble><span>03</span>Galería</p>
+            <h2 class="sec-title" id="gallery-title" data-split>Capeado. Dorado. <em>Listo.</em></h2>
+          </div>
+          <p class="sec-lead" data-reveal>Así salen de la cocina. Toca cualquier foto para verla en grande.</p>
+        </header>
+
+        <div class="gallery__grid">
+          <figure class="gitem gitem--tall" data-reveal="clip">
+            <button class="gitem__btn" type="button" data-lightbox="0" data-cursor="Ver" aria-label="Ampliar foto: tacos capeados sobre tabla de madera">
+              <img src="img/gallery-1.jpg" width="1400" height="2100" loading="lazy" decoding="async" data-parallax-img alt="Tacos capeados servidos sobre una tabla de madera, recién fritos, con limón y salsa verde">
+            </button>
+            <figcaption>Recién salidos del capeado</figcaption>
+          </figure>
+          <figure class="gitem gitem--wide" data-reveal="clip" style="--d:1">
+            <button class="gitem__btn" type="button" data-lightbox="1" data-cursor="Ver" aria-label="Ampliar foto: tacos de pescado con salsa de piña">
+              <img src="img/gallery-2.jpg" width="1400" height="933" loading="lazy" decoding="async" data-parallax-img alt="Tacos de pescado capeado con cebolla morada, cilantro y salsa de piña">
+            </button>
+            <figcaption>Con todo, al estilo Los Capes</figcaption>
+          </figure>
+          <figure class="gitem" data-reveal="clip" style="--d:2">
+            <button class="gitem__btn" type="button" data-lightbox="2" data-cursor="Ver" aria-label="Ampliar foto: camarón capeado recién frito">
+              <img src="img/proceso-frito.jpg" width="1400" height="2099" loading="lazy" decoding="async" data-parallax-img alt="Camarón capeado recién frito, dorado y escurrido en canasta">
+            </button>
+            <figcaption>Dorado parejo</figcaption>
+          </figure>
+          <figure class="gitem" data-reveal="clip" style="--d:1">
+            <button class="gitem__btn" type="button" data-lightbox="3" data-cursor="Ver" aria-label="Ampliar foto: tacos de camarón relleno de queso">
+              <img src="img/taco-camaron.jpg" width="1200" height="800" loading="lazy" decoding="async" data-parallax-img alt="Tacos de camarón relleno de queso, capeados, con limón y salsa">
+            </button>
+            <figcaption>Relleno de queso</figcaption>
+          </figure>
+          <figure class="gitem gitem--wide" data-reveal="clip" style="--d:2">
+            <button class="gitem__btn" type="button" data-lightbox="4" data-cursor="Ver" aria-label="Ampliar foto: tacos de camarón con guacamole">
+              <img src="img/gallery-4.jpg" width="1400" height="1865" loading="lazy" decoding="async" data-parallax-img alt="Tacos de camarón con guacamole y crema">
+            </button>
+            <figcaption>Para compartir (o no)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CTA INTERMEDIO
+         ==================================================================== -->
+    <section class="cta-band" aria-labelledby="cta-band-title">
+      <div class="papel" aria-hidden="true"><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg><svg class="papel__flag" focusable="false"><use href="#papel"/></svg></div>
+      <div class="cta-band__glow" aria-hidden="true"></div>
+      <div class="container cta-band__inner">
+        <p class="eyebrow eyebrow--center eyebrow--light" data-scramble>¿Ya se te antojó?</p>
+        <h2 class="cta-band__title" id="cta-band-title" data-split>Un mensaje y empezamos a <em>capear</em> lo tuyo.</h2>
+        <div class="cta-band__actions" data-reveal>
+          <a class="btn btn--gold btn--lg" data-magnetic href="#menu">
+            <svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+            <span class="btn__label">Sí, quiero mis tacos ya</span>
+          </a>
+          <a class="btn btn--outline-light btn--lg" data-magnetic href="#menu">
+            <span class="btn__label">Prefiero armar mi pedido</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         HORARIO
+         ==================================================================== -->
+    <section class="section hours-sec" id="horario" aria-labelledby="hours-title">
+      <div class="container">
+        <header class="sec-head sec-head--split">
+          <div>
+            <p class="eyebrow" data-scramble><span>04</span>Horario</p>
+            <h2 class="sec-title" id="hours-title" data-split>Te esperamos seis días <em>a la semana.</em></h2>
+          </div>
+          <p class="sec-lead" data-reveal>Capeamos desde temprano hasta la tarde. Los martes descansamos para volver con todo.</p>
+        </header>
+
+        <div class="hours-grid">
+          <article class="cell cell--hours" data-reveal data-spot>
+            <div class="cell__head">
+              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg></span>
+              <h3 class="cell__label">Horario</h3>
+              <p class="cell__clock" aria-live="off">Hora local <span id="local-clock">--:--</span></p>
+            </div>
+            <p class="cell__big">9:00<span>–</span>16:00</p>
+            <ul class="week" id="week" aria-label="Días de servicio">
+              <li data-day="1"><abbr title="Lunes">L</abbr></li>
+              <li data-day="2" class="is-off"><abbr title="Martes, cerrado">M</abbr></li>
+              <li data-day="3"><abbr title="Miércoles">M</abbr></li>
+              <li data-day="4"><abbr title="Jueves">J</abbr></li>
+              <li data-day="5"><abbr title="Viernes">V</abbr></li>
+              <li data-day="6"><abbr title="Sábado">S</abbr></li>
+              <li data-day="0"><abbr title="Domingo">D</abbr></li>
+            </ul>
+            <div class="cell__foot">
+              <p class="status" data-status data-open="false"><span class="status__dot" aria-hidden="true"></span><span data-status-text>Consultando horario</span></p>
+              <p class="legend"><span class="legend__dot"></span>Promo 2×$65: solo lunes y jueves</p>
+            </div>
+          </article>
+
+          <article class="cell cell--photo" data-reveal style="--d:1">
+            <img src="img/proceso-frito.jpg" width="1400" height="2099" loading="lazy" decoding="async" data-parallax-img alt="Camarones recién capeados friéndose en el aceite">
+            <div class="cell__photo-copy">
+              <span class="chip chip--glass"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-flame"/></svg>Al momento</span>
+              <p>Capeado y frito cuando haces tu pedido. Nunca antes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PIZARRÓN DE PRECIOS
+         ==================================================================== -->
+    <section class="section board-sec" id="precios" aria-labelledby="board-title">
+      <div class="container">
+        <header class="sec-head sec-head--center">
+          <p class="eyebrow eyebrow--center" data-scramble><span>05</span>Precios</p>
+          <h2 class="sec-title" id="board-title" data-split>Precios claros, <em>sin sorpresas.</em></h2>
+        </header>
+
+        <article class="cell cell--prices board" data-reveal="scale">
+          <div class="cell__head board__head">
+            <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cash"/></svg></span>
+            <h3 class="cell__label">El pizarrón de Los Capes</h3>
+          </div>
+
+          <div class="board__cols">
+            <ul class="pricelist">
+              <li class="pricelist__group">Tacos capeados</li>
+              <li><span>Camarón</span><i aria-hidden="true"></i><strong>$40</strong></li>
+              <li><span>Camarón relleno de queso</span><i aria-hidden="true"></i><strong>$45</strong></li>
+              <li><span>Pescado</span><i aria-hidden="true"></i><strong>$35</strong></li>
+              <li><span>Pescado relleno de queso</span><i aria-hidden="true"></i><strong>$40</strong></li>
+            </ul>
+            <ul class="pricelist">
+              <li class="pricelist__group">Para tomar</li>
+              <li><span>Limonada mineral</span><i aria-hidden="true"></i><strong>$30</strong></li>
+              <li><span>Uvola</span><i aria-hidden="true"></i><strong>$30</strong></li>
+              <li><span>Coca-Cola</span><i aria-hidden="true"></i><strong>$25</strong></li>
+            </ul>
+          </div>
+
+          <ul class="pricelist board__promo">
+            <li class="pricelist__promo"><span>Promo: 2 tacos sencillos (solo lunes y jueves)</span><i aria-hidden="true"></i><strong>$65</strong></li>
+          </ul>
+
+          <div class="board__cta">
+            <a class="btn btn--gold btn--lg" data-magnetic href="#menu">
+              <svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+              <span class="btn__label">Ya sé qué quiero: armar mi pedido</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ENTREGA Y PAGO
+         ==================================================================== -->
+    <section class="section service-sec" id="entrega" aria-labelledby="service-title">
+      <div class="container">
+        <header class="sec-head">
+          <p class="eyebrow" data-scramble><span>06</span>Entrega y pago</p>
+          <h2 class="sec-title" id="service-title" data-split>Tú eliges <em>cómo te llega.</em></h2>
+        </header>
+
+        <div class="service-grid">
+          <article class="cell cell--pickup" data-reveal data-spot>
+            <div class="cell__head">
+              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span>
+              <h3 class="cell__label">Entrega</h3>
+            </div>
+            <p class="cell__title">A domicilio o para recoger.</p>
+            <p class="cell__note">Tú eliges al hacer tu pedido. Para domicilio te confirmamos el envío por WhatsApp.</p>
+          </article>
+
+          <article class="cell cell--pay" data-reveal style="--d:1" data-spot>
+            <div class="cell__head">
+              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></span>
+              <h3 class="cell__label">Pago</h3>
+            </div>
+            <p class="cell__title">Efectivo al recibir.</p>
+            <p class="cell__note">Sin cobros por adelantado ni datos de tarjeta.</p>
+          </article>
+
+          <article class="cell cell--contact" data-reveal style="--d:2" data-spot>
+            <div class="cell__head">
+              <span class="cell__icon cell__icon--wa"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>
+              <h3 class="cell__label">WhatsApp</h3>
+            </div>
+            <p class="cell__phone"><a href="https://wa.me/526683856140" target="_blank" rel="noopener noreferrer">668 385 6140</a></p>
+            <a class="link-arrow" href="https://wa.me/526683856140?text=Hola%20Los%20Capes%2C%20tengo%20una%20duda." target="_blank" rel="noopener noreferrer">
+              Escríbenos, te contestamos
+              <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         OPINIONES
+         TODO: sustituir por reseñas reales del negocio (Google, Facebook)
+         antes de publicar.
+         ==================================================================== -->
+    <section class="section reviews" id="opiniones" aria-labelledby="reviews-title">
+      <div class="container">
+        <header class="sec-head sec-head--center">
+          <p class="eyebrow eyebrow--center" data-scramble><span>07</span>Opiniones</p>
+          <h2 class="sec-title" id="reviews-title" data-split>Lo que dicen <em>al recoger.</em></h2>
+        </header>
+
+        <div class="reviews__grid">
+          <figure class="review" data-reveal data-spot>
+            <svg class="review__quote" aria-hidden="true" focusable="false"><use href="#i-quote"/></svg>
+            <div class="review__stars" role="img" aria-label="5 de 5 estrellas">
+              <svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <blockquote>El camarón capeado de Los Capes no se compara con nada del rumbo. Pido doble cada vez que paso.</blockquote>
+            <figcaption><span class="review__avatar" aria-hidden="true">KB</span><span><strong>Karla B.</strong><small>Clienta frecuente</small></span></figcaption>
+          </figure>
+          <figure class="review review--feature" data-reveal style="--d:1" data-spot>
+            <svg class="review__quote" aria-hidden="true" focusable="false"><use href="#i-quote"/></svg>
+            <div class="review__stars" role="img" aria-label="5 de 5 estrellas">
+              <svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <blockquote>Pedí por WhatsApp y en minutos ya estaba recogiendo. Pescado dorado parejo, como me gusta.</blockquote>
+            <figcaption><span class="review__avatar" aria-hidden="true">JA</span><span><strong>Jesús A.</strong><small>Cliente</small></span></figcaption>
+          </figure>
+          <figure class="review" data-reveal style="--d:2" data-spot>
+            <svg class="review__quote" aria-hidden="true" focusable="false"><use href="#i-quote"/></svg>
+            <div class="review__stars" role="img" aria-label="5 de 5 estrellas">
+              <svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <blockquote>La promo de 2 tacos por $65 es imbatible. Ya es mi antojo de cada lunes y jueves sin falta.</blockquote>
+            <figcaption><span class="review__avatar" aria-hidden="true">DV</span><span><strong>Daniela V.</strong><small>Clienta</small></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         PREGUNTAS FRECUENTES
+         ==================================================================== -->
+    <section class="section faq" id="preguntas" aria-labelledby="faq-title">
+      <div class="container faq__layout">
+        <header class="sec-head faq__head">
+          <p class="eyebrow" data-scramble><span>08</span>Preguntas</p>
+          <h2 class="sec-title" id="faq-title" data-split>Preguntas <em>frecuentes.</em></h2>
+          <p class="sec-lead" data-reveal>¿No ves tu duda? Escríbenos y te contestamos directo, sin bots.</p>
+          <a class="btn btn--glass" data-magnetic data-reveal href="https://wa.me/526683856140?text=Hola%20Los%20Capes%2C%20tengo%20una%20pregunta." target="_blank" rel="noopener noreferrer">
+            <svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+            <span class="btn__label">Tengo otra duda</span>
+          </a>
+        </header>
+
+        <div class="faq__list">
+          <details class="faq__item" name="faq" data-reveal>
+            <summary><span>¿Hacen entregas a domicilio?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Sí. Al hacer tu pedido eliges si lo quieres a domicilio o para recoger en la taquería. Para domicilio te confirmamos por WhatsApp el costo de envío y el tiempo de entrega.</p></div>
+          </details>
+          <details class="faq__item" name="faq" data-reveal style="--d:1">
+            <summary><span>¿Cómo pago mi pedido?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Aceptamos efectivo al recibir o recoger tu pedido. No pedimos pagos por adelantado. Si es a domicilio, dinos con cuánto pagas para llevarte cambio.</p></div>
+          </details>
+          <details class="faq__item" name="faq" data-reveal style="--d:2">
+            <summary><span>¿Qué tacos entran en la promo de 2 por $65?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Únicamente los lunes y jueves: 2 tacos sencillos de camarón o pescado por $65, combinados como quieras. Esos días la promo se aplica sola en tu pedido; el resto de la semana los tacos van a precio normal.</p></div>
+          </details>
+          <details class="faq__item" name="faq" data-reveal style="--d:3">
+            <summary><span>¿Qué días cierran?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Cerramos los martes. El resto de la semana abrimos de 9:00 a 16:00.</p></div>
+          </details>
+          <details class="faq__item" name="faq" data-reveal style="--d:4">
+            <summary><span>¿Cuánto tardan en preparar mi pedido?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Capeamos y freímos al momento, así que normalmente está listo en minutos. Te confirmamos la hora exacta por WhatsApp.</p></div>
+          </details>
+          <details class="faq__item" name="faq" data-reveal style="--d:5">
+            <summary><span>¿Puedo pedir con anticipación?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Sí. Dinos a qué hora pasas y lo empezamos a preparar para que esté recién hecho cuando llegues.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CONTACTO / FORMULARIO → WHATSAPP
+         ==================================================================== -->
+    <section class="section contact" id="contacto" aria-labelledby="contact-title">
+      <div class="contact__bg" aria-hidden="true">
+        <span class="aurora aurora--a"></span>
+        <span class="aurora aurora--b"></span>
+      </div>
+
+      <div class="container contact__layout">
+        <div class="contact__intro">
+          <p class="eyebrow" data-scramble><span>09</span>Haz tu pedido</p>
+          <h2 class="contact__title" id="contact-title" data-split>Tu pedido, a un <em>mensaje</em> de distancia.</h2>
+          <p class="sec-lead" data-reveal>Elige en el menú, revisa tu carrito y llena tus datos: a domicilio o para recoger. Tu comanda llega completa y ordenada por WhatsApp.</p>
+
+          <ul class="contact__info" data-reveal>
+            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span><span><small>WhatsApp</small><a href="https://wa.me/526683856140" target="_blank" rel="noopener noreferrer">668 385 6140</a></span></li>
+            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg></span><span><small>Horario</small>9:00 a 16:00 · Martes cerrado</span></li>
+            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span><span><small>Entrega</small>A domicilio o para recoger en la taquería</span></li>
+            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cash"/></svg></span><span><small>Pago</small>Efectivo al recibir</span></li>
+          </ul>
+        </div>
+
+        <div class="form-card form-card--steps" data-reveal="scale">
+          <div class="ticket-head" aria-hidden="true"><span>Comanda</span><span>Así de fácil</span></div>
+          <ol class="howto">
+            <li class="howto__step">
+              <span class="howto__num">1</span>
+              <span class="howto__text"><strong>Elige en el menú</strong>Toca “Agregar” en los tacos y bebidas que se te antojen.</span>
+            </li>
+            <li class="howto__step">
+              <span class="howto__num">2</span>
+              <span class="howto__text"><strong>Revisa tu carrito</strong>Ajusta cantidades; los lunes y jueves la promo 2×$65 se aplica sola.</span>
+            </li>
+            <li class="howto__step">
+              <span class="howto__num">3</span>
+              <span class="howto__text"><strong>Toca “Hacer pedido”</strong>Elige a domicilio o recoger en la taquería y llena tus datos.</span>
+            </li>
+            <li class="howto__step">
+              <span class="howto__num">4</span>
+              <span class="howto__text"><strong>Envíalo por WhatsApp</strong>Te llega con folio y te confirmamos la hora.</span>
+            </li>
+          </ol>
+          <a class="btn btn--primary btn--lg btn--block" data-magnetic href="#menu">
+            <svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+            <span class="btn__label">Ver el menú y armar mi pedido</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <svg class="footer__badge" aria-hidden="true" focusable="false"><use href="#logo-badge"/></svg>
+        <p class="footer__tag">Camarón y pescado,<br><em>capeados al momento.</em></p>
+      </div>
+
+      <nav class="footer__col" aria-label="Pie de página">
+        <p class="footer__title">Explora</p>
+        <ul>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#promo">Promo 2×$65 (lun y jue)</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <p class="footer__title">Visítanos</p>
+        <ul>
+          <li>Lunes, miércoles a domingo</li>
+          <li>9:00 a 16:00</li>
+          <li>Martes cerrado</li>
+          <li>A domicilio o para recoger</li>
+          <!-- TODO: agregar dirección y redes sociales cuando el cliente las comparta. -->
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__title">Pedidos</p>
+        <ul>
+          <li><a href="https://wa.me/526683856140" target="_blank" rel="noopener noreferrer">WhatsApp 668 385 6140</a></li>
+          <li><a href="#menu">Armar mi pedido</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer__word" aria-hidden="true"><span>LOS CAPES</span></p>
+
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year">2026</span> Los Capes. Todos los derechos reservados.</p>
+      <a class="footer__top" href="#inicio">Volver arriba <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg></a>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       PANEL DEL PEDIDO
+       ====================================================================== -->
+  <div class="overlay" id="cart-overlay" hidden></div>
+  <aside class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" inert>
+    <div class="drawer__head">
+      <div>
+        <p class="drawer__kicker">Tu carrito</p>
+        <h2 class="drawer__title" id="cart-title">Tu pedido</h2>
+      </div>
+      <button class="icon-btn" id="cart-close" type="button" aria-label="Cerrar pedido">
+        <svg class="i" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer__empty" id="cart-empty">
+      <span class="drawer__empty-ico" aria-hidden="true"><svg class="i" focusable="false"><use href="#i-bag"/></svg></span>
+      <p class="drawer__empty-title">Aún no hay tacos aquí.</p>
+      <p>Agrega tacos o bebidas desde el menú.</p>
+      <a class="btn btn--primary" href="#menu" data-close-drawer>
+        <span class="btn__label">Ver el menú</span>
+        <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+
+    <ul class="drawer__list" id="cart-list" data-lenis-prevent></ul>
+
+    <div class="drawer__foot" id="cart-foot" hidden>
+      <div class="totals">
+        <p class="totals__line totals__line--promo" data-promo-line hidden><span>Promo 2×$65</span><strong data-promo-amount>-$0</strong></p>
+        <p class="totals__hint" data-promo-hint>Promo 2×$65 válida únicamente lunes y jueves.</p>
+        <p class="totals__line totals__line--total"><span>Total estimado</span><strong data-total>$0</strong></p>
+      </div>
+      <button class="btn btn--primary btn--block btn--lg" id="cart-checkout" type="button">
+        <span class="btn__label">Hacer pedido</span>
+        <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+      </button>
+      <button class="link-btn" id="cart-clear" type="button">Vaciar pedido</button>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       VENTANA DE PEDIDO (comanda): se abre desde "Hacer pedido" en el carrito
+       ====================================================================== -->
+  <div class="overlay overlay--checkout" id="checkout-overlay" hidden></div>
+  <div class="checkout" id="checkout" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true" inert>
+    <div class="checkout__scroll" data-lenis-prevent>
+      <div class="checkout__ticket">
+        <div class="ticket-head">
+          <span id="checkout-title">Comanda</span>
+          <button class="icon-btn" id="checkout-close" type="button" aria-label="Cerrar pedido">
+            <svg class="i" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+          </button>
+        </div>
+
+        <form class="form" id="order-form" novalidate>
+          <fieldset class="form__block">
+            <legend class="form__legend"><span>1</span>Tu pedido</legend>
+            <ul class="summary" id="checkout-summary"></ul>
+            <div class="totals" aria-live="polite">
+              <p class="totals__line totals__line--promo" data-promo-line hidden><span>Promo 2×$65</span><strong data-promo-amount>-$0</strong></p>
+              <p class="totals__line totals__line--total"><span>Total estimado</span><strong data-total>$0</strong></p>
+              <p class="totals__hint" id="checkout-ship-note" hidden>+ envío a domicilio (te lo confirmamos por WhatsApp)</p>
+            </div>
+            <button class="link-btn checkout__edit" id="checkout-edit" type="button">Editar mi carrito</button>
+          </fieldset>
+
+          <fieldset class="form__block">
+            <legend class="form__legend"><span>2</span>¿Cómo lo quieres?</legend>
+            <div class="choice" id="f-mode-group">
+              <label class="choice__opt">
+                <input type="radio" name="mode" value="domicilio" aria-describedby="f-mode-err">
+                <span class="choice__card">
+                  <span class="choice__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-moto"/></svg></span>
+                  <strong>A domicilio</strong>
+                  <small>Te lo llevamos</small>
+                </span>
+              </label>
+              <label class="choice__opt">
+                <input type="radio" name="mode" value="recoger" aria-describedby="f-mode-err">
+                <span class="choice__card">
+                  <span class="choice__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span>
+                  <strong>Recoger en la taquería</strong>
+                  <small>Pasas por él</small>
+                </span>
+              </label>
+            </div>
+            <p class="field__err" id="f-mode-err" hidden>Elige si lo quieres a domicilio o para recoger.</p>
+          </fieldset>
+
+          <fieldset class="form__block">
+            <legend class="form__legend"><span>3</span>Tus datos</legend>
+            <div class="field">
+              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" placeholder=" " aria-describedby="f-name-err">
+              <label class="field__label" for="f-name">Nombre completo</label>
+              <p class="field__err" id="f-name-err" hidden>Escribe tu nombre para identificar tu pedido.</p>
+            </div>
+            <div class="field">
+              <input class="field__input" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" " aria-describedby="f-phone-err">
+              <label class="field__label" for="f-phone">Teléfono / WhatsApp (10 dígitos)</label>
+              <p class="field__err" id="f-phone-err" hidden>Escribe un teléfono de 10 dígitos para contactarte.</p>
+            </div>
+
+            <!-- Solo para pedidos a domicilio -->
+            <div class="delivery" id="delivery-fields" hidden>
+              <div class="field">
+                <input class="field__input" id="f-street" name="street" type="text" autocomplete="address-line1" placeholder=" " aria-describedby="f-street-err">
+                <label class="field__label" for="f-street">Calle y número</label>
+                <p class="field__err" id="f-street-err" hidden>Escribe la calle y el número de tu domicilio.</p>
+              </div>
+              <div class="field">
+                <input class="field__input" id="f-colonia" name="colonia" type="text" autocomplete="address-level3" placeholder=" " aria-describedby="f-colonia-err">
+                <label class="field__label" for="f-colonia">Colonia</label>
+                <p class="field__err" id="f-colonia-err" hidden>Escribe tu colonia.</p>
+              </div>
+              <div class="field">
+                <input class="field__input" id="f-ref" name="ref" type="text" placeholder=" ">
+                <label class="field__label" for="f-ref">Referencias (opcional): color de casa, entre calles…</label>
+              </div>
+              <div class="field">
+                <input class="field__input" id="f-cash" name="cash" type="text" inputmode="numeric" placeholder=" ">
+                <label class="field__label" for="f-cash">¿Con cuánto pagas? (opcional, para tu cambio)</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <select class="field__input field__select" id="f-time" name="time">
+                <option value="Lo antes posible">Lo antes posible</option>
+                <option value="En unos 30 minutos">En unos 30 minutos</option>
+                <option value="En 1 hora">En 1 hora</option>
+                <option value="Más tarde (te escribo la hora)">Más tarde (te escribo la hora)</option>
+              </select>
+              <label class="field__label field__label--fixed" for="f-time" id="f-time-label">¿Para cuándo?</label>
+              <svg class="field__chev i" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg>
+            </div>
+            <div class="field">
+              <textarea class="field__input field__textarea" id="f-notes" name="notes" rows="3" placeholder=" "></textarea>
+              <label class="field__label" for="f-notes">Comentarios (opcional): sin cebolla, salsa aparte…</label>
+            </div>
+          </fieldset>
+
+          <button class="btn btn--primary btn--lg btn--block form__submit" type="submit">
+            <svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+            <span class="btn__label">Enviar pedido por WhatsApp</span>
+          </button>
+          <p class="form__fine"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg>Tus datos solo se usan para tu pedido y se envían directo a WhatsApp.</p>
+        </form>
+
+        <div class="form-done" id="order-done" role="status" hidden>
+          <span class="form-done__check" aria-hidden="true"><svg class="i" focusable="false"><use href="#i-check"/></svg></span>
+          <p class="form-done__title">¡Listo! Tu folio es <span id="order-folio">LC-00000</span></p>
+          <p class="form-done__text">Abrimos WhatsApp con tu comanda. Solo confírmala enviando el mensaje. Si no se abrió, <a id="order-fallback" href="https://wa.me/526683856140" target="_blank" rel="noopener noreferrer">toca aquí</a>.</p>
+          <button class="btn btn--glass" type="button" id="order-again">Hacer otro pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visor de fotos -->
+  <dialog class="lightbox" id="lightbox" aria-label="Visor de fotos">
+    <button class="icon-btn lightbox__close" type="button" data-lb-close aria-label="Cerrar visor"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+    <figure class="lightbox__figure">
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-cap"></figcaption>
+    </figure>
+    <button class="icon-btn lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Foto anterior"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-left"/></svg></button>
+    <button class="icon-btn lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Foto siguiente"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></button>
+  </dialog>
+
+  <!-- Avisos -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Volver arriba -->
+  <button class="to-top" id="to-top" type="button" aria-label="Volver al inicio">
+    <svg class="to-top__ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" pathLength="100"/></svg>
+    <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg>
+  </button>
+
+  <!-- Carrito flotante (arriba del botón de WhatsApp) -->
+  <button class="fab-cart" id="fab-cart" type="button" aria-haspopup="dialog" aria-controls="cart-drawer" aria-label="Ver mi pedido, 0 productos">
+    <span class="fab-cart__pill" id="fab-cart-pill" aria-hidden="true" hidden>Ver pedido · <b id="fab-cart-total">$0</b></span>
+    <svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>
+    <span class="fab-cart__badge" id="fab-cart-badge" aria-hidden="true" hidden>0</span>
+  </button>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="fab" href="https://wa.me/526683856140?text=Hola%20Los%20Capes%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer" aria-label="Pedir por WhatsApp">
+    <span class="fab__tip" aria-hidden="true">¿Se te antojó? Escríbenos</span>
+    <span class="fab__ping" aria-hidden="true"></span>
+    <span class="fab__ping fab__ping--2" aria-hidden="true"></span>
+    <svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
+  </a>
+</body>
+</html>
