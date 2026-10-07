@@ -2616,6 +2616,20 @@ html.is-loaded .hero__display--accent { clip-path: inset(-20% -5% -30% 0); }
   border: 1.5px solid var(--ink);
   transform: rotate(-6deg);
 }
+.howto__plate {
+  width: min(190px, 52%);
+  aspect-ratio: 1;
+  margin: 2px auto 18px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #fff;
+  border: var(--border);
+  box-shadow: 5px 5px 0 var(--ink);
+  transform: rotate(-5deg);
+  transition: transform .8s var(--ease-spring);
+}
+.form-card--steps:hover .howto__plate { transform: rotate(3deg) scale(1.04); }
+.howto__plate img { width: 100%; height: 100%; object-fit: cover; }
 .howto__text { display: grid; gap: 2px; color: var(--muted); font-size: .96rem; }
 .howto__text strong { font-family: var(--font-display); font-size: 1.12rem; font-weight: 800; letter-spacing: -.02em; color: var(--ink); }
 
@@ -2668,6 +2682,8 @@ html.checkout-open .checkout__ticket { opacity: 1; transform: none; }
 .checkout__ticket::before { top: -13px; background-position: left bottom; transform: scaleY(-1); }
 .checkout__ticket::after { bottom: -13px; background-position: left top; }
 .checkout .ticket-head { align-items: center; }
+.checkout__title { display: inline-flex; align-items: center; gap: 12px; }
+.checkout__thumb { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ink); background: #fff; transform: rotate(-6deg); }
 .checkout .ticket-head span { font-family: var(--font-sign); font-size: 1.5rem; color: var(--ink); }
 
 /* Resumen del pedido */

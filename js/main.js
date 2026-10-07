@@ -51,10 +51,10 @@
   /* Catálogo. "promo: true" marca los tacos que entran en el 2×$65 (solo camarón sencillo).
      Las bebidas no tienen foto: se muestran con icono y color propio. */
   var PRODUCTS = {
-    "camaron":       { name: "Taco de camarón capeado", short: "Taco de camarón", price: 40, group: "taco", promo: true, img: "img/gallery-1.jpg" },
-    "camaron-queso": { name: "Taco de camarón relleno de queso", short: "Camarón relleno de queso", price: 45, group: "taco", promo: false, img: "img/taco-camaron.jpg" },
-    "pescado":       { name: "Taco de pescado capeado", short: "Taco de pescado", price: 35, group: "taco", promo: false, img: "img/gallery-2.jpg" },
-    "pescado-queso": { name: "Taco de pescado relleno de queso", short: "Pescado relleno de queso", price: 40, group: "taco", promo: false, img: "img/taco-pescado.jpg" },
+    "camaron":       { name: "Taco de camarón capeado", short: "Taco de camarón", price: 40, group: "taco", promo: true, img: "img/negocio/camaron-capeado.jpg" },
+    "camaron-queso": { name: "Taco de camarón relleno de queso", short: "Camarón relleno de queso", price: 45, group: "taco", promo: false, img: "img/negocio/camaron-plato.jpg" },
+    "pescado":       { name: "Taco de pescado capeado", short: "Taco de pescado", price: 35, group: "taco", promo: false, img: "img/negocio/tacos-pescado.jpg" },
+    "pescado-queso": { name: "Taco de pescado relleno de queso", short: "Pescado relleno de queso", price: 40, group: "taco", promo: false, img: "img/negocio/pescado-capeado.jpg" },
     "limonada":      { name: "Limonada mineral", short: "Limonada mineral", price: 30, group: "drink", icon: "i-lemon", tone: "lime" },
     "uvola":         { name: "Uvola", short: "Uvola", price: 30, group: "drink", icon: "i-bottle", tone: "grape" },
     "coca":          { name: "Coca-Cola", short: "Coca-Cola", price: 25, group: "drink", icon: "i-can", tone: "red" }
@@ -1272,6 +1272,8 @@
     var folioEl = qs("#order-folio");
     var deliveryBox = qs("#delivery-fields");
     var dineBox = qs("#dinein-fields");
+    var phoneInput = qs("#f-phone");
+    var phoneField = phoneInput ? phoneInput.closest(".field") : null;
     var modeGroup = qs("#f-mode-group");
     var timeLabel = qs("#f-time-label");
 
@@ -1314,6 +1316,7 @@
       var mode = getMode();
       if (deliveryBox) deliveryBox.hidden = mode !== "domicilio";
       if (dineBox) dineBox.hidden = mode !== "mesa";
+      if (phoneField) phoneField.hidden = mode === "mesa";
       if (shipNote) shipNote.hidden = mode !== "domicilio";
       if (timeLabel) {
         timeLabel.textContent = mode === "recoger" ? "¿A qué hora pasas?" :
@@ -1416,7 +1419,7 @@
         var ref = val("#f-ref");
         var cash = val("#f-cash").replace(/[^\d.]/g, "");
         var time = val("#f-time");
-        var people = val("#f-people").replace(/[^\d]/g, "");
+        var tableName = val("#f-tablename");
         var notes = val("#f-notes");
 
         /* Validación: se marca todo lo que falta y se lleva al primer error */
@@ -1427,7 +1430,7 @@
         }
         check(!!mode, modeGroup, "#f-mode-err");
         check(name.length >= 2, qs("#f-name"), "#f-name-err");
-        check(phone.length >= 10, qs("#f-phone"), "#f-phone-err");
+        if (mode !== "mesa") check(phone.length >= 10, qs("#f-phone"), "#f-phone-err");
         if (mode === "domicilio") {
           check(!!street, qs("#f-street"), "#f-street-err");
           check(!!colonia, qs("#f-colonia"), "#f-colonia-err");
@@ -1445,18 +1448,18 @@
         var lines = [
           "*NUEVO PEDIDO · LOS CAPES*",
           "Folio: " + folio,
-          "Tipo: " + (isDelivery ? "PEDIDO A DOMICILIO" : mode === "mesa" ? "COMER EN EL LOCAL" : "RECOGER EN SUCURSAL"),
+          "Tipo: " + (isDelivery ? "PEDIDO A DOMICILIO" : mode === "mesa" ? "DISFRUTA CON NOSOTROS (EN MESA)" : "RECOGER EN SUCURSAL"),
           "",
           "*Cliente*",
-          "Nombre: " + name,
-          "Teléfono: " + phoneRaw
+          "Nombre: " + name
         ];
+        if (mode !== "mesa") lines.push("Teléfono: " + phoneRaw);
         if (isDelivery) {
           lines.push("Dirección: " + street + ", Col. " + colonia);
           if (ref) lines.push("Referencias: " + ref);
         }
         lines.push((isDelivery ? "Para cuándo: " : mode === "mesa" ? "Llega a las: " : "Pasa a recoger: ") + time);
-        if (mode === "mesa" && people) lines.push("Personas: " + people);
+        if (mode === "mesa") lines.push("A nombre de: " + (tableName || name));
         lines.push("");
         lines.push("*Pedido*");
         Object.keys(PRODUCTS).forEach(function (id) {
