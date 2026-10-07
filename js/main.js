@@ -48,12 +48,12 @@
     storageKey: "loscapes-order-v2"
   };
 
-  /* Catálogo. "promo: true" marca los tacos que entran en el 2×$65.
+  /* Catálogo. "promo: true" marca los tacos que entran en el 2×$65 (solo camarón sencillo).
      Las bebidas no tienen foto: se muestran con icono y color propio. */
   var PRODUCTS = {
     "camaron":       { name: "Taco de camarón capeado", short: "Taco de camarón", price: 40, group: "taco", promo: true, img: "img/gallery-1.jpg" },
     "camaron-queso": { name: "Taco de camarón relleno de queso", short: "Camarón relleno de queso", price: 45, group: "taco", promo: false, img: "img/taco-camaron.jpg" },
-    "pescado":       { name: "Taco de pescado capeado", short: "Taco de pescado", price: 35, group: "taco", promo: true, img: "img/gallery-2.jpg" },
+    "pescado":       { name: "Taco de pescado capeado", short: "Taco de pescado", price: 35, group: "taco", promo: false, img: "img/gallery-2.jpg" },
     "pescado-queso": { name: "Taco de pescado relleno de queso", short: "Pescado relleno de queso", price: 40, group: "taco", promo: false, img: "img/taco-pescado.jpg" },
     "limonada":      { name: "Limonada mineral", short: "Limonada mineral", price: 30, group: "drink", icon: "i-lemon", tone: "lime" },
     "uvola":         { name: "Uvola", short: "Uvola", price: 30, group: "drink", icon: "i-bottle", tone: "grape" },
@@ -151,7 +151,7 @@
     var arc = qs("#loader-arc");
     var bar = qs("#loader-bar");
     var label = qs("#loader-label");
-    var labels = ["Calentando el aceite", "Preparando el capeado", "Dorando al momento", "Sirviendo calientito"];
+    var labels = ["Preparando todo", "Capeando al momento", "Armando tu pedido", "Listo para ti"];
 
     /* Las visitas repetidas en la misma sesión ven un loader más corto */
     var repeat = false;
@@ -588,7 +588,7 @@
         }
         if (p.y < -20) spawn(p, false);
 
-        /* Se desvanecen al acercarse a la parte de arriba, como si "truenan" */
+        /* Se desvanecen al acercarse a la parte de arriba, como si se esfumaran */
         var fade = clamp(p.y / (H * 0.3), 0, 1);
         var alpha = p.a * fade;
 
@@ -1161,10 +1161,10 @@
       qsa("[data-promo-line]").forEach(function (el) { el.hidden = c.promo === 0; });
       qsa("[data-promo-amount]").forEach(function (el) { el.textContent = "-" + money(c.promo); });
       var hint;
-      if (!c.promoDay) hint = "Promo 2×$65 válida únicamente lunes y jueves.";
-      else if (c.tacos === 0) hint = "Hoy es día de promo (solo lunes y jueves): 2 tacos sencillos por $65.";
-      else if (c.tacos % 2 === 1) hint = "Agrega 1 taco sencillo más y el par te sale en $65.";
-      else hint = "Promo de hoy aplicada a tus tacos sencillos.";
+      if (!c.promoDay) hint = "Promo 2×$65 en tacos de camarón, válida únicamente lunes y jueves.";
+      else if (c.tacos === 0) hint = "Hoy es día de promo (solo lunes y jueves): 2 tacos de camarón por $65.";
+      else if (c.tacos % 2 === 1) hint = "Agrega 1 taco de camarón más y el par te sale en $65.";
+      else hint = "Promo de hoy aplicada a tus tacos de camarón.";
       qsa("[data-promo-hint]").forEach(function (el) { el.textContent = hint; });
     }
 
@@ -1243,8 +1243,7 @@
     /* Combo 2×$65 */
     qsa("[data-add-combo]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        order.camaron = (order.camaron || 0) + 1;
-        order.pescado = (order.pescado || 0) + 1;
+        order.camaron = (order.camaron || 0) + 2;
         save();
         renderAll();
         bump();
@@ -1438,7 +1437,7 @@
         var lines = [
           "*NUEVO PEDIDO · LOS CAPES*",
           "Folio: " + folio,
-          "Tipo: " + (isDelivery ? "A DOMICILIO" : "RECOGER EN LA TAQUERÍA"),
+          "Tipo: " + (isDelivery ? "PEDIDO A DOMICILIO" : "RECOGER EN SUCURSAL"),
           "",
           "*Cliente*",
           "Nombre: " + name,
