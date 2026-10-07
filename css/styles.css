@@ -2187,6 +2187,10 @@ html.is-loaded .hero__display--accent { clip-path: inset(-20% -5% -30% 0); }
 
 .cell__title { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; letter-spacing: -.03em; line-height: 1.12; }
 .cell__note { color: var(--muted); font-size: .96rem; }
+.cell__list { display: grid; gap: 10px; margin-top: -6px; }
+.cell__list li { position: relative; padding-left: 20px; color: var(--muted); font-size: .95rem; line-height: 1.45; }
+.cell__list li::before { content: ""; position: absolute; left: 2px; top: .5em; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); border: 1.5px solid var(--ink); }
+.cell__list strong { color: var(--ink); font-weight: 700; }
 .cell__phone { font-family: var(--font-sign); font-size: clamp(1.45rem, 6.4vw, 1.9rem); line-height: 1.1; }
 .cell__phone a:hover { color: #128C4A; }
 
