@@ -37,7 +37,7 @@
      0. Configuración, utilidades y bus de scroll
      ------------------------------------------------------------------------ */
   var CONFIG = {
-    phone: "526683856140",
+    phone: "526682452744",
     timeZone: "America/Mazatlan",
     openHour: 9,
     closeHour: 16,
@@ -160,14 +160,14 @@
       sessionStorage.setItem("loscapes-visited", "1");
     } catch (e) { /* almacenamiento bloqueado: se usa la duración completa */ }
 
-    var minTime = reduceMotion ? 250 : (repeat ? 900 : 2400);
+    var minTime = reduceMotion ? 250 : (repeat ? 700 : 1550);
     var pageReady = document.readyState === "complete";
     var start = performance.now();
     var shown = 0;
     var labelIndex = -1;
 
     window.addEventListener("load", function () { pageReady = true; });
-    setTimeout(function () { pageReady = true; }, 3500); /* tope por si una imagen tarda */
+    setTimeout(function () { pageReady = true; }, 900); /* tope: no esperamos a imágenes lentas */
 
     function setLabel(i) {
       if (i === labelIndex || !label) return;
@@ -186,10 +186,14 @@
       setLabel(Math.min(labels.length - 1, Math.floor(v / 100 * labels.length)));
     }
 
+    var last = 0;
     function tick(now) {
       var timeP = clamp((now - start) / minTime, 0, 1);
       var target = (pageReady ? timeP : Math.min(timeP, 0.88)) * 100;
-      shown += (target - shown) * 0.09;
+      /* El avance depende del tiempo (no de los cuadros), así dura igual en cualquier equipo */
+      var dt = last ? Math.min(now - last, 100) : 16.7;
+      last = now;
+      shown += (target - shown) * (1 - Math.pow(0.91, dt / 16.7));
       if (target >= 100 && shown > 99.3) shown = 100;
       render(shown);
       if (shown >= 100) {
@@ -1267,6 +1271,7 @@
     var again = qs("#order-again");
     var folioEl = qs("#order-folio");
     var deliveryBox = qs("#delivery-fields");
+    var dineBox = qs("#dinein-fields");
     var modeGroup = qs("#f-mode-group");
     var timeLabel = qs("#f-time-label");
 
@@ -1308,9 +1313,11 @@
     function updateMode() {
       var mode = getMode();
       if (deliveryBox) deliveryBox.hidden = mode !== "domicilio";
+      if (dineBox) dineBox.hidden = mode !== "mesa";
       if (shipNote) shipNote.hidden = mode !== "domicilio";
       if (timeLabel) {
         timeLabel.textContent = mode === "recoger" ? "¿A qué hora pasas?" :
+          mode === "mesa" ? "¿A qué hora llegas?" :
           mode === "domicilio" ? "¿Para cuándo lo quieres?" : "¿Para cuándo?";
       }
       if (mode) setError(modeGroup, qs("#f-mode-err"), false);
@@ -1409,6 +1416,7 @@
         var ref = val("#f-ref");
         var cash = val("#f-cash").replace(/[^\d.]/g, "");
         var time = val("#f-time");
+        var people = val("#f-people").replace(/[^\d]/g, "");
         var notes = val("#f-notes");
 
         /* Validación: se marca todo lo que falta y se lleva al primer error */
@@ -1437,7 +1445,7 @@
         var lines = [
           "*NUEVO PEDIDO · LOS CAPES*",
           "Folio: " + folio,
-          "Tipo: " + (isDelivery ? "PEDIDO A DOMICILIO" : "RECOGER EN SUCURSAL"),
+          "Tipo: " + (isDelivery ? "PEDIDO A DOMICILIO" : mode === "mesa" ? "COMER EN EL LOCAL" : "RECOGER EN SUCURSAL"),
           "",
           "*Cliente*",
           "Nombre: " + name,
@@ -1447,7 +1455,8 @@
           lines.push("Dirección: " + street + ", Col. " + colonia);
           if (ref) lines.push("Referencias: " + ref);
         }
-        lines.push((isDelivery ? "Para cuándo: " : "Pasa a recoger: ") + time);
+        lines.push((isDelivery ? "Para cuándo: " : mode === "mesa" ? "Llega a las: " : "Pasa a recoger: ") + time);
+        if (mode === "mesa" && people) lines.push("Personas: " + people);
         lines.push("");
         lines.push("*Pedido*");
         Object.keys(PRODUCTS).forEach(function (id) {

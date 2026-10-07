@@ -996,7 +996,31 @@ html.menu-open .mobile-menu__foot { opacity: 1; transform: none; transition-dela
 
 .hero__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
 
-.hero__aurora { position: absolute; inset: 0; filter: blur(70px); }
+/* Foto de fondo del hero: se aprecia en los costados y se aclara detrás del texto */
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.hero__photo::before {
+  content: "";
+  position: absolute;
+  inset: -6%;
+  background: url("../imagenes/header-fondo-hero.jpg") center / cover no-repeat;
+  transform-origin: 50% 40%;
+  animation: photo-drift 28s ease-in-out infinite alternate;
+}
+.hero__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 58% 66% at 50% 48%, rgba(255, 255, 255, .92) 0%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, .16) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, .55) 0%, rgba(255, 255, 255, 0) 20%);
+}
+
+.hero__aurora { position: absolute; inset: 0; filter: blur(70px); opacity: .7; }
 .aurora {
   position: absolute;
   border-radius: 50%;
@@ -1033,7 +1057,7 @@ html.menu-open .mobile-menu__foot { opacity: 1; transform: none; transition-dela
   position: absolute;
   inset: 0;
   background: var(--talavera) 0 0 / 80px 80px;
-  opacity: .16;
+  opacity: .1;
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 5%, transparent 72%);
   mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 5%, transparent 72%);
   animation: tile-pan 30s linear infinite;
@@ -2668,7 +2692,7 @@ html.checkout-open .checkout__ticket { opacity: 1; transform: none; }
 .checkout .totals__hint { font-family: var(--font-hand); font-size: 1.15rem; font-weight: 700; color: var(--gold-deep); }
 
 /* Selector domicilio / recoger */
-.choice { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.choice { display: grid; grid-template-columns: 1fr; gap: 12px; }
 .choice__opt { position: relative; cursor: pointer; }
 .choice__opt input {
   position: absolute;
@@ -2691,6 +2715,17 @@ html.checkout-open .checkout__ticket { opacity: 1; transform: none; }
 }
 .choice__card strong { font-family: var(--font-display); font-weight: 800; font-size: 1rem; line-height: 1.15; letter-spacing: -.02em; }
 .choice__card small { font-family: var(--font-hand); font-size: 1.1rem; font-weight: 700; color: var(--brand); line-height: 1; }
+/* Celular: tarjetas en fila (icono a la izquierda) para que se lean completas */
+.choice__card { grid-template-columns: auto 1fr; justify-items: start; align-items: center; text-align: left; column-gap: 14px; row-gap: 0; padding: 14px 16px; }
+.choice__card .choice__ico { grid-row: 1 / span 2; margin: 0; }
+.choice__card strong { align-self: end; }
+.choice__card small { align-self: start; }
+@media (min-width: 640px) {
+  .choice { grid-template-columns: repeat(3, 1fr); }
+  .choice__card { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 16px 10px 14px; row-gap: 4px; }
+  .choice__card .choice__ico { grid-row: auto; margin-bottom: 4px; }
+  .choice__card strong, .choice__card small { align-self: auto; }
+}
 .choice__ico {
   display: grid;
   place-items: center;
@@ -3173,6 +3208,7 @@ html.checkout-open .to-top { opacity: 0; transform: scale(.6); pointer-events: n
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes border-spin { to { --angle: 360deg; } }
 @keyframes breathe { 0%, 100% { transform: scale(1); opacity: .85; } 50% { transform: scale(1.06); opacity: 1; } }
+@keyframes photo-drift { from { transform: scale(1.02) translate3d(0, 0, 0); } to { transform: scale(1.12) translate3d(-1.5%, 1%, 0); } }
 @keyframes tile-pan { to { background-position: 80px 80px; } }
 @keyframes ping { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.8); opacity: 0; } }
 @keyframes blink { 50% { opacity: .35; } }

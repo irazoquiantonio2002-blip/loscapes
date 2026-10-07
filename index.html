@@ -55,6 +55,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Caveat:wght@600;700&display=swap"></noscript>
   <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="imagenes/header-fondo-hero.jpg" as="image" fetchpriority="high">
 
   <link rel="stylesheet" href="css/styles.css">
 
@@ -69,12 +70,12 @@
     "@id": "https://www.TU-DOMINIO.com/#restaurant",
     "name": "Los Capes",
     "slogan": "Crujientes. Capeados. Al momento.",
-    "description": "Tacos de camarón y pescado capeados al momento, sencillos o rellenos de queso. Pedidos por WhatsApp: pedido a domicilio o recoger en sucursal.",
+    "description": "Tacos de camarón y pescado capeados al momento, sencillos o rellenos de queso. Pedidos por WhatsApp: a domicilio, para recoger en sucursal o para comer en el local.",
     "url": "https://www.TU-DOMINIO.com/",
     "image": "https://www.TU-DOMINIO.com/img/og-cover-new.jpg",
     "logo": "https://www.TU-DOMINIO.com/img/favicon.png",
     "servesCuisine": ["Mariscos", "Tacos", "Mexicana"],
-    "telephone": "+526683856140",
+    "telephone": "+526682452744",
     "priceRange": "$",
     "currenciesAccepted": "MXN",
     "paymentAccepted": "Efectivo",
@@ -91,7 +92,7 @@
       "@type": "OrderAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://wa.me/526683856140",
+        "urlTemplate": "https://wa.me/526682452744",
         "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
       },
       "deliveryMethod": ["http://purl.org/goodrelations/v1#DeliveryModePickUp", "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"]
@@ -129,8 +130,8 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "¿Los Capes hace entregas a domicilio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Al hacer tu pedido eliges entre pedido a domicilio o recoger en sucursal. Para domicilio te confirmamos por WhatsApp el costo de envío y el tiempo de entrega." } },
-      { "@type": "Question", "name": "¿Cómo pago mi pedido en Los Capes?", "acceptedAnswer": { "@type": "Answer", "text": "Aceptamos efectivo al recibir o recoger tu pedido." } },
+      { "@type": "Question", "name": "¿Los Capes hace entregas a domicilio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Al hacer tu pedido eliges entre pedido a domicilio, recoger en sucursal o comer en el local. Para domicilio te confirmamos por WhatsApp el costo de envío y el tiempo de entrega." } },
+      { "@type": "Question", "name": "¿Cómo pago mi pedido en Los Capes?", "acceptedAnswer": { "@type": "Answer", "text": "Aceptamos efectivo al recibir, recoger o consumir tu pedido." } },
       { "@type": "Question", "name": "¿Qué tacos entran en la promoción de 2 por $65?", "acceptedAnswer": { "@type": "Answer", "text": "Únicamente los lunes y jueves: 2 tacos de camarón capeado por $65. La promo aplica solo a los tacos de camarón." } },
       { "@type": "Question", "name": "¿Qué días cierra Los Capes?", "acceptedAnswer": { "@type": "Answer", "text": "Cerramos los martes. El resto de la semana abrimos de 9:00 a 16:00." } },
       { "@type": "Question", "name": "¿Cuánto tardan en preparar los tacos?", "acceptedAnswer": { "@type": "Answer", "text": "Capeamos al momento, así que normalmente tu pedido está listo en minutos. Te confirmamos la hora exacta por WhatsApp." } },
@@ -204,6 +205,7 @@
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></symbol>
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
     <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="2.5"/><circle cx="18.5" cy="17" r="2.5"/><path d="M8 17h8l-3-7h-3"/><path d="M14.5 6h2.2l2.6 8.4"/><path d="M3 11.5h6.5l1.5 3"/></symbol>
+    <symbol id="i-dine" viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 3v18"/><path d="M17 3c-2.2 1.8-3 4.2-3 7 0 1.6 1 2.6 3 2.6V21"/></symbol>
     <symbol id="i-chile" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.6 7.2c1.5.9 2.1 2.7 1.6 4.6C17.8 17.4 11.4 21.3 4.4 20.2c-.9-.1-1-1.3-.2-1.6 5.2-2.3 9.1-6.1 10.6-10.3.4-1.1 1.6-1.6 2.8-1.1Z"/><path d="M17.6 7.2c.2-1.6 1-2.8 2.6-3.4"/></symbol>
     <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.7 10.7 5 19 5c0 8.3-5.7 14-14 14Z"/><path d="M5 19l8.5-8.5"/></symbol>
     <!-- Bandera de papel picado (los huecos se recortan con evenodd) -->
@@ -316,6 +318,8 @@
          ==================================================================== -->
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
+        <!-- Foto de fondo: fila de tacos de "imagenes/header fondo.jpg" (recorte en imagenes/header-fondo-hero.jpg) con velo claro para que el texto se lea -->
+        <div class="hero__photo"></div>
         <div class="hero__aurora">
           <span class="aurora aurora--a"></span>
           <span class="aurora aurora--b"></span>
@@ -396,7 +400,7 @@
         <header class="sec-head">
           <p class="eyebrow" data-scramble><span>01</span>Menú</p>
           <h2 class="sec-title" id="menu-title" data-split>Elige tu taco. Nosotros lo dejamos <em>bien capeado.</em></h2>
-          <p class="sec-lead" data-reveal>Haz tu pedido: recógelo en sucursal o pídelo a domicilio. Arma tu carrito aquí mismo y mándalo por WhatsApp ya escrito.</p>
+          <p class="sec-lead" data-reveal>Haz tu pedido: pídelo a domicilio, recógelo en sucursal o disfrútalo aquí en el local. Arma tu carrito aquí mismo y mándalo por WhatsApp ya escrito.</p>
         </header>
 
         <!-- Tacos -->
@@ -629,7 +633,7 @@
             <div class="pstep__body">
               <span class="pstep__num">03</span>
               <h3 class="pstep__title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>Lo recibes</h3>
-              <p>Pasas por él o te lo llevamos a domicilio, calientito y listo para morder. Pagas en efectivo.</p>
+              <p>Te lo llevamos a domicilio, pasas por él a la sucursal o lo disfrutas aquí en el local. Calientito y listo para morder. Pagas en efectivo.</p>
             </div>
           </li>
           <li class="pstep pstep--cta">
@@ -824,7 +828,7 @@
               <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span>
               <h3 class="cell__label">Entrega</h3>
             </div>
-            <p class="cell__title">Pedido a domicilio o recoger en sucursal.</p>
+            <p class="cell__title">A domicilio, para recoger o comer aquí.</p>
             <p class="cell__note">Tú eliges al hacer tu pedido. Para domicilio te confirmamos el envío por WhatsApp.</p>
           </article>
 
@@ -842,8 +846,8 @@
               <span class="cell__icon cell__icon--wa"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span>
               <h3 class="cell__label">WhatsApp</h3>
             </div>
-            <p class="cell__phone"><a href="https://wa.me/526683856140" target="_blank" rel="noopener noreferrer">668 385 6140</a></p>
-            <a class="link-arrow" href="https://wa.me/526683856140?text=Hola%20Los%20Capes%2C%20tengo%20una%20duda." target="_blank" rel="noopener noreferrer">
+            <p class="cell__phone"><a href="https://wa.me/526682452744" target="_blank" rel="noopener noreferrer">668 245 2744</a></p>
+            <a class="link-arrow" href="https://wa.me/526682452744?text=Hola%20Los%20Capes%2C%20tengo%20una%20duda." target="_blank" rel="noopener noreferrer">
               Escríbenos, te contestamos
               <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
             </a>
@@ -902,7 +906,7 @@
           <p class="eyebrow" data-scramble><span>08</span>Preguntas</p>
           <h2 class="sec-title" id="faq-title" data-split>Preguntas <em>frecuentes.</em></h2>
           <p class="sec-lead" data-reveal>¿No ves tu duda? Escríbenos y te contestamos directo, sin bots.</p>
-          <a class="btn btn--glass" data-magnetic data-reveal href="https://wa.me/526683856140?text=Hola%20Los%20Capes%2C%20tengo%20una%20pregunta." target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--glass" data-magnetic data-reveal href="https://wa.me/526682452744?text=Hola%20Los%20Capes%2C%20tengo%20una%20pregunta." target="_blank" rel="noopener noreferrer">
             <svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg>
             <span class="btn__label">Tengo otra duda</span>
           </a>
@@ -911,11 +915,11 @@
         <div class="faq__list">
           <details class="faq__item" name="faq" data-reveal>
             <summary><span>¿Hacen entregas a domicilio?</span><span class="faq__icon" aria-hidden="true"></span></summary>
-            <div class="faq__answer"><p>Sí. Al hacer tu pedido eliges entre pedido a domicilio o recoger en sucursal. Para domicilio te confirmamos por WhatsApp el costo de envío y el tiempo de entrega.</p></div>
+            <div class="faq__answer"><p>Sí. Al hacer tu pedido eliges entre pedido a domicilio, recoger en sucursal o comer en el local. Para domicilio te confirmamos por WhatsApp el costo de envío y el tiempo de entrega.</p></div>
           </details>
           <details class="faq__item" name="faq" data-reveal style="--d:1">
             <summary><span>¿Cómo pago mi pedido?</span><span class="faq__icon" aria-hidden="true"></span></summary>
-            <div class="faq__answer"><p>Aceptamos efectivo al recibir o recoger tu pedido. No pedimos pagos por adelantado. Si es a domicilio, dinos con cuánto pagas para llevarte cambio.</p></div>
+            <div class="faq__answer"><p>Aceptamos efectivo al recibir, recoger o consumir tu pedido. No pedimos pagos por adelantado. Si es a domicilio, dinos con cuánto pagas para llevarte cambio.</p></div>
           </details>
           <details class="faq__item" name="faq" data-reveal style="--d:2">
             <summary><span>¿Qué tacos entran en la promo de 2 por $65?</span><span class="faq__icon" aria-hidden="true"></span></summary>
@@ -950,12 +954,12 @@
         <div class="contact__intro">
           <p class="eyebrow" data-scramble><span>09</span>Haz tu pedido</p>
           <h2 class="contact__title" id="contact-title" data-split>Tu pedido, a un <em>mensaje</em> de distancia.</h2>
-          <p class="sec-lead" data-reveal>Elige en el menú, revisa tu carrito y llena tus datos: pedido a domicilio o recoger en sucursal. Tu comanda llega completa y ordenada por WhatsApp.</p>
+          <p class="sec-lead" data-reveal>Elige en el menú, revisa tu carrito y llena tus datos: a domicilio, recoger en sucursal o comer en el local. Tu comanda llega completa y ordenada por WhatsApp.</p>
 
           <ul class="contact__info" data-reveal>
-            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span><span><small>WhatsApp</small><a href="https://wa.me/526683856140" target="_blank" rel="noopener noreferrer">668 385 6140</a></span></li>
+            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span><span><small>WhatsApp</small><a href="https://wa.me/526682452744" target="_blank" rel="noopener noreferrer">668 245 2744</a></span></li>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg></span><span><small>Horario</small>9:00 a 16:00 · Martes cerrado</span></li>
-            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span><span><small>Entrega</small>Pedido a domicilio o recoger en sucursal</span></li>
+            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span><span><small>Entrega</small>Domicilio, recoger en sucursal o comer en el local</span></li>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cash"/></svg></span><span><small>Pago</small>Efectivo al recibir</span></li>
           </ul>
         </div>
@@ -973,7 +977,7 @@
             </li>
             <li class="howto__step">
               <span class="howto__num">3</span>
-              <span class="howto__text"><strong>Toca “Hacer pedido”</strong>Elige pedido a domicilio o recoger en sucursal y llena tus datos.</span>
+              <span class="howto__text"><strong>Toca “Hacer pedido”</strong>Elige a domicilio, recoger en sucursal o comer en el local y llena tus datos.</span>
             </li>
             <li class="howto__step">
               <span class="howto__num">4</span>
@@ -1016,7 +1020,7 @@
           <li>Lunes, miércoles a domingo</li>
           <li>9:00 a 16:00</li>
           <li>Martes cerrado</li>
-          <li>Pedido a domicilio</li><li>Recoger en sucursal</li>
+          <li>Pedido a domicilio</li><li>Recoger en sucursal</li><li>Comer en el local</li>
           <!-- TODO: agregar dirección y redes sociales cuando el cliente las comparta. -->
         </ul>
       </div>
@@ -1024,7 +1028,7 @@
       <div class="footer__col">
         <p class="footer__title">Pedidos</p>
         <ul>
-          <li><a href="https://wa.me/526683856140" target="_blank" rel="noopener noreferrer">WhatsApp 668 385 6140</a></li>
+          <li><a href="https://wa.me/526682452744" target="_blank" rel="noopener noreferrer">WhatsApp 668 245 2744</a></li>
           <li><a href="#menu">Armar mi pedido</a></li>
         </ul>
       </div>
@@ -1124,8 +1128,16 @@
                   <small>Pasas por él</small>
                 </span>
               </label>
+              <label class="choice__opt">
+                <input type="radio" name="mode" value="mesa" aria-describedby="f-mode-err">
+                <span class="choice__card">
+                  <span class="choice__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-dine"/></svg></span>
+                  <strong>Comer en el local</strong>
+                  <small>Te esperamos en mesa</small>
+                </span>
+              </label>
             </div>
-            <p class="field__err" id="f-mode-err" hidden>Elige pedido a domicilio o recoger en sucursal.</p>
+            <p class="field__err" id="f-mode-err" hidden>Elige pedido a domicilio, recoger en sucursal o comer en el local.</p>
           </fieldset>
 
           <fieldset class="form__block">
@@ -1163,6 +1175,14 @@
               </div>
             </div>
 
+            <!-- Solo para comer en el local -->
+            <div class="delivery" id="dinein-fields" hidden>
+              <div class="field">
+                <input class="field__input" id="f-people" name="people" type="text" inputmode="numeric" placeholder=" ">
+                <label class="field__label" for="f-people">¿Cuántas personas? (opcional)</label>
+              </div>
+            </div>
+
             <div class="field">
               <select class="field__input field__select" id="f-time" name="time">
                 <option value="Lo antes posible">Lo antes posible</option>
@@ -1189,7 +1209,7 @@
         <div class="form-done" id="order-done" role="status" hidden>
           <span class="form-done__check" aria-hidden="true"><svg class="i" focusable="false"><use href="#i-check"/></svg></span>
           <p class="form-done__title">¡Listo! Tu folio es <span id="order-folio">LC-00000</span></p>
-          <p class="form-done__text">Abrimos WhatsApp con tu comanda. Solo confírmala enviando el mensaje. Si no se abrió, <a id="order-fallback" href="https://wa.me/526683856140" target="_blank" rel="noopener noreferrer">toca aquí</a>.</p>
+          <p class="form-done__text">Abrimos WhatsApp con tu comanda. Solo confírmala enviando el mensaje. Si no se abrió, <a id="order-fallback" href="https://wa.me/526682452744" target="_blank" rel="noopener noreferrer">toca aquí</a>.</p>
           <button class="btn btn--glass" type="button" id="order-again">Hacer otro pedido</button>
         </div>
       </div>
@@ -1224,7 +1244,7 @@
   </button>
 
   <!-- Botón flotante de WhatsApp -->
-  <a class="fab" href="https://wa.me/526683856140?text=Hola%20Los%20Capes%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer" aria-label="Pedir por WhatsApp">
+  <a class="fab" href="https://wa.me/526682452744?text=Hola%20Los%20Capes%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer" aria-label="Pedir por WhatsApp">
     <span class="fab__tip" aria-hidden="true">¿Se te antojó? Escríbenos</span>
     <span class="fab__ping" aria-hidden="true"></span>
     <span class="fab__ping fab__ping--2" aria-hidden="true"></span>
