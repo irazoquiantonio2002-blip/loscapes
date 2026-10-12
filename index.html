@@ -32,7 +32,8 @@
   <!-- Geolocalización (ciudad del negocio) -->
   <meta name="geo.region" content="MX-SIN">
   <meta name="geo.placename" content="Los Mochis, Sinaloa">
-  <!-- TODO: cuando tengamos la dirección exacta, agregar geo.position y ICBM con las coordenadas del local. -->
+  <meta name="geo.position" content="25.7981016;-109.0299785">
+  <meta name="ICBM" content="25.7981016, -109.0299785">
 
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#FFF8EC">
@@ -85,7 +86,7 @@
     "@type": "Restaurant",
     "@id": "https://www.loscapes.com/#restaurant",
     "name": "Los Capes",
-    "alternateName": "Los Capes Los Mochis",
+    "alternateName": ["Los Capes Los Mochis", "Tacos Los Capes"],
     "slogan": "Tacos capeados al momento.",
     "description": "Tacos capeados en Los Mochis, Sinaloa: tacos de camarón y de pescado capeados al momento, sencillos o rellenos de queso. Pide por la página o por WhatsApp: para recoger o para comer en el local.",
     "url": "https://www.loscapes.com/",
@@ -100,12 +101,19 @@
     "servesCuisine": ["Tacos capeados", "Tacos de camarón", "Tacos de pescado", "Mexicana"],
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Frente al deportivo 2690, Alameda",
       "addressLocality": "Los Mochis",
       "addressRegion": "Sinaloa",
+      "postalCode": "81234",
       "addressCountry": "MX"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.7981016,
+      "longitude": -109.0299785
+    },
     "sameAs": ["https://www.facebook.com/p/los-capes-61551611623002/"],
-    "hasMap": "https://maps.app.goo.gl/PNVK8VNBF23V8NiV8",
+    "hasMap": "https://maps.app.goo.gl/AuPFGoGtbXwhij196",
     "menu": "https://www.loscapes.com/#menu",
     "telephone": "+526682452744",
     "priceRange": "$",
@@ -172,6 +180,7 @@
       { "@type": "Question", "name": "¿Qué días cierran?", "acceptedAnswer": { "@type": "Answer", "text": "Cerramos los martes y miércoles. El resto de la semana abrimos de 9:00 a 16:00." } },
       { "@type": "Question", "name": "¿Cuánto tardan en preparar mi pedido?", "acceptedAnswer": { "@type": "Answer", "text": "Capeamos al momento, así que normalmente está listo en minutos. Te confirmamos la hora exacta por WhatsApp." } },
       { "@type": "Question", "name": "¿Puedo pedir con anticipación?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Dinos a qué hora pasas y lo empezamos a preparar para que esté recién hecho cuando llegues." } },
+      { "@type": "Question", "name": "¿Dónde está Los Capes?", "acceptedAnswer": { "@type": "Answer", "text": "Estamos en Frente al deportivo 2690, Alameda, 81234 Los Mochis, Sinaloa. Abrimos lunes y de jueves a domingo, de 9:00 a 16:00. Puedes ver la ubicación en Google Maps." } },
       { "@type": "Question", "name": "¿Dónde puedo comer tacos capeados en Los Mochis?", "acceptedAnswer": { "@type": "Answer", "text": "En Los Capes, en Los Mochis, Sinaloa. Hacemos tacos de camarón y de pescado capeados al momento, sencillos o rellenos de queso. Los puedes pedir para recoger o comer en el local. Escríbenos por WhatsApp al 668 245 2744." } },
       { "@type": "Question", "name": "¿Cuánto cuesta un taco capeado en Los Mochis?", "acceptedAnswer": { "@type": "Answer", "text": "En Los Capes el taco de pescado capeado cuesta $35 y el de camarón capeado $40. Si lo quieres relleno de queso, el de pescado cuesta $40 y el de camarón $45. Los lunes y jueves hay promo: 2 tacos de camarón por $65." } },
       { "@type": "Question", "name": "¿Puedo pedir tacos para llevar en Los Mochis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Pide por la página o por WhatsApp y pasa a recogerlo. Para llevar se cobra empaque: $5 por plato." } }
@@ -881,7 +890,7 @@
       <div class="container">
         <header class="sec-head sec-head--split">
           <div>
-            <p class="eyebrow" data-scramble><span>04</span>Horario</p>
+            <p class="eyebrow" data-scramble><span>04</span>Horario y ubicación</p>
             <h2 class="sec-title" id="hours-title" data-split>Te esperamos cinco días <em>a la semana.</em></h2>
           </div>
           <p class="sec-lead" data-reveal>Capeamos en Los Mochis desde temprano hasta la tarde. Los martes y miércoles descansamos para volver con todo.</p>
@@ -918,6 +927,31 @@
             </div>
           </article>
         </div>
+
+        <!-- Ubicación: mapa de Google (se carga al llegar a esta parte de la página) -->
+        <article class="cell cell--map" id="ubicacion" aria-labelledby="map-title" data-reveal>
+          <div class="map__frame">
+            <iframe title="Mapa con la ubicación de Los Capes en Los Mochis, Sinaloa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d900!2d-109.0299785!3d25.7981016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba27004e2fc0cb%3A0xdb0cd77f68854ae0!2sTacos%20los%20capes!5e0!3m2!1ses!2smx!4v1760000000000!5m2!1ses!2smx" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <div class="map__info">
+            <div class="cell__head">
+              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span>
+              <h3 class="cell__label" id="map-title">Dónde estamos</h3>
+            </div>
+            <address class="map__addr">Frente al deportivo 2690<br>Alameda, 81234<br>Los Mochis, Sinaloa</address>
+            <p class="map__note">Pasa por tu pedido o come en el local: lunes y de jueves a domingo, de 9:00 a 16:00.</p>
+            <div class="map__actions">
+              <a class="btn btn--primary" data-magnetic href="https://www.google.com/maps/dir/?api=1&amp;destination=25.7981016,-109.0299785" target="_blank" rel="noopener noreferrer">
+                <svg class="i" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>
+                <span class="btn__label">Cómo llegar</span>
+              </a>
+              <a class="btn btn--glass" href="https://maps.app.goo.gl/AuPFGoGtbXwhij196" target="_blank" rel="noopener noreferrer">
+                <span class="btn__label">Ver en Google Maps</span>
+                <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1101,6 +1135,10 @@
             <div class="faq__answer"><p>Sí. Dinos a qué hora pasas y lo empezamos a preparar para que esté recién hecho cuando llegues.</p></div>
           </details>
           <details class="faq__item" name="faq" data-reveal>
+            <summary><span>¿Dónde está Los Capes?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Estamos en Frente al deportivo 2690, Alameda, 81234 Los Mochis, Sinaloa. Abrimos lunes y de jueves a domingo, de 9:00 a 16:00. Puedes ver la ubicación en Google Maps.</p></div>
+          </details>
+          <details class="faq__item" name="faq" data-reveal>
             <summary><span>¿Dónde puedo comer tacos capeados en Los Mochis?</span><span class="faq__icon" aria-hidden="true"></span></summary>
             <div class="faq__answer"><p>En Los Capes, en Los Mochis, Sinaloa. Hacemos tacos de camarón y de pescado capeados al momento, sencillos o rellenos de queso. Los puedes pedir para recoger o comer en el local. Escríbenos por WhatsApp al 668 245 2744.</p></div>
           </details>
@@ -1209,7 +1247,7 @@
 
           <ul class="contact__info" data-reveal>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span><span><small>WhatsApp</small><a href="https://wa.me/526682452744" target="_blank" rel="noopener noreferrer">668 245 2744</a></span></li>
-            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span><span><small>Ciudad</small>Los Mochis, Sinaloa</span></li>
+            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span><span><small>Dirección</small><a href="#ubicacion">Frente al deportivo 2690, Alameda, 81234 Los Mochis, Sinaloa</a></span></li>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg></span><span><small>Horario</small>9:00 a 16:00 · Martes y miércoles cerrado</span></li>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span><span><small>Pedido</small>Para recoger o comer en el local (empaque para llevar: $5 por plato)</span></li>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cash"/></svg></span><span><small>Pago</small>Efectivo</span></li>
@@ -1279,12 +1317,13 @@
       <div class="footer__col">
         <p class="footer__title">Visítanos</p>
         <ul>
+          <li>Frente al deportivo 2690</li>
+          <li>Alameda, 81234</li>
           <li>Los Mochis, Sinaloa</li>
           <li>Lunes y de jueves a domingo</li>
           <li>9:00 a 16:00</li>
           <li>Martes y miércoles cerrado</li>
           <li>Para recoger</li><li>Comer en el local</li><li>Empaque para llevar: $5 por plato</li>
-          <!-- TODO: agregar la dirección exacta cuando el cliente la comparta. -->
         </ul>
       </div>
 
@@ -1294,7 +1333,7 @@
           <li><a href="https://wa.me/526682452744" target="_blank" rel="noopener noreferrer">WhatsApp 668 245 2744</a></li>
           <li><a href="#menu">Armar mi pedido</a></li>
           <li><a href="https://www.facebook.com/p/los-capes-61551611623002/" target="_blank" rel="noopener noreferrer">Facebook: Los Capes</a></li>
-          <li><a href="https://maps.app.goo.gl/PNVK8VNBF23V8NiV8" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+          <li><a href="https://maps.app.goo.gl/AuPFGoGtbXwhij196" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
         </ul>
       </div>
     </div>
