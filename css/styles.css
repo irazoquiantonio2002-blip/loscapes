@@ -919,6 +919,8 @@ html.menu-open .burger span:last-child { top: 20px; transform: rotate(-45deg); }
   flex-direction: column;
   justify-content: space-between;
   padding: calc(var(--header-h) + 28px) var(--gutter) calc(28px + env(safe-area-inset-bottom));
+  overflow-y: auto;
+  overscroll-behavior: contain;
   visibility: hidden;
   pointer-events: none;
   transition: visibility 0s linear .7s;
@@ -963,6 +965,11 @@ html.menu-open .mobile-menu__list li:nth-child(3) a { transition-delay: .3s; }
 html.menu-open .mobile-menu__list li:nth-child(4) a { transition-delay: .35s; }
 html.menu-open .mobile-menu__list li:nth-child(5) a { transition-delay: .4s; }
 html.menu-open .mobile-menu__list li:nth-child(6) a { transition-delay: .45s; }
+html.menu-open .mobile-menu__list li:nth-child(7) a { transition-delay: .5s; }
+html.menu-open .mobile-menu__list li:nth-child(8) a { transition-delay: .55s; }
+/* Con 7 o más enlaces la lista se compacta para que quepa en pantallas bajas */
+.mobile-menu__list:has(> li:nth-child(7)) { gap: 0; }
+.mobile-menu__list:has(> li:nth-child(7)) a { padding: 7px 0; font-size: clamp(1.55rem, 7.2vw, 2.3rem); }
 
 .mobile-menu__foot {
   display: grid;
