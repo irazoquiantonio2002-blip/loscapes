@@ -47,9 +47,11 @@
   <meta name="twitter:image" content="https://www.loscapes.com/img/negocio/og-economicos.jpg">
   <meta name="twitter:image:alt" content="Tacos capeados de Los Capes desde $35 en Los Mochis, con col, pico de gallo y limón">
 
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
-  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/img/icon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,10 +151,10 @@
       },
       {
         "@type": "Question",
-        "name": "¿El envío a domicilio cuesta aparte?",
+        "name": "¿Cuánto cuesta el empaque para llevar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. El total de la página no incluye el envío; te confirmamos por WhatsApp el costo y el tiempo de entrega."
+          "text": "Para llevar se cobra empaque: $5 por plato."
         }
       }
     ]
@@ -198,12 +200,12 @@
     <symbol id="i-shrimp" viewBox="0 0 24 24"><path d="M18 5C11.5 5 7 8.6 7 14c0 3 2 5 4.6 5 2 0 3.4-1.3 3.4-3 0-1.4-1-2.4-2.4-2.4"/><path d="M18 5c1.7 0 3 1.1 3 2.6S19.7 10.2 18 10.2h-3.2"/><path d="M10 10.2 8 8.4M12.8 8.4l-.9-2.4M15.6 7.4l-.2-2.4"/></symbol>
     <symbol id="i-glass" viewBox="0 0 24 24"><path d="M6 4h12l-1.6 16.5H7.6L6 4Z"/><path d="M6.7 10.5h10.6"/></symbol>
     <symbol id="i-lemon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5.5"/><path d="M12 6.5v11M6.5 12h11M8.1 8.1l7.8 7.8M15.9 8.1l-7.8 7.8"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.7 10.7 5 19 5c0 8.3-5.7 14-14 14Z"/><path d="M5 19l8.5-8.5"/></symbol>
     <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M10 2.5h4v3l1.6 3.2V20a1.5 1.5 0 0 1-1.5 1.5H9.9A1.5 1.5 0 0 1 8.4 20V8.7L10 5.5v-3Z"/><path d="M8.4 12.5h7.2M8.4 16.5h7.2"/></symbol>
     <symbol id="i-can" viewBox="0 0 24 24"><rect x="6.5" y="3.5" width="11" height="17" rx="2.6"/><path d="M6.5 7.5h11M6.5 16.5h11M10 3.5V2.5h4v1"/></symbol>
     <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
-    <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="2.5"/><circle cx="18.5" cy="17" r="2.5"/><path d="M8 17h8l-3-7h-3"/><path d="M14.5 6h2.2l2.6 8.4"/><path d="M3 11.5h6.5l1.5 3"/></symbol>
     <symbol id="papel" viewBox="0 0 60 70"><path fill="currentColor" fill-rule="evenodd" d="M0 0H60V62L55 68L50 62L45 68L40 62L35 68L30 62L25 68L20 62L15 68L10 62L5 68L0 62Z M10 7l3 3-3 3-3-3Z M20 7l3 3-3 3-3-3Z M30 7l3 3-3 3-3-3Z M40 7l3 3-3 3-3-3Z M50 7l3 3-3 3-3-3Z M14 35C20 26 32 26 38 35C32 44 20 44 14 35Z M38 35L46 29V41Z M9.5 53a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0Z M21.5 53a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0Z M33.5 53a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0Z M45.5 53a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0Z"/></symbol>
     <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
   </svg>
@@ -229,7 +231,7 @@
             <li><a class="nav__link" href="/#menu">Menú</a></li>
             <li><a class="nav__link" href="/tacos-de-camaron-los-mochis/">Camarón</a></li>
             <li><a class="nav__link" href="/tacos-de-pescado-los-mochis/">Pescado</a></li>
-            <li><a class="nav__link" href="/pedidos-a-domicilio-los-mochis/">A domicilio</a></li>
+            <li><a class="nav__link" href="/pedidos-para-recoger-los-mochis/">Para recoger</a></li>
             <li><a class="nav__link" aria-current="page" href="/tacos-economicos-los-mochis/">Precios</a></li>
             <li><a class="nav__link" href="/donde-comer-tacos-capeados-los-mochis/">Dónde comer</a></li>
         </ul>
@@ -252,7 +254,7 @@
         <li><a href="/#menu"><span class="mobile-menu__num">01</span>Menú</a></li>
         <li><a href="/tacos-de-camaron-los-mochis/"><span class="mobile-menu__num">02</span>Tacos de camarón</a></li>
         <li><a href="/tacos-de-pescado-los-mochis/"><span class="mobile-menu__num">03</span>Tacos de pescado</a></li>
-        <li><a href="/pedidos-a-domicilio-los-mochis/"><span class="mobile-menu__num">04</span>A domicilio</a></li>
+        <li><a href="/pedidos-para-recoger-los-mochis/"><span class="mobile-menu__num">04</span>Para recoger</a></li>
         <li><a href="/tacos-economicos-los-mochis/"><span class="mobile-menu__num">05</span>Precios y promo</a></li>
         <li><a href="/donde-comer-tacos-capeados-los-mochis/"><span class="mobile-menu__num">06</span>Dónde comer</a></li>
       </ol>
@@ -321,7 +323,7 @@
 
             <aside class="lp-answer" aria-label="Respuesta rápida" data-in style="--i:7">
               <span class="lp-answer__label">Respuesta rápida</span>
-              En Los Capes (Los Mochis) el taco más económico es el de pescado capeado, a <strong>$35</strong>. El de camarón cuesta $40 y los rellenos de queso $5 más. Los <strong>lunes y jueves</strong> hay 2 tacos de camarón por <strong>$65</strong>. Las bebidas cuestan de $25 a $30.
+              En Los Capes (Los Mochis) el taco más económico es el de pescado capeado, a <strong>$35</strong>. El de camarón cuesta $40 y los rellenos de queso $5 más. Los <strong>lunes y jueves</strong> hay 2 tacos de camarón por <strong>$65</strong>. Las bebidas cuestan de $25 a $30 y el vaso con hielo, $2.
             </aside>
           </div>
 
@@ -454,15 +456,30 @@
                 </div>
                 <div class="drink__body">
                   <div class="dish__row">
-                    <h4 class="drink__name">Limonada mineral</h4>
+                    <h4 class="drink__name">Limonada</h4>
                     <p class="dish__price">$30</p>
                   </div>
-                  <p class="drink__desc">Limón con agua mineral, bien fría.</p>
+                  <p class="drink__desc">Bien fría, la pareja perfecta del capeado.</p>
                 </div>
-                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Quiero una</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
+                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Lo quiero</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
               </article>
 
-              <article class="drink drink--grape" data-reveal style="--d:1" data-spot>
+              <article class="drink drink--tea" data-reveal style="--d:1" data-spot>
+                <div class="drink__visual" aria-hidden="true">
+                  <span class="drink__bubbles"><i></i><i></i><i></i><i></i></span>
+                  <span class="drink__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-leaf"/></svg></span>
+                </div>
+                <div class="drink__body">
+                  <div class="dish__row">
+                    <h4 class="drink__name">Té chino oolong</h4>
+                    <p class="dish__price">$25</p>
+                  </div>
+                  <p class="drink__desc">Té oolong para acompañar tus tacos.</p>
+                </div>
+                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Lo quiero</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
+              </article>
+
+              <article class="drink drink--grape" data-reveal style="--d:2" data-spot>
                 <div class="drink__visual" aria-hidden="true">
                   <span class="drink__bubbles"><i></i><i></i><i></i><i></i></span>
                   <span class="drink__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bottle"/></svg></span>
@@ -474,24 +491,56 @@
                   </div>
                   <p class="drink__desc">Bebida fría, lista para acompañar tus tacos.</p>
                 </div>
-                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Quiero una</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
+                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Lo quiero</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
               </article>
 
-              <article class="drink drink--red" data-reveal style="--d:2" data-spot>
+              <article class="drink drink--red" data-reveal data-spot>
                 <div class="drink__visual" aria-hidden="true">
                   <span class="drink__bubbles"><i></i><i></i><i></i><i></i></span>
                   <span class="drink__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-can"/></svg></span>
                 </div>
                 <div class="drink__body">
                   <div class="dish__row">
-                    <h4 class="drink__name">Coca-Cola</h4>
+                    <h4 class="drink__name">Coca-Cola 355 ml</h4>
                     <p class="dish__price">$25</p>
                   </div>
                   <p class="drink__desc">Bien fría, la clásica de siempre.</p>
                 </div>
-                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Quiero una</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
+                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Lo quiero</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
+              </article>
+
+              <article class="drink drink--red" data-reveal style="--d:1" data-spot>
+                <div class="drink__visual" aria-hidden="true">
+                  <span class="drink__bubbles"><i></i><i></i><i></i><i></i></span>
+                  <span class="drink__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-can"/></svg></span>
+                </div>
+                <div class="drink__body">
+                  <div class="dish__row">
+                    <h4 class="drink__name">Coca-Cola 400 ml</h4>
+                    <p class="dish__price">$30</p>
+                  </div>
+                  <p class="drink__desc">La clásica en presentación de 400 ml.</p>
+                </div>
+                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Lo quiero</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
+              </article>
+
+              <article class="drink drink--ice" data-reveal style="--d:2" data-spot>
+                <div class="drink__visual" aria-hidden="true">
+                  <span class="drink__bubbles"><i></i><i></i><i></i><i></i></span>
+                  <span class="drink__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-glass"/></svg></span>
+                </div>
+                <div class="drink__body">
+                  <div class="dish__row">
+                    <h4 class="drink__name">Vaso con hielo</h4>
+                    <p class="dish__price">$2</p>
+                  </div>
+                  <p class="drink__desc">Un vaso con o sin hielo, como lo prefieras.</p>
+                </div>
+                <div class="dish__foot"><a class="btn btn--glass" href="/#menu"><span class="btn__label">Lo quiero</span><svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></div>
               </article>
             </div>
+
+            <p class="menu__pack" data-reveal><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg><span>Para llevar: empaque de <strong>$5 por plato</strong>.</span></p>
           </div>
         </div>
       </section>
@@ -559,19 +608,19 @@
             </li>
             <li class="lp-ex" data-reveal style="--d:1">
               <span class="lp-ex__tag">Comida completa</span>
-              <p class="lp-ex__text"><strong>2 tacos de pescado y una limonada mineral:</strong> $70 + $30 = <strong>$100</strong>.</p>
+              <p class="lp-ex__text"><strong>2 tacos de pescado y una limonada:</strong> $70 + $30 = <strong>$100</strong>.</p>
               <span class="lp-ex__total" aria-hidden="true">$100</span>
               <button class="lp-ex__try" type="button" data-load="pescado:2,limonada:1" data-promo="off">Probarlo en mi cuenta</button>
             </li>
             <li class="lp-ex" data-reveal style="--d:2">
               <span class="lp-ex__tag">Día de promo</span>
-              <p class="lp-ex__text"><strong>Lunes o jueves, promo de camarón y una Coca-Cola:</strong> $65 + $25 = <strong>$90</strong>.</p>
+              <p class="lp-ex__text"><strong>Lunes o jueves, promo de camarón y una Coca-Cola de 355 ml:</strong> $65 + $25 = <strong>$90</strong>.</p>
               <span class="lp-ex__total" aria-hidden="true">$90</span>
               <button class="lp-ex__try" type="button" data-load="camaron:2,coca:1" data-promo="on">Probarlo en mi cuenta</button>
             </li>
             <li class="lp-ex" data-reveal style="--d:3">
               <span class="lp-ex__tag">Para dos con promo</span>
-              <p class="lp-ex__text"><strong>Para dos, lunes o jueves:</strong> 2 promos (4 tacos de camarón) = $130; con 2 Coca-Cola, <strong>$180</strong>.</p>
+              <p class="lp-ex__text"><strong>Para dos, lunes o jueves:</strong> 2 promos (4 tacos de camarón) = $130; con 2 Coca-Cola de 355 ml, <strong>$180</strong>.</p>
               <span class="lp-ex__total" aria-hidden="true">$180</span>
               <button class="lp-ex__try" type="button" data-load="camaron:4,coca:2" data-promo="on">Probarlo en mi cuenta</button>
             </li>
@@ -627,13 +676,22 @@
                 </ul>
                 <p class="lp-group">Para tomar</p>
                 <ul class="lp-lines">
-                  <li class="lp-line" data-id="limonada" data-price="30" data-name="limonada mineral" data-plural="limonadas minerales">
-                  <span class="lp-line__name">Limonada mineral</span>
+                  <li class="lp-line" data-id="limonada" data-price="30" data-name="limonada" data-plural="limonadas">
+                  <span class="lp-line__name">Limonada</span>
                   <span class="lp-line__price">$30</span>
                   <span class="lp-qty">
-                    <button type="button" data-act="dec" aria-label="Quitar uno: Limonada mineral" disabled><svg class="i" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button>
+                    <button type="button" data-act="dec" aria-label="Quitar uno: Limonada" disabled><svg class="i" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button>
                     <output data-qty aria-live="polite">0</output>
-                    <button type="button" data-act="inc" aria-label="Agregar uno: Limonada mineral"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
+                    <button type="button" data-act="inc" aria-label="Agregar uno: Limonada"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
+                  </span>
+                </li>
+                  <li class="lp-line" data-id="te" data-price="25" data-name="té chino oolong" data-plural="tés chinos oolong">
+                  <span class="lp-line__name">Té chino oolong</span>
+                  <span class="lp-line__price">$25</span>
+                  <span class="lp-qty">
+                    <button type="button" data-act="dec" aria-label="Quitar uno: Té chino oolong" disabled><svg class="i" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button>
+                    <output data-qty aria-live="polite">0</output>
+                    <button type="button" data-act="inc" aria-label="Agregar uno: Té chino oolong"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
                   </span>
                 </li>
                   <li class="lp-line" data-id="uvola" data-price="30" data-name="Uvola" data-plural="Uvolas">
@@ -645,13 +703,31 @@
                     <button type="button" data-act="inc" aria-label="Agregar uno: Uvola"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
                   </span>
                 </li>
-                  <li class="lp-line" data-id="coca" data-price="25" data-name="Coca-Cola" data-plural="Coca-Colas">
-                  <span class="lp-line__name">Coca-Cola</span>
+                  <li class="lp-line" data-id="coca" data-price="25" data-name="Coca-Cola de 355 ml" data-plural="Coca-Colas de 355 ml">
+                  <span class="lp-line__name">Coca-Cola 355 ml</span>
                   <span class="lp-line__price">$25</span>
                   <span class="lp-qty">
-                    <button type="button" data-act="dec" aria-label="Quitar uno: Coca-Cola" disabled><svg class="i" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button>
+                    <button type="button" data-act="dec" aria-label="Quitar uno: Coca-Cola 355 ml" disabled><svg class="i" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button>
                     <output data-qty aria-live="polite">0</output>
-                    <button type="button" data-act="inc" aria-label="Agregar uno: Coca-Cola"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
+                    <button type="button" data-act="inc" aria-label="Agregar uno: Coca-Cola 355 ml"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
+                  </span>
+                </li>
+                  <li class="lp-line" data-id="coca400" data-price="30" data-name="Coca-Cola de 400 ml" data-plural="Coca-Colas de 400 ml">
+                  <span class="lp-line__name">Coca-Cola 400 ml</span>
+                  <span class="lp-line__price">$30</span>
+                  <span class="lp-qty">
+                    <button type="button" data-act="dec" aria-label="Quitar uno: Coca-Cola 400 ml" disabled><svg class="i" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button>
+                    <output data-qty aria-live="polite">0</output>
+                    <button type="button" data-act="inc" aria-label="Agregar uno: Coca-Cola 400 ml"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
+                  </span>
+                </li>
+                  <li class="lp-line" data-id="hielo" data-price="2" data-name="vaso con hielo" data-plural="vasos con hielo">
+                  <span class="lp-line__name">Vaso con hielo</span>
+                  <span class="lp-line__price">$2</span>
+                  <span class="lp-qty">
+                    <button type="button" data-act="dec" aria-label="Quitar uno: Vaso con hielo" disabled><svg class="i" aria-hidden="true" focusable="false"><use href="#i-minus"/></svg></button>
+                    <output data-qty aria-live="polite">0</output>
+                    <button type="button" data-act="inc" aria-label="Agregar uno: Vaso con hielo"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button>
                   </span>
                 </li>
                 </ul>
@@ -679,7 +755,7 @@
             </aside>
           </div>
 
-          <p class="lp-calc__note" data-reveal>El total de tu pedido lo ves en tu carrito, y si pides a domicilio se suma el envío, que te confirmamos por WhatsApp.</p>
+          <p class="lp-calc__note" data-reveal>El total de tu pedido lo ves en tu carrito; si es para llevar, se suma el empaque: $5 por plato.</p>
         </div>
       </section>
 
@@ -722,7 +798,7 @@
             </article>
           </div>
 
-          <p class="lp-calc__note" data-reveal>Arma tu pedido en el <a href="/#menu">menú</a> o consulta cómo funcionan los <a href="/pedidos-a-domicilio-los-mochis/">pedidos a domicilio en Los Mochis</a>. Abrimos de lunes y de miércoles a domingo, de 9:00 a 16:00. Los martes descansamos.</p>
+          <p class="lp-calc__note" data-reveal>Arma tu pedido en el <a href="/#menu">menú</a> o consulta cómo funcionan los <a href="/pedidos-para-recoger-los-mochis/">pedidos para recoger en Los Mochis</a>. Abrimos lunes y de jueves a domingo, de 9:00 a 16:00. Los martes y miércoles descansamos.</p>
         </div>
       </section>
 
@@ -759,8 +835,8 @@
             <div class="faq__answer"><p>Aceptamos pago en efectivo. No pedimos pagos por adelantado ni datos de tarjeta.</p></div>
           </details>
           <details class="faq__item" name="faq" data-reveal style="--d:4">
-            <summary><span>¿El envío a domicilio cuesta aparte?</span><span class="faq__icon" aria-hidden="true"></span></summary>
-            <div class="faq__answer"><p>Sí. El total de la página no incluye el envío; te confirmamos por WhatsApp el costo y el tiempo de entrega.</p></div>
+            <summary><span>¿Cuánto cuesta el empaque para llevar?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Para llevar se cobra empaque: $5 por plato.</p></div>
           </details>
           </div>
         </div>
@@ -796,12 +872,12 @@
           </article>
           <article class="cell" data-reveal style="--d:2" data-spot>
             <div class="cell__head">
-              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-moto"/></svg></span>
-              <h3 class="cell__label">A domicilio</h3>
+              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span>
+              <h3 class="cell__label">Para recoger</h3>
             </div>
-            <p class="cell__title">Tacos y mariscos a domicilio</p>
-            <p class="cell__note">Pide en la página o por WhatsApp: a domicilio, para recoger o comer en el local.</p>
-            <a class="link-arrow" href="/pedidos-a-domicilio-los-mochis/">Ver cómo pedir <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+            <p class="cell__title">Pide y recoge tus tacos</p>
+            <p class="cell__note">Pide en la página o por WhatsApp y pasa por tu pedido, o come en el local.</p>
+            <a class="link-arrow" href="/pedidos-para-recoger-los-mochis/">Ver cómo pedir <svg class="i" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
           </article>
           </div>
         </div>
@@ -845,7 +921,7 @@
           <li><a href="/#menu">Menú</a></li>
           <li><a href="/tacos-de-camaron-los-mochis/">Tacos de camarón</a></li>
           <li><a href="/tacos-de-pescado-los-mochis/">Tacos de pescado</a></li>
-          <li><a href="/pedidos-a-domicilio-los-mochis/">Pedidos a domicilio</a></li>
+          <li><a href="/pedidos-para-recoger-los-mochis/">Pedidos para recoger</a></li>
           <li><a href="/tacos-economicos-los-mochis/">Precios y promo</a></li>
           <li><a href="/donde-comer-tacos-capeados-los-mochis/">Dónde comer tacos capeados</a></li>
         </ul>
@@ -855,10 +931,10 @@
         <p class="footer__title">Visítanos</p>
         <ul>
           <li>Los Mochis, Sinaloa</li>
-          <li>Lunes, miércoles a domingo</li>
+          <li>Lunes y de jueves a domingo</li>
           <li>9:00 a 16:00</li>
-          <li>Martes cerrado</li>
-          <li>Pedido a domicilio</li><li>Recoger en sucursal</li><li>Comer en el local</li>
+          <li>Martes y miércoles cerrado</li>
+          <li>Para recoger</li><li>Comer en el local</li><li>Empaque para llevar: $5 por plato</li>
         </ul>
       </div>
 

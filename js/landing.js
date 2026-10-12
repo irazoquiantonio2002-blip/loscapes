@@ -25,8 +25,8 @@
     timeZone: "America/Mazatlan",
     openHour: 9,
     closeHour: 16,
-    closedWeekday: 2,      /* martes */
-    promoWeekdays: [1, 4]  /* lunes y jueves */
+    closedWeekdays: [2, 3],  /* martes y miércoles */
+    promoWeekdays: [1, 4]    /* lunes y jueves */
   };
 
   /* ------------------------------------------------------------------------
@@ -177,14 +177,34 @@
       return { weekday: weekdays[map.weekday], hour: parseInt(map.hour, 10) % 24, minute: parseInt(map.minute, 10) };
     }
 
-    function dayNote(weekday) {
+    function dayNote(weekday, minutes) {
+      var beforeOpen = minutes < CONFIG.openHour * 60;
+      var afterClose = minutes >= CONFIG.closeHour * 60;
       switch (weekday) {
-        case 1: return "¡Hoy es lunes: la promo está activa!";
-        case 4: return "¡Hoy es jueves: la promo está activa!";
+        case 1:
+        case 4:
+          if (afterClose) return weekday === 1 ? "Hoy ya cerramos. La próxima promo es el jueves." : "Hoy ya cerramos. La próxima promo es el lunes.";
+          if (beforeOpen) return "Hoy es día de promo: abrimos a las 9:00.";
+          return weekday === 1 ? "¡Hoy es lunes: la promo está activa!" : "¡Hoy es jueves: la promo está activa!";
         case 2: return "Hoy descansamos. La promo vuelve el jueves.";
-        case 3: return "Mañana es jueves: promo de camarón.";
+        case 3: return "Hoy descansamos. Mañana jueves hay promo.";
         default: return "La próxima promo es el lunes.";
       }
+    }
+
+    var DAY_NAMES = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+
+    function isClosedDay(weekday) {
+      return CONFIG.closedWeekdays.indexOf(weekday) > -1;
+    }
+
+    /* Cuándo vuelve a abrir: "mañana" o "el jueves", saltando los días de descanso */
+    function nextOpenLabel(weekday) {
+      for (var d = 1; d <= 7; d++) {
+        var day = (weekday + d) % 7;
+        if (!isClosedDay(day)) return d === 1 ? "mañana" : "el " + DAY_NAMES[day];
+      }
+      return "mañana";
     }
 
     function update() {
@@ -192,20 +212,19 @@
       var minutes = t.hour * 60 + t.minute;
       var openMin = CONFIG.openHour * 60;
       var closeMin = CONFIG.closeHour * 60;
-      var closedDay = t.weekday === CONFIG.closedWeekday;
+      var closedDay = isClosedDay(t.weekday);
       var isOpen = !closedDay && minutes >= openMin && minutes < closeMin;
-      var tomorrowClosed = (t.weekday + 1) % 7 === CONFIG.closedWeekday;
 
       var text;
       if (isOpen) {
         var left = closeMin - minutes;
         text = left <= 45 ? "Abierto · cerramos en " + left + " min" : "Abierto ahora · hasta las 16:00";
       } else if (closedDay) {
-        text = "Hoy descansamos · mañana 9:00";
+        text = "Hoy descansamos · abrimos " + nextOpenLabel(t.weekday) + " 9:00";
       } else if (minutes < openMin) {
         text = "Cerrado · abrimos hoy a las 9:00";
       } else {
-        text = tomorrowClosed ? "Cerrado · abrimos el miércoles 9:00" : "Cerrado · abrimos mañana 9:00";
+        text = "Cerrado · abrimos " + nextOpenLabel(t.weekday) + " 9:00";
       }
 
       chips.forEach(function (chip) {
@@ -220,7 +239,7 @@
         var el = qs("[data-promo-text]", chip);
         if (el) el.textContent = promo ? "Promo activa hoy" : "Solo lunes y jueves";
       });
-      dayNotes.forEach(function (el) { el.textContent = dayNote(t.weekday); });
+      dayNotes.forEach(function (el) { el.textContent = dayNote(t.weekday, minutes); });
 
       if (clock) clock.textContent = (t.hour < 10 ? "0" : "") + t.hour + ":" + (t.minute < 10 ? "0" : "") + t.minute;
       weekItems.forEach(function (li) {
@@ -337,7 +356,7 @@
       if (disc > 0) elNote.textContent = "¡La promo te ahorra " + money(disc) + "!";
       else if (promoOn && promoUnits === 1) elNote.textContent = "Agrega otro taco de camarón sencillo y la promo se aplica.";
       else if (!promoOn && promoUnits >= 2) elNote.textContent = "Lunes y jueves estos tacos te costarían menos con la promo.";
-      else elNote.textContent = "Pago en efectivo. El envío a domicilio no está incluido.";
+      else elNote.textContent = "Pago en efectivo. Para llevar: empaque $5 por plato.";
 
       var msg;
       if (chosen.length) {

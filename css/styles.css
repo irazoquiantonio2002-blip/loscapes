@@ -1,6 +1,6 @@
 /* ==========================================================================
    Los Capes | styles.css
-   Rediseño 2026 — "Taquería de mariscos, nivel app":
+   Rediseño 2026 — "Taquería de tacos capeados, nivel app":
    base blanca y limpia con el teal y el dorado de la marca, más una capa de
    taquería callejera: rótulos pintados (Bungee), notas a plumón (Caveat),
    stickers de precio, toldo de carrito, cintas cruzadas, papel picado,
@@ -1485,6 +1485,25 @@ html.is-loaded .hero__display--accent { clip-path: inset(-20% -5% -30% 0); }
 .drink--lime  { --d1: #ECFADF; --d2: #B9EBA2; --dc: #3E8A1E; }
 .drink--grape { --d1: #F2EAFF; --d2: #CFB8F6; --dc: #6A3DBF; }
 .drink--red   { --d1: #FFE8E5; --d2: #FFB7AF; --dc: #C8231B; }
+.drink--tea   { --d1: #FFF3DC; --d2: #F2D08F; --dc: #9A6410; }
+.drink--ice   { --d1: #E8F6FD; --d2: #B7E1F5; --dc: #1C78A6; }
+
+/* Aviso de empaque para llevar, bajo el menú */
+.menu__pack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--brand);
+  text-align: center;
+}
+.menu__pack .i { width: 1.1em; height: 1.1em; color: var(--chile); }
+.menu__pack strong { color: var(--chile); }
 
 .drink__visual {
   position: relative;
@@ -2741,7 +2760,7 @@ html.checkout-open .checkout__ticket { opacity: 1; transform: none; }
 .choice__card strong { align-self: end; }
 .choice__card small { align-self: start; }
 @media (min-width: 640px) {
-  .choice { grid-template-columns: repeat(3, 1fr); }
+  .choice { grid-template-columns: repeat(2, 1fr); }
   .choice__card { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 16px 10px 14px; row-gap: 4px; }
   .choice__card .choice__ico { grid-row: auto; margin-bottom: 4px; }
   .choice__card strong, .choice__card small { align-self: auto; }

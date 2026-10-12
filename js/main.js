@@ -41,7 +41,7 @@
     timeZone: "America/Mazatlan",
     openHour: 9,
     closeHour: 16,
-    closedWeekday: 2,          /* martes */
+    closedWeekdays: [2, 3],      /* martes y miércoles */
     promoWeekdays: [1, 4],       /* promo 2×$65: solo lunes y jueves */
     promoPairPrice: 65,
     headerOffset: 84,
@@ -55,9 +55,12 @@
     "camaron-queso": { name: "Taco de camarón relleno de queso", short: "Camarón relleno de queso", price: 45, group: "taco", promo: false, img: "img/negocio/camaron-plato.jpg" },
     "pescado":       { name: "Taco de pescado capeado", short: "Taco de pescado", price: 35, group: "taco", promo: false, img: "img/negocio/tacos-pescado.jpg" },
     "pescado-queso": { name: "Taco de pescado relleno de queso", short: "Pescado relleno de queso", price: 40, group: "taco", promo: false, img: "img/negocio/pescado-capeado.jpg" },
-    "limonada":      { name: "Limonada mineral", short: "Limonada mineral", price: 30, group: "drink", icon: "i-lemon", tone: "lime" },
+    "limonada":      { name: "Limonada", short: "Limonada", price: 30, group: "drink", icon: "i-lemon", tone: "lime" },
+    "te":            { name: "Té chino oolong", short: "Té chino oolong", price: 25, group: "drink", icon: "i-leaf", tone: "tea" },
     "uvola":         { name: "Uvola", short: "Uvola", price: 30, group: "drink", icon: "i-bottle", tone: "grape" },
-    "coca":          { name: "Coca-Cola", short: "Coca-Cola", price: 25, group: "drink", icon: "i-can", tone: "red" }
+    "coca":          { name: "Coca-Cola 355 ml", short: "Coca-Cola 355 ml", price: 25, group: "drink", icon: "i-can", tone: "red" },
+    "coca400":       { name: "Coca-Cola 400 ml", short: "Coca-Cola 400 ml", price: 30, group: "drink", icon: "i-can", tone: "red" },
+    "hielo":         { name: "Vaso con hielo", short: "Vaso con hielo", price: 2, group: "drink", icon: "i-glass", tone: "ice" }
   };
 
   /* Miniatura de un producto: foto para tacos, icono de color para bebidas */
@@ -918,9 +921,24 @@
       };
     }
 
+    var DAY_NAMES = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+
+    function isClosedDay(weekday) {
+      return CONFIG.closedWeekdays.indexOf(weekday) > -1;
+    }
+
+    /* Cuándo vuelve a abrir: "mañana" o "el jueves", saltando los días de descanso */
+    function nextOpenLabel(weekday) {
+      for (var d = 1; d <= 7; d++) {
+        var day = (weekday + d) % 7;
+        if (!isClosedDay(day)) return d === 1 ? "mañana" : "el " + DAY_NAMES[day];
+      }
+      return "mañana";
+    }
+
     App.isPromoDay = function () {
       var t = now();
-      return t.weekday !== CONFIG.closedWeekday && CONFIG.promoWeekdays.indexOf(t.weekday) > -1;
+      return !isClosedDay(t.weekday) && CONFIG.promoWeekdays.indexOf(t.weekday) > -1;
     };
 
     function update() {
@@ -928,20 +946,19 @@
       var minutes = t.hour * 60 + t.minute;
       var openMin = CONFIG.openHour * 60;
       var closeMin = CONFIG.closeHour * 60;
-      var closedDay = t.weekday === CONFIG.closedWeekday;
+      var closedDay = isClosedDay(t.weekday);
       var isOpen = !closedDay && minutes >= openMin && minutes < closeMin;
-      var tomorrowClosed = (t.weekday + 1) % 7 === CONFIG.closedWeekday;
 
       var text;
       if (isOpen) {
         var left = closeMin - minutes;
         text = left <= 45 ? "Abierto · cerramos en " + left + " min" : "Abierto ahora · hasta las 16:00";
       } else if (closedDay) {
-        text = "Hoy descansamos · mañana 9:00";
+        text = "Hoy descansamos · abrimos " + nextOpenLabel(t.weekday) + " 9:00";
       } else if (minutes < openMin) {
         text = "Cerrado · abrimos hoy a las 9:00";
       } else {
-        text = tomorrowClosed ? "Cerrado · abrimos el miércoles 9:00" : "Cerrado · abrimos mañana 9:00";
+        text = "Cerrado · abrimos " + nextOpenLabel(t.weekday) + " 9:00";
       }
 
       chips.forEach(function (chip) {
@@ -1264,13 +1281,12 @@
     var checkoutClose = qs("#checkout-close");
     var checkoutEdit = qs("#checkout-edit");
     var summary = qs("#checkout-summary");
-    var shipNote = qs("#checkout-ship-note");
+    var packNote = qs("#checkout-ship-note");   /* aviso de empaque para llevar */
     var form = qs("#order-form");
     var done = qs("#order-done");
     var fallback = qs("#order-fallback");
     var again = qs("#order-again");
     var folioEl = qs("#order-folio");
-    var deliveryBox = qs("#delivery-fields");
     var dineBox = qs("#dinein-fields");
     var phoneInput = qs("#f-phone");
     var phoneField = phoneInput ? phoneInput.closest(".field") : null;
@@ -1311,17 +1327,15 @@
       });
     }
 
-    /* Muestra u oculta los campos de domicilio según la opción elegida */
+    /* Muestra u oculta los campos según la opción elegida (para recoger o en mesa) */
     function updateMode() {
       var mode = getMode();
-      if (deliveryBox) deliveryBox.hidden = mode !== "domicilio";
       if (dineBox) dineBox.hidden = mode !== "mesa";
       if (phoneField) phoneField.hidden = mode === "mesa";
-      if (shipNote) shipNote.hidden = mode !== "domicilio";
+      if (packNote) packNote.hidden = mode !== "recoger";
       if (timeLabel) {
         timeLabel.textContent = mode === "recoger" ? "¿A qué hora pasas?" :
-          mode === "mesa" ? "¿A qué hora llegas?" :
-          mode === "domicilio" ? "¿Para cuándo lo quieres?" : "¿Para cuándo?";
+          mode === "mesa" ? "¿A qué hora llegas?" : "¿Para cuándo?";
       }
       if (mode) setError(modeGroup, qs("#f-mode-err"), false);
     }
@@ -1414,10 +1428,6 @@
         var name = val("#f-name");
         var phoneRaw = val("#f-phone");
         var phone = phoneRaw.replace(/\D/g, "");
-        var street = val("#f-street");
-        var colonia = val("#f-colonia");
-        var ref = val("#f-ref");
-        var cash = val("#f-cash").replace(/[^\d.]/g, "");
         var time = val("#f-time");
         var tableName = val("#f-tablename");
         var notes = val("#f-notes");
@@ -1431,10 +1441,6 @@
         check(!!mode, modeGroup, "#f-mode-err");
         check(name.length >= 2, qs("#f-name"), "#f-name-err");
         if (mode !== "mesa") check(phone.length >= 10, qs("#f-phone"), "#f-phone-err");
-        if (mode === "domicilio") {
-          check(!!street, qs("#f-street"), "#f-street-err");
-          check(!!colonia, qs("#f-colonia"), "#f-colonia-err");
-        }
         if (firstBad) {
           var target = firstBad.classList.contains("field__input") ? firstBad : qs("input", firstBad);
           target.focus({ preventScroll: true });
@@ -1444,21 +1450,17 @@
 
         var c = calc();
         var folio = makeFolio();
-        var isDelivery = mode === "domicilio";
+        var isPickup = mode === "recoger";
         var lines = [
           "*NUEVO PEDIDO · LOS CAPES*",
           "Folio: " + folio,
-          "Tipo: " + (isDelivery ? "PEDIDO A DOMICILIO" : mode === "mesa" ? "DISFRUTA CON NOSOTROS (EN MESA)" : "RECOGER EN SUCURSAL"),
+          "Tipo: " + (mode === "mesa" ? "DISFRUTA CON NOSOTROS (EN MESA)" : "PARA RECOGER"),
           "",
           "*Cliente*",
           "Nombre: " + name
         ];
         if (mode !== "mesa") lines.push("Teléfono: " + phoneRaw);
-        if (isDelivery) {
-          lines.push("Dirección: " + street + ", Col. " + colonia);
-          if (ref) lines.push("Referencias: " + ref);
-        }
-        lines.push((isDelivery ? "Para cuándo: " : mode === "mesa" ? "Llega a las: " : "Pasa a recoger: ") + time);
+        lines.push((mode === "mesa" ? "Llega a las: " : "Pasa a recoger: ") + time);
         if (mode === "mesa") lines.push("A nombre de: " + (tableName || name));
         lines.push("");
         lines.push("*Pedido*");
@@ -1467,8 +1469,8 @@
           lines.push("• " + order[id] + " × " + PRODUCTS[id].name + " — " + money(order[id] * PRODUCTS[id].price));
         });
         if (c.promo > 0) lines.push("Promo 2×$65 (lunes y jueves): -" + money(c.promo));
-        lines.push("*Total estimado: " + money(c.total) + (isDelivery ? " + envío*" : "*"));
-        lines.push("Pago: Efectivo" + (isDelivery && cash ? " · paga con " + money(parseFloat(cash) || 0) : ""));
+        lines.push("*Total estimado: " + money(c.total) + (isPickup ? " + empaque para llevar ($5 por plato)*" : "*"));
+        lines.push("Pago: Efectivo");
         if (notes) lines.push("Comentarios: " + notes);
 
         var url = "https://wa.me/" + CONFIG.phone + "?text=" + encodeURIComponent(lines.join("\n"));

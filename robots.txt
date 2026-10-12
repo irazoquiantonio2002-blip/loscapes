@@ -1,4 +1,4 @@
-# Los Capes | Tacos capeados y mariscos en Los Mochis, Sinaloa
+# Los Capes | Tacos capeados de camarón y pescado en Los Mochis, Sinaloa
 # https://www.loscapes.com
 User-agent: *
 Allow: /

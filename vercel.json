@@ -2,8 +2,23 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "loscapes.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "loscapes.vercel.app"
+        }
+      ],
       "destination": "https://www.loscapes.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/pedidos-a-domicilio-los-mochis",
+      "destination": "/pedidos-para-recoger-los-mochis/",
+      "permanent": true
+    },
+    {
+      "source": "/pedidos-a-domicilio-los-mochis/",
+      "destination": "/pedidos-para-recoger-los-mochis/",
       "permanent": true
     }
   ]
