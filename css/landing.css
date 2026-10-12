@@ -1,0 +1,508 @@
+/* ==========================================================================
+   Los Capes | landing.css
+   Capa de diseño para las páginas de aterrizaje de SEO local (hoy:
+   /tacos-de-camaron-los-mochis/). Se carga DESPUÉS de styles.css y solo
+   añade clases propias (lp-*) más unos ajustes puntuales.
+
+   Reutiliza tal cual los componentes de la página principal:
+   .eyebrow, .sec-title, .sec-lead, .btn, .chip, .status, .ticker, .awning,
+   .dish, .promo (póster con rayos), .cell, .week, .hours-grid, .faq__item,
+   .cta-band + .papel y .footer. Aquí solo se añade el héroe, la historia, los
+   pasos y las capas de movimiento.
+
+   Mobile first: los estilos base son para teléfono y se amplían con
+   min-width en 640px, 900px y 1100px.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Base de la página
+   -------------------------------------------------------------------------- */
+body.lp { background: var(--bg); }
+.lp main { display: block; }
+
+.lp .nav__link { padding: 0 13px; font-size: .9rem; }
+.lp .nav__link[aria-current="page"] {
+  color: var(--ink);
+  background: var(--gold-2);
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+}
+
+.lp-nowrap { white-space: nowrap; }
+
+/* Migas de pan */
+.crumbs { margin-bottom: 22px; }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: .86rem; color: var(--muted); }
+.crumbs li + li::before { content: "›"; margin-right: 8px; color: var(--dim); }
+.crumbs a { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.crumbs a:hover { color: var(--brand); }
+.crumbs [aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+/* --------------------------------------------------------------------------
+   Héroe
+   -------------------------------------------------------------------------- */
+.lp-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: calc(var(--header-h) + 22px) 0 clamp(64px, 9vw, 120px);
+  background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+}
+.lp-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  z-index: -1;
+  background: linear-gradient(transparent, var(--bg));
+  pointer-events: none;
+}
+.lp-hero__inner { display: grid; gap: 52px; align-items: center; }
+.lp-hero__copy { min-width: 0; position: relative; z-index: 2; }
+
+/* Burbujas que suben despacio (movimiento constante, solo CSS) */
+.lp-bubbles { position: absolute; inset: 0; overflow: hidden; }
+.lp-bubbles i {
+  position: absolute;
+  bottom: -40px;
+  left: var(--x);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  border: 2px solid rgba(26, 135, 149, .28);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .85), rgba(255, 214, 136, .28));
+  opacity: 0;
+  animation: lp-rise var(--t) linear var(--dl) infinite;
+}
+
+.lp-hero__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+
+.lp-kicker {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-family: var(--font-sign);
+  font-size: clamp(.66rem, 2.6vw, .8rem);
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--brand);
+  border: var(--border);
+  box-shadow: 4px 4px 0 var(--ink);
+  rotate: -1.5deg;
+}
+
+.lp-title {
+  margin-top: 22px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 9.4vw, 4.5rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.lp-title em {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.12em;
+  letter-spacing: 0;
+  line-height: .9;
+  color: var(--brand);
+  padding: 0 .08em .08em;
+  white-space: nowrap;
+  background: var(--swash) no-repeat 0 100% / 0% .3em;
+  animation: lp-swash 1s var(--ease-out) 1s forwards;
+}
+
+.lp-lead {
+  margin-top: 24px;
+  max-width: 35rem;
+  font-size: clamp(1.04rem, 2.6vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.lp-lead strong { color: var(--ink); font-weight: 700; }
+
+.lp-hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.lp-hero__cta .btn { flex: 1 1 100%; }
+
+/* Nota de papel con la respuesta rápida (útil para buscadores y para la gente) */
+.lp-answer {
+  position: relative;
+  max-width: 35rem;
+  margin-top: 34px;
+  padding: 20px 20px 18px;
+  border: 2px dashed var(--line-3);
+  border-radius: var(--r);
+  background: #FFF8E4;
+  rotate: -.8deg;
+  font-size: .98rem;
+  line-height: 1.6;
+}
+.lp-answer::before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  width: 84px;
+  height: 22px;
+  translate: -50% 0;
+  rotate: 2deg;
+  background: rgba(244, 174, 61, .55);
+  border-inline: 2px dotted rgba(10, 45, 50, .25);
+}
+.lp-answer strong { color: var(--ink); }
+.lp-answer__label {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--chile);
+}
+
+/* Composición de fotos del héroe */
+.lp-hero__visual {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin-inline: auto;
+  padding: 18px 14px 56px;
+}
+.lp-photo {
+  margin: 0;
+  overflow: hidden;
+  border: var(--border);
+  background: #fff;
+}
+.lp-photo img { width: 100%; height: 100%; object-fit: cover; }
+.lp-photo--main {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 4.5;
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-offset);
+  rotate: 2deg;
+  animation: lp-bob 9s ease-in-out infinite alternate;
+}
+.lp-photo--small {
+  position: absolute;
+  z-index: 2;
+  left: -2%;
+  bottom: 0;
+  width: 44%;
+  aspect-ratio: 1;
+  border-radius: var(--r-lg);
+  box-shadow: 5px 5px 0 var(--gold-deep);
+  rotate: -7deg;
+  animation: lp-bob 7s ease-in-out -2s infinite alternate;
+}
+
+.lp-sticker {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  border-radius: 50%;
+  border: var(--border);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.lp-sticker--price {
+  top: 0;
+  left: 2%;
+  width: 92px;
+  height: 92px;
+  background: var(--gold);
+  color: var(--ink);
+  rotate: -12deg;
+  animation: wiggle 6s ease-in-out infinite;
+}
+.lp-sticker--price small { font-family: var(--font-hand); font-size: 1.15rem; font-weight: 700; line-height: .8; }
+.lp-sticker--price b { font-family: var(--font-sign); font-weight: 400; font-size: 1.75rem; line-height: 1; }
+
+.lp-stamp {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 12%;
+  width: 112px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--chile);
+  color: #fff;
+  border: var(--border);
+  box-shadow: 4px 4px 0 var(--ink);
+  rotate: 10deg;
+}
+.lp-stamp svg:first-child { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); animation: spin 18s linear infinite; }
+.lp-stamp text { font-family: var(--font-sign); font-size: 8.5px; letter-spacing: .6px; fill: #fff; }
+.lp-stamp .i { width: 30px; height: 30px; stroke-width: 2; }
+
+.lp-float {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px 8px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  background: #fff;
+  box-shadow: 3px 3px 0 var(--ink);
+  font-size: .82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.lp-float .i { width: 18px; height: 18px; padding: 3px; border-radius: 50%; color: #fff; background: var(--brand); }
+.lp-float--a { top: 22%; right: -2%; animation: lp-bob 6s ease-in-out infinite alternate; }
+.lp-float--b { bottom: 30%; left: 30%; animation: lp-bob 8s ease-in-out -3s infinite alternate; }
+.lp-float--b .i { background: var(--lime); }
+
+/* Datos clave bajo el héroe */
+.lp-metrics {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  margin-top: 36px;
+  max-width: 35rem;
+  border-top: 2px dashed var(--line-2);
+}
+.lp-metric { display: flex; flex-direction: column-reverse; padding: 16px 12px 0 0; }
+.lp-metric + .lp-metric { padding-left: 14px; border-left: 2px dashed var(--line-2); }
+.lp-metric dt { font-family: var(--font-hand); font-size: 1.12rem; font-weight: 600; line-height: 1.05; color: var(--brand); }
+.lp-metric dd { font-family: var(--font-sign); font-size: clamp(1rem, 4.1vw, 1.5rem); line-height: 1.2; white-space: nowrap; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* --------------------------------------------------------------------------
+   Historia: ¿Cómo es un taco de camarón capeado?
+   -------------------------------------------------------------------------- */
+.lp-story { background: var(--bg); }
+.lp-story__grid { display: grid; gap: 64px; align-items: center; }
+.lp-story__media { position: relative; width: 100%; max-width: 500px; margin-inline: auto; padding-bottom: 24px; }
+.lp-frame {
+  margin: 0;
+  overflow: hidden;
+  border: var(--border);
+  border-radius: var(--r-xl);
+  background: #fff;
+  box-shadow: var(--shadow-offset-gold);
+  rotate: -2deg;
+}
+.lp-frame img { width: 100%; aspect-ratio: 4 / 4.5; object-fit: cover; }
+.lp-note {
+  position: absolute;
+  left: -3%;
+  bottom: 0;
+  max-width: 76%;
+  padding: 10px 16px 12px;
+  border: var(--border);
+  border-radius: 10px;
+  background: var(--gold);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+  rotate: 3deg;
+}
+
+.lp-story__copy > p:not(.eyebrow) { margin-top: 18px; font-size: 1.08rem; line-height: 1.75; color: var(--muted); max-width: 38rem; }
+.lp-story__copy .sec-title + p { margin-top: 26px; }
+.lp-story__copy strong { color: var(--ink); }
+.lp-story__copy p a,
+.lp-pick__txt a,
+.lp-pick__more a,
+.lp-after p a,
+.lp-visit-note a {
+  color: var(--brand-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.lp-story__copy p a:hover,
+.lp-pick__txt a:hover,
+.lp-pick__more a:hover,
+.lp-after p a:hover,
+.lp-visit-note a:hover { color: var(--ink); }
+
+.lp-feats { display: grid; gap: 12px; margin-top: 30px; max-width: 38rem; }
+.lp-feat {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 16px;
+  border: var(--border);
+  border-radius: var(--r);
+  background: #fff;
+  box-shadow: 3px 3px 0 var(--brand-deep);
+  transition: transform .4s var(--ease-spring), box-shadow .3s;
+}
+.lp-feat:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--gold-deep); }
+.lp-feat .cell__icon { width: 44px; height: 44px; }
+.lp-feat b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; letter-spacing: -.02em; line-height: 1.2; }
+.lp-feat span:last-child { display: block; font-size: .92rem; color: var(--muted); line-height: 1.4; }
+
+/* --------------------------------------------------------------------------
+   Precios: tarjetas de producto (reutiliza .dish) y cómo elegir
+   -------------------------------------------------------------------------- */
+.lp-menu { background: var(--bg); }
+.lp-dishes { display: grid; gap: 52px 26px; max-width: 940px; margin-inline: auto; }
+.lp-dishes .dish__media { aspect-ratio: 4 / 3.3; }
+.lp-dishes .dish__desc { max-width: 34ch; }
+.lp-dishes .dish__foot .btn { width: 100%; }
+
+.lp-pick { display: grid; gap: 22px; max-width: 940px; margin: 64px auto 0; }
+.lp-pick__title {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4.4vw, 2.1rem);
+  letter-spacing: -.03em;
+  line-height: 1.1;
+}
+.lp-pick__title em { font-family: var(--font-hand); font-size: 1.15em; font-weight: 700; color: var(--brand); letter-spacing: 0; }
+.lp-pick__card {
+  padding: 22px 22px 24px;
+  border: 2px dashed var(--line-3);
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, .6);
+}
+.lp-pick__tag { display: inline-block; font-family: var(--font-hand); font-size: 1.55rem; font-weight: 700; line-height: 1; color: var(--chile); }
+.lp-pick__txt { margin-top: 10px; font-size: 1.02rem; line-height: 1.7; color: var(--muted); }
+.lp-pick__txt strong { color: var(--ink); }
+.lp-pick__more { grid-column: 1 / -1; font-size: 1.04rem; line-height: 1.7; color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   Promo: ajustes sobre el póster de la página principal
+   -------------------------------------------------------------------------- */
+.lp-promo .promo__title { font-size: clamp(2.1rem, 6.4vw, 3.5rem); }
+.lp-promo .promo__text { max-width: 36rem; }
+.lp-daynote {
+  min-height: 1.4em;
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.lp-daynote:empty { display: none; }
+
+/* --------------------------------------------------------------------------
+   Pasos: cómo pedir
+   -------------------------------------------------------------------------- */
+.lp-steps { background: var(--bg-alt); }
+.lp-steps__list { position: relative; display: grid; gap: 40px; margin-top: 8px; }
+.lp-step {
+  position: relative;
+  padding: 34px 22px 26px;
+  border: var(--border);
+  border-radius: var(--r-lg);
+  background: #fff;
+  box-shadow: var(--shadow-offset);
+  transition: transform .5s var(--ease-spring), box-shadow .3s;
+}
+.lp-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-offset-gold); }
+.lp-step__num {
+  position: absolute;
+  top: -22px;
+  left: 20px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: var(--border);
+  background: var(--gold);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: var(--font-sign);
+  font-size: 1.05rem;
+  color: var(--ink);
+  rotate: -6deg;
+}
+.lp-step .cell__icon { margin-bottom: 14px; }
+.lp-step h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; letter-spacing: -.03em; line-height: 1.1; }
+.lp-step p { margin-top: 8px; font-size: 1rem; line-height: 1.6; color: var(--muted); }
+.lp-step p a { color: var(--brand-ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+.lp-after { display: grid; gap: 22px; justify-items: start; margin-top: 52px; }
+.lp-after p { max-width: 44rem; font-size: 1.04rem; line-height: 1.7; color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   Horario y ubicación (reutiliza .hours-grid y .cell)
+   -------------------------------------------------------------------------- */
+.lp-visit-note { margin-top: 28px; max-width: 46rem; font-size: 1.04rem; line-height: 1.7; color: var(--muted); }
+.lp-photo-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.lp-visit .cell--photo img { object-position: 50% 40%; }
+
+/* --------------------------------------------------------------------------
+   Seguir explorando
+   -------------------------------------------------------------------------- */
+.lp-more .service-grid .cell { min-height: 0; }
+
+/* --------------------------------------------------------------------------
+   Animaciones propias
+   -------------------------------------------------------------------------- */
+@keyframes lp-rise {
+  0% { transform: translateY(0) scale(.5); opacity: 0; }
+  12% { opacity: .9; }
+  100% { transform: translateY(-880px) scale(1); opacity: 0; }
+}
+@keyframes lp-bob { from { translate: 0 0; } to { translate: 0 -12px; } }
+@keyframes lp-in { from { opacity: 0; translate: 0 26px; } }
+@keyframes lp-swash { to { background-size: 100% .3em; } }
+
+/* Entrada escalonada del héroe: solo CSS, así el texto aparece aunque falle el JS */
+[data-in] {
+  animation: lp-in .9s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 100ms);
+}
+
+/* --------------------------------------------------------------------------
+   Pantallas medianas y grandes
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+  .lp-hero__cta .btn { flex: 0 0 auto; }
+  .lp-sticker--price { width: 108px; height: 108px; }
+  .lp-sticker--price b { font-size: 2.1rem; }
+  .lp-stamp { width: 128px; }
+  .lp-float { font-size: .9rem; }
+  .lp-dishes { grid-template-columns: repeat(2, 1fr); }
+  .lp-pick { grid-template-columns: repeat(2, 1fr); }
+  .lp-steps__list { grid-template-columns: repeat(2, 1fr); gap: 46px 22px; }
+}
+@media (min-width: 900px) {
+  .lp-hero__inner { grid-template-columns: 1.02fr .98fr; gap: 56px; }
+  .lp-story__grid { grid-template-columns: .92fr 1.08fr; gap: 80px; }
+  .lp-story__media { margin-inline: 0; }
+}
+@media (min-width: 1100px) {
+  .lp-steps__list { grid-template-columns: repeat(4, 1fr); }
+  .lp-steps__list::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 8%;
+    right: 8%;
+    border-top: 3px dashed var(--line-3);
+  }
+  .lp-hero__visual { margin-right: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Movimiento reducido
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .lp-bubbles { display: none; }
+  .lp-photo--main,
+  .lp-photo--small,
+  .lp-float,
+  .lp-sticker--price { animation: none !important; }
+}
