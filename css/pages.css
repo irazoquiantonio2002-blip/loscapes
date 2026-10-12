@@ -1,0 +1,304 @@
+/* ==========================================================================
+   Los Capes | pages.css
+   Estilos de las páginas de guía (SEO local): /tacos-de-camaron-los-mochis/,
+   /tacos-de-pescado-los-mochis/, /pedidos-a-domicilio-los-mochis/,
+   /tacos-economicos-los-mochis/ y /donde-comer-tacos-capeados-los-mochis/.
+
+   Se carga DESPUÉS de styles.css y solo añade clases nuevas (pg-*, crumbs,
+   toc, prose, facts, pg-table, steps). No modifica ninguna regla existente.
+   Reutiliza: tokens, .header, .brand, .nav, .btn, .eyebrow, .sec-title,
+   .cell, .service-grid, .faq__item, .link-arrow y .footer.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Navegación: enlace de la página actual
+   -------------------------------------------------------------------------- */
+.pg-header .nav__link[aria-current="page"] {
+  color: var(--ink);
+  background: var(--gold-2);
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+}
+.pg-header .nav__link { padding: 0 13px; font-size: .9rem; }
+
+/* --------------------------------------------------------------------------
+   Cabecera de la página (migas, título, foto)
+   -------------------------------------------------------------------------- */
+.pg-hero {
+  position: relative;
+  padding: calc(var(--header-h) + 34px) 0 clamp(36px, 6vw, 72px);
+  background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+  overflow: hidden;
+}
+.pg-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--talavera) 0 0 / 80px 80px;
+  opacity: .05;
+  pointer-events: none;
+}
+.pg-hero > .container { position: relative; }
+.pg-hero__grid { display: grid; gap: 30px; align-items: center; }
+
+.crumbs { margin-bottom: 22px; }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: .86rem; color: var(--muted); }
+.crumbs li + li::before { content: "›"; margin-right: 8px; color: var(--dim); }
+.crumbs a { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+.crumbs a:hover { color: var(--brand); }
+.crumbs [aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+.pg-title {
+  font-size: clamp(2.1rem, 6.4vw, 3.9rem);
+  line-height: 1.03;
+}
+/* "Los Mochis." se mantiene junto para que el subrayado no se parta en dos líneas */
+.pg-title em { white-space: nowrap; }
+.pg-lead {
+  margin-top: 20px;
+  max-width: 60ch;
+  font-size: clamp(1.04rem, 2.5vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.pg-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.pg-actions--center { justify-content: center; }
+.pg-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 22px;
+  font-size: .84rem;
+  color: var(--dim);
+}
+
+.pg-figure {
+  margin: 0;
+  border: var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-offset);
+}
+.pg-figure img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
+.pg-figure figcaption {
+  padding: 10px 16px;
+  border-top: var(--border);
+  background: #fff;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Cuerpo del artículo
+   -------------------------------------------------------------------------- */
+.pg-body { padding-block: clamp(28px, 5vw, 64px) clamp(40px, 7vw, 90px); }
+.pg-wrap { max-width: 800px; margin-inline: auto; }
+
+.pg-answer {
+  padding: 20px 22px;
+  border-radius: var(--r);
+  border: var(--border);
+  border-left-width: 8px;
+  border-left-color: var(--gold);
+  background: #FFF6DE;
+  box-shadow: 4px 4px 0 var(--gold-deep);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.pg-answer strong { color: var(--ink); }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+.fact {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+  padding: 14px 16px;
+  border: var(--border);
+  border-radius: var(--r);
+  background: #fff;
+  box-shadow: 3px 3px 0 var(--brand-deep);
+}
+.fact__k { font-family: var(--font-sign); font-size: .6rem; letter-spacing: .04em; text-transform: uppercase; color: var(--brand); }
+.fact__v { font-family: var(--font-display); font-weight: 800; font-size: 1.55rem; line-height: 1.1; letter-spacing: -.03em; }
+.fact__s { font-size: .84rem; color: var(--muted); line-height: 1.35; }
+
+.toc {
+  margin-top: 28px;
+  padding: 18px 22px;
+  border: var(--border);
+  border-radius: var(--r);
+  background: var(--surface-2);
+}
+.toc__title { margin-bottom: 8px; font-family: var(--font-sign); font-size: .66rem; letter-spacing: .04em; text-transform: uppercase; color: var(--brand); }
+.toc ol { display: grid; gap: 6px; counter-reset: toc; }
+.toc li { counter-increment: toc; display: flex; gap: 10px; font-size: .98rem; }
+.toc li::before { content: counter(toc) "."; min-width: 1.4em; color: var(--gold-deep); font-weight: 700; }
+.toc a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-3); text-underline-offset: 3px; }
+.toc a:hover { color: var(--brand); text-decoration-color: var(--gold); }
+
+.prose { margin-top: 12px; }
+.prose > section { scroll-margin-top: calc(var(--header-h) + 16px); }
+.prose h2 {
+  margin-top: clamp(40px, 6vw, 60px);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 4.6vw, 2.35rem);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+.prose h3 { margin-top: 1.6em; font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; letter-spacing: -.02em; }
+.prose p,
+.prose li { font-size: 1.04rem; line-height: 1.75; color: var(--text); }
+.prose p { margin-top: 1em; }
+.prose p:first-of-type { margin-top: 14px; }
+.prose a {
+  color: var(--brand-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.prose a:hover { color: var(--ink); }
+.prose strong { color: var(--ink); }
+
+/* Fotos dentro del texto: más bajas que la foto principal */
+.prose .pg-figure { margin-top: 24px; }
+.prose .pg-figure img { aspect-ratio: 16 / 10; }
+
+.prose ul.checks { display: grid; gap: 10px; margin-top: 16px; }
+.prose ul.checks li { position: relative; padding-left: 26px; }
+.prose ul.checks li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .65em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--ink);
+}
+
+.steps { display: grid; gap: 14px; margin-top: 18px; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 38px 1fr; gap: 14px; align-items: start; }
+.steps li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--ink);
+  font-family: var(--font-sign);
+  font-size: .8rem;
+  color: var(--ink);
+}
+
+/* Tablas de precios y comparativas */
+.table-wrap { margin-top: 20px; overflow-x: auto; padding-bottom: 6px; }
+.pg-table {
+  width: 100%;
+  min-width: 460px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-offset);
+  font-size: .98rem;
+}
+.pg-table caption { caption-side: bottom; padding-top: 14px; text-align: left; font-size: .84rem; color: var(--muted); }
+.pg-table thead th {
+  padding: 12px 16px;
+  text-align: left;
+  background: var(--brand-deep);
+  color: #fff;
+  font-family: var(--font-sign);
+  font-weight: 400;
+  font-size: .66rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.pg-table tbody th,
+.pg-table tbody td { padding: 14px 16px; text-align: left; vertical-align: top; border-top: 1.5px solid var(--line-2); line-height: 1.45; }
+.pg-table tbody tr:first-child th,
+.pg-table tbody tr:first-child td { border-top: 0; }
+.pg-table tbody th { font-weight: 700; color: var(--ink); }
+.pg-table tbody td { color: var(--muted); }
+.pg-table .price { text-align: right; white-space: nowrap; font-family: var(--font-sign); font-size: .98rem; color: var(--ink); }
+.pg-table thead th.price { text-align: right; color: #fff; font-family: var(--font-sign); font-size: .66rem; }
+.pg-table tbody tr:nth-child(even) { background: var(--surface-2); }
+
+/* --------------------------------------------------------------------------
+   Preguntas frecuentes dentro del artículo (reutiliza .faq__item)
+   -------------------------------------------------------------------------- */
+.prose .faq__list { margin-top: 22px; }
+.prose .faq__answer p { margin-top: 0; font-size: 1rem; }
+
+/* --------------------------------------------------------------------------
+   Llamada a la acción y artículos relacionados
+   -------------------------------------------------------------------------- */
+.pg-cta { padding-block: clamp(20px, 4vw, 40px) clamp(44px, 7vw, 90px); }
+.pg-cta__box {
+  position: relative;
+  padding: clamp(30px, 6vw, 56px) clamp(22px, 5vw, 56px);
+  border: var(--border);
+  border-radius: var(--r-xl);
+  background: linear-gradient(135deg, var(--deep-2), var(--deep));
+  color: var(--on-deep);
+  text-align: center;
+  box-shadow: var(--shadow-offset-gold);
+  overflow: hidden;
+}
+.pg-cta__box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--talavera) 0 0 / 80px 80px;
+  opacity: .07;
+  pointer-events: none;
+}
+.pg-cta__box > * { position: relative; }
+.pg-cta__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 5vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.pg-cta__text { max-width: 52ch; margin: 14px auto 0; color: var(--on-deep-muted); font-size: 1.04rem; }
+
+.pg-related { padding-block: 0 clamp(60px, 9vw, 110px); }
+.pg-related__title {
+  margin-bottom: 26px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 4.6vw, 2.35rem);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+.pg-related .service-grid .cell { min-height: 0; }
+
+/* --------------------------------------------------------------------------
+   Pantallas medianas y grandes
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+  .facts { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 900px) {
+  .pg-hero__grid { grid-template-columns: 1.1fr .9fr; gap: 56px; }
+  .pg-figure img { aspect-ratio: 4 / 4.2; }
+}

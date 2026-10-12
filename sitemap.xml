@@ -15,4 +15,46 @@
     <image:image><image:loc>https://www.loscapes.com/img/negocio/plato-de-lado.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.loscapes.com/img/negocio/charolas-para-llevar.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://www.loscapes.com/tacos-de-camaron-los-mochis/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/camaron-capeado.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/camaron-plato.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.loscapes.com/tacos-de-pescado-los-mochis/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/tacos-pescado.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/pescado-capeado.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/plato-de-lado.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.loscapes.com/pedidos-a-domicilio-los-mochis/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/charolas-para-llevar.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/menu-plato.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.loscapes.com/tacos-economicos-los-mochis/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/dos-tacos.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/plato-de-lado.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.loscapes.com/donde-comer-tacos-capeados-los-mochis/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/camaron-plato.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/tacos-pescado.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.loscapes.com/img/negocio/charolas-para-llevar.jpg</image:loc></image:image>
+  </url>
 </urlset>
