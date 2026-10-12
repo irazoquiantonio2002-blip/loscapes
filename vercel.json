@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "loscapes.vercel.app" }],
+      "destination": "https://www.loscapes.com/$1",
+      "permanent": true
+    }
+  ]
+}

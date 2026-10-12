@@ -13,16 +13,25 @@
   </script>
 
   <!-- ======================================================================
-       SEO
-       TODO antes de publicar: reemplaza https://www.TU-DOMINIO.com por el
-       dominio real en canonical, og:url, og:image y twitter:image.
+       SEO LOCAL: Los Mochis, Sinaloa
+       Palabras clave objetivo: "tacos capeados los mochis" y "mariscos los mochis".
+       Dominio oficial: https://www.loscapes.com (el dominio sin www redirige aquí).
+       Si algún día cambia el dominio, reemplaza "https://www.loscapes.com" en este
+       archivo, en robots.txt y en sitemap.xml.
        ====================================================================== -->
-  <title>Los Capes | Tacos de camarón y pescado capeados desde $35</title>
-  <meta name="description" content="Tacos de camarón y pescado capeados al momento, sencillos o rellenos de queso, desde $35. Promo 2 tacos de camarón por $65 únicamente lunes y jueves. Pide por WhatsApp.">
-  <meta name="keywords" content="tacos capeados, tacos de camarón, tacos de pescado, camarón relleno de queso, pescado relleno de queso, tacos de camarón capeado, Los Capes, mariscos, promoción de tacos, pedidos por WhatsApp">
+  <title>Tacos Capeados y Mariscos en Los Mochis | Los Capes</title>
+  <meta name="description" content="Tacos capeados y mariscos en Los Mochis: camarón y pescado capeados al momento desde $35. 2 tacos de camarón por $65 lunes y jueves. Pide por WhatsApp.">
+  <meta name="keywords" content="tacos capeados los mochis, mariscos los mochis, tacos de camarón los mochis, tacos de pescado los mochis, tacos de mariscos los mochis, tacos capeados, tacos de camarón capeado, tacos de pescado capeado, camarón relleno de queso, pescado relleno de queso, mariscos a domicilio los mochis, tacos capeados a domicilio, dónde comer tacos capeados en Los Mochis, promoción 2 tacos de camarón, tacos Sinaloa, Los Capes, Los Capes Los Mochis">
   <meta name="author" content="Los Capes">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://www.TU-DOMINIO.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://www.loscapes.com/">
+  <link rel="alternate" hreflang="es-MX" href="https://www.loscapes.com/">
+  <link rel="alternate" hreflang="x-default" href="https://www.loscapes.com/">
+
+  <!-- Geolocalización (ciudad del negocio) -->
+  <meta name="geo.region" content="MX-SIN">
+  <meta name="geo.placename" content="Los Mochis, Sinaloa">
+  <!-- TODO: cuando tengamos la dirección exacta, agregar geo.position y ICBM con las coordenadas del local. -->
 
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#FFF8EC">
@@ -30,21 +39,23 @@
   <meta property="og:type" content="restaurant.restaurant">
   <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="Los Capes">
-  <meta property="og:title" content="Los Capes | Tacos de camarón y pescado capeados al momento">
-  <meta property="og:description" content="Tacos capeados al momento. Sencillos o rellenos de queso, desde $35. Promo 2 tacos de camarón por $65 únicamente lunes y jueves.">
-  <meta property="og:url" content="https://www.TU-DOMINIO.com/">
-  <meta property="og:image" content="https://www.TU-DOMINIO.com/img/negocio/og-cover.jpg">
+  <meta property="og:title" content="Tacos Capeados y Mariscos en Los Mochis | Los Capes">
+  <meta property="og:description" content="Tacos de camarón y pescado capeados al momento en Los Mochis, sencillos o rellenos de queso, desde $35. 2 tacos de camarón por $65 lunes y jueves.">
+  <meta property="og:url" content="https://www.loscapes.com/">
+  <meta property="og:image" content="https://www.loscapes.com/img/negocio/og-cover.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Tacos capeados de Los Capes con limón">
+  <meta property="og:image:alt" content="Tacos de pescado capeado de Los Capes en Los Mochis, con col, pico de gallo y limón">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Los Capes | Tacos capeados al momento">
-  <meta name="twitter:description" content="Camarón y pescado capeados desde $35. Promo 2 tacos por $65 únicamente lunes y jueves.">
-  <meta name="twitter:image" content="https://www.TU-DOMINIO.com/img/negocio/og-cover.jpg">
+  <meta name="twitter:title" content="Tacos Capeados y Mariscos en Los Mochis | Los Capes">
+  <meta name="twitter:description" content="Camarón y pescado capeados en Los Mochis desde $35. Promo 2 tacos de camarón por $65 lunes y jueves.">
+  <meta name="twitter:image" content="https://www.loscapes.com/img/negocio/og-cover.jpg">
+  <meta name="twitter:image:alt" content="Tacos de pescado capeado de Los Capes en Los Mochis, con col, pico de gallo y limón">
 
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-  <link rel="icon" type="image/png" href="img/favicon.png">
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 
   <!-- Tipografía: Bricolage Grotesque (títulos) y Geist (texto) se sirven localmente
        desde /fonts. Bungee (rótulos y precios) y Caveat (notas a mano) desde Google Fonts. -->
@@ -67,14 +78,30 @@
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    "@id": "https://www.TU-DOMINIO.com/#restaurant",
+    "@id": "https://www.loscapes.com/#restaurant",
     "name": "Los Capes",
+    "alternateName": "Los Capes Los Mochis",
     "slogan": "Tacos capeados al momento.",
-    "description": "Tacos de camarón y pescado capeados al momento, sencillos o rellenos de queso. Pedidos por WhatsApp: a domicilio, para recoger en sucursal o para comer en el local.",
-    "url": "https://www.TU-DOMINIO.com/",
-    "image": "https://www.TU-DOMINIO.com/img/negocio/og-cover.jpg",
-    "logo": "https://www.TU-DOMINIO.com/img/favicon.png",
-    "servesCuisine": ["Mariscos", "Tacos", "Mexicana"],
+    "description": "Tacos capeados y mariscos en Los Mochis, Sinaloa: tacos de camarón y de pescado capeados al momento, sencillos o rellenos de queso. Pedidos por WhatsApp: a domicilio, para recoger en sucursal o para comer en el local.",
+    "url": "https://www.loscapes.com/",
+    "image": [
+      "https://www.loscapes.com/img/negocio/og-cover.jpg",
+      "https://www.loscapes.com/img/negocio/camaron-capeado.jpg",
+      "https://www.loscapes.com/img/negocio/tacos-pescado.jpg",
+      "https://www.loscapes.com/img/negocio/charolas-para-llevar.jpg"
+    ],
+    "logo": "https://www.loscapes.com/img/logo-loscapes-512.png",
+    "keywords": "tacos capeados los mochis, mariscos los mochis, tacos de camarón, tacos de pescado, tacos de mariscos",
+    "servesCuisine": ["Mariscos", "Tacos de mariscos", "Tacos capeados", "Mexicana"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Los Mochis",
+      "addressRegion": "Sinaloa",
+      "addressCountry": "MX"
+    },
+    "areaServed": { "@type": "City", "name": "Los Mochis" },
+    "sameAs": ["https://www.facebook.com/p/los-capes-61551611623002/"],
+    "menu": "https://www.loscapes.com/#menu",
     "telephone": "+526682452744",
     "priceRange": "$",
     "currenciesAccepted": "MXN",
@@ -105,10 +132,10 @@
           "@type": "MenuSection",
           "name": "Tacos capeados",
           "hasMenuItem": [
-            { "@type": "MenuItem", "name": "Taco de camarón capeado", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "MXN" } },
-            { "@type": "MenuItem", "name": "Taco de camarón relleno de queso", "offers": { "@type": "Offer", "price": "45", "priceCurrency": "MXN" } },
-            { "@type": "MenuItem", "name": "Taco de pescado capeado", "offers": { "@type": "Offer", "price": "35", "priceCurrency": "MXN" } },
-            { "@type": "MenuItem", "name": "Taco de pescado relleno de queso", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Taco de camarón capeado", "description": "Camarón capeado al momento y jugoso por dentro.", "image": "https://www.loscapes.com/img/negocio/camaron-capeado.jpg", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Taco de camarón relleno de queso", "description": "Camarón capeado con queso derretido por dentro.", "image": "https://www.loscapes.com/img/negocio/camaron-plato.jpg", "offers": { "@type": "Offer", "price": "45", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Taco de pescado capeado", "description": "Pescado capeado ligero, hecho al momento.", "image": "https://www.loscapes.com/img/negocio/tacos-pescado.jpg", "offers": { "@type": "Offer", "price": "35", "priceCurrency": "MXN" } },
+            { "@type": "MenuItem", "name": "Taco de pescado relleno de queso", "description": "Filete de pescado capeado con queso derretido por dentro.", "image": "https://www.loscapes.com/img/negocio/pescado-capeado.jpg", "offers": { "@type": "Offer", "price": "40", "priceCurrency": "MXN" } },
             { "@type": "MenuItem", "name": "Promoción 2 tacos de camarón (únicamente lunes y jueves)", "description": "2 tacos de camarón capeado por $65. Válida únicamente los lunes y jueves.", "offers": { "@type": "Offer", "price": "65", "priceCurrency": "MXN" } }
           ]
         },
@@ -130,13 +157,28 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "¿Los Capes hace entregas a domicilio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Al hacer tu pedido eliges entre pedido a domicilio, recoger en sucursal o comer en el local. Para domicilio te confirmamos por WhatsApp el costo de envío y el tiempo de entrega." } },
-      { "@type": "Question", "name": "¿Cómo pago mi pedido en Los Capes?", "acceptedAnswer": { "@type": "Answer", "text": "Aceptamos pago en efectivo." } },
-      { "@type": "Question", "name": "¿Qué tacos entran en la promoción de 2 por $65?", "acceptedAnswer": { "@type": "Answer", "text": "Únicamente los lunes y jueves: 2 tacos de camarón capeado por $65. La promo aplica solo a los tacos de camarón." } },
-      { "@type": "Question", "name": "¿Qué días cierra Los Capes?", "acceptedAnswer": { "@type": "Answer", "text": "Cerramos los martes. El resto de la semana abrimos de 9:00 a 16:00." } },
-      { "@type": "Question", "name": "¿Cuánto tardan en preparar los tacos?", "acceptedAnswer": { "@type": "Answer", "text": "Capeamos al momento, así que normalmente tu pedido está listo en minutos. Te confirmamos la hora exacta por WhatsApp." } },
-      { "@type": "Question", "name": "¿Puedo pedir con anticipación?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Escríbenos por WhatsApp a qué hora pasas y lo empezamos a preparar para que esté recién hecho cuando llegues." } }
+      { "@type": "Question", "name": "¿Hacen entregas a domicilio?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Al hacer tu pedido eliges entre pedido a domicilio, recoger en sucursal o comer en el local. Para domicilio te confirmamos por WhatsApp el costo de envío y el tiempo de entrega." } },
+      { "@type": "Question", "name": "¿Cómo pago mi pedido?", "acceptedAnswer": { "@type": "Answer", "text": "Aceptamos pago en efectivo. No pedimos pagos por adelantado. Si es a domicilio, dinos con cuánto pagas para llevarte cambio." } },
+      { "@type": "Question", "name": "¿Qué tacos entran en la promo de 2 por $65?", "acceptedAnswer": { "@type": "Answer", "text": "Únicamente los lunes y jueves: 2 tacos de camarón capeado por $65. La promo aplica solo a los tacos de camarón (no a pescado ni a los rellenos de queso). Esos días se aplica sola en tu pedido; el resto de la semana los tacos van a precio normal." } },
+      { "@type": "Question", "name": "¿Qué días cierran?", "acceptedAnswer": { "@type": "Answer", "text": "Cerramos los martes. El resto de la semana abrimos de 9:00 a 16:00." } },
+      { "@type": "Question", "name": "¿Cuánto tardan en preparar mi pedido?", "acceptedAnswer": { "@type": "Answer", "text": "Capeamos al momento, así que normalmente está listo en minutos. Te confirmamos la hora exacta por WhatsApp." } },
+      { "@type": "Question", "name": "¿Puedo pedir con anticipación?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Dinos a qué hora pasas y lo empezamos a preparar para que esté recién hecho cuando llegues." } },
+      { "@type": "Question", "name": "¿Dónde puedo comer tacos capeados en Los Mochis?", "acceptedAnswer": { "@type": "Answer", "text": "En Los Capes, en Los Mochis, Sinaloa. Hacemos tacos de camarón y de pescado capeados al momento, sencillos o rellenos de queso. Los puedes pedir a domicilio, recoger en sucursal o comer en el local. Escríbenos por WhatsApp al 668 245 2744." } },
+      { "@type": "Question", "name": "¿Cuánto cuesta un taco capeado en Los Mochis?", "acceptedAnswer": { "@type": "Answer", "text": "En Los Capes el taco de pescado capeado cuesta $35 y el de camarón capeado $40. Si lo quieres relleno de queso, el de pescado cuesta $40 y el de camarón $45. Los lunes y jueves hay promo: 2 tacos de camarón por $65." } },
+      { "@type": "Question", "name": "¿Hay mariscos a domicilio en Los Mochis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Nuestros tacos de camarón y de pescado capeados se pueden pedir a domicilio en Los Mochis. Te confirmamos por WhatsApp el costo de envío y el tiempo de entrega. También puedes recogerlos en sucursal o comerlos en el local." } }
     ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.loscapes.com/#website",
+    "name": "Los Capes",
+    "alternateName": "Los Capes Los Mochis",
+    "url": "https://www.loscapes.com/",
+    "inLanguage": "es-MX",
+    "publisher": { "@id": "https://www.loscapes.com/#restaurant" }
   }
   </script>
 </head>
@@ -341,12 +383,12 @@
           </div>
 
           <h1 class="hero__title" id="hero-title">
-            <span class="hero__kicker" data-intro="2">Camarón y pescado</span>
+            <span class="hero__kicker" data-intro="2">Camarón y pescado en Los Mochis</span>
             <span class="hero__display" data-hero-chars>Tacos capeados</span>
             <span class="hero__display hero__display--accent"><em>al momento.</em></span>
           </h1>
 
-          <p class="hero__lead" data-intro="4">Capeamos cada taco justo cuando lo pides: nada recalentado, nada hecho desde temprano. Sencillos o <strong>rellenos de queso</strong>, desde <strong>$35</strong>.</p>
+          <p class="hero__lead" data-intro="4">Tacos capeados y mariscos en Los Mochis. Capeamos cada taco justo cuando lo pides: nada recalentado, nada hecho desde temprano. Sencillos o <strong>rellenos de queso</strong>, desde <strong>$35</strong>.</p>
 
           <div class="hero__cta" data-intro="5">
             <a class="btn btn--primary btn--lg" data-magnetic href="#menu">
@@ -400,7 +442,7 @@
         <header class="sec-head">
           <p class="eyebrow" data-scramble><span>01</span>Menú</p>
           <h2 class="sec-title" id="menu-title" data-split>Elige tu taco. Nosotros lo dejamos <em>bien capeado.</em></h2>
-          <p class="sec-lead" data-reveal>Haz tu pedido: pídelo a domicilio, recógelo en sucursal o disfrútalo aquí en el local. Arma tu carrito aquí mismo y mándalo por WhatsApp ya escrito.</p>
+          <p class="sec-lead" data-reveal>Haz tu pedido de tacos capeados en Los Mochis: pídelo a domicilio, recógelo en sucursal o disfrútalo aquí en el local. Arma tu carrito aquí mismo y mándalo por WhatsApp ya escrito.</p>
         </header>
 
         <!-- Tacos -->
@@ -414,7 +456,7 @@
             <article class="dish" data-reveal data-tilt data-spot>
               <figure class="dish__media" data-cursor="Ver">
                 <img src="img/negocio/camaron-capeado.jpg" width="1200" height="1218" loading="lazy" decoding="async" style="object-position:50% 55%"
-                     alt="Taco de camarón capeado sobre tortilla con col, jitomate y limón">
+                     alt="Tacos de camarón capeado en Los Mochis: camarones sobre tortilla con totopos, col, pico de gallo y limón">
                 <span class="dish__badge dish__badge--teal"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-shrimp"/></svg>Clásico</span>
               </figure>
               <div class="dish__body">
@@ -431,7 +473,7 @@
             <article class="dish dish--cheese" data-reveal style="--d:1" data-tilt data-spot>
               <figure class="dish__media" data-cursor="Ver">
                 <img src="img/negocio/camaron-plato.jpg" width="1200" height="1398" loading="lazy" decoding="async" style="object-position:50% 38%"
-                     alt="Camarones capeados sobre tortilla con totopos, col, jitomate y limón">
+                     alt="Camarón capeado de Los Capes sobre tortilla con totopos, col, pico de gallo, cebolla y limón">
                 <span class="dish__badge"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cheese"/></svg>Relleno de queso</span>
               </figure>
               <div class="dish__body">
@@ -448,7 +490,7 @@
             <article class="dish" data-reveal style="--d:2" data-tilt data-spot>
               <figure class="dish__media" data-cursor="Ver">
                 <img src="img/negocio/tacos-pescado.jpg" width="1400" height="1024" loading="lazy" decoding="async"
-                     alt="Tacos de pescado capeado con col, jitomate, cebolla y limón">
+                     alt="Tacos de pescado capeado en Los Mochis con col, pico de gallo, aderezo y limón">
                 <span class="dish__badge dish__badge--teal"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-fish"/></svg>Clásico</span>
               </figure>
               <div class="dish__body">
@@ -465,7 +507,7 @@
             <article class="dish dish--cheese" data-reveal style="--d:3" data-tilt data-spot>
               <figure class="dish__media" data-cursor="Ver">
                 <img src="img/negocio/pescado-capeado.jpg" width="1200" height="1222" loading="lazy" decoding="async" style="object-position:50% 52%"
-                     alt="Piezas de pescado capeado sobre tortilla con totopos">
+                     alt="Piezas de pescado capeado sobre tortilla con totopos, listas para tu taco de pescado">
                 <span class="dish__badge"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cheese"/></svg>Relleno de queso</span>
               </figure>
               <div class="dish__body">
@@ -541,7 +583,7 @@
           <div class="combo__border" aria-hidden="true"></div>
           <div class="combo__media">
             <img src="img/negocio/dos-tacos.jpg" width="1261" height="1300" loading="lazy" decoding="async" style="object-position:50% 45%"
-                 alt="Dos tacos capeados con col, jitomate y salsa, con limón">
+                 alt="Promo de dos tacos capeados con col, pico de gallo, aderezo y limón, lunes y jueves en Los Mochis">
           </div>
           <div class="combo__body">
             <p class="promo-chip" data-promo data-active="false"><span class="promo-chip__dot" aria-hidden="true"></span><span data-promo-text>Solo lunes y jueves</span></p>
@@ -613,7 +655,7 @@
 
         <ol class="process__track" id="process-track">
           <li class="pstep" data-reveal>
-            <div class="pstep__media"><img src="img/negocio/plato-de-lado.jpg" width="720" height="472" loading="lazy" decoding="async" alt="Tacos de pescado capeado con crema, col y limón en un plato"></div>
+            <div class="pstep__media"><img src="img/negocio/plato-de-lado.jpg" width="720" height="472" loading="lazy" decoding="async" alt="Dos tacos de pescado capeado con crema, col y limón servidos en un plato"></div>
             <div class="pstep__body">
               <span class="pstep__num">01</span>
               <h3 class="pstep__title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg>Pides</h3>
@@ -621,7 +663,7 @@
             </div>
           </li>
           <li class="pstep" data-reveal style="--d:1">
-            <div class="pstep__media"><img src="img/negocio/camaron-capeado.jpg" width="1200" height="1218" loading="lazy" decoding="async" style="object-position:50% 55%" alt="Camarones recién capeados sobre tortilla"></div>
+            <div class="pstep__media"><img src="img/negocio/camaron-capeado.jpg" width="1200" height="1218" loading="lazy" decoding="async" style="object-position:50% 55%" alt="Camarones recién capeados sobre tortilla, listos para armar tus tacos"></div>
             <div class="pstep__body">
               <span class="pstep__num">02</span>
               <h3 class="pstep__title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-sparkle"/></svg>Capeamos</h3>
@@ -629,7 +671,7 @@
             </div>
           </li>
           <li class="pstep" data-reveal style="--d:2">
-            <div class="pstep__media"><img src="img/negocio/charolas-para-llevar.jpg" width="1085" height="1600" loading="lazy" decoding="async" style="object-position:50% 40%" alt="Charolas de tacos capeados listas para llevar"></div>
+            <div class="pstep__media"><img src="img/negocio/charolas-para-llevar.jpg" width="1085" height="1600" loading="lazy" decoding="async" style="object-position:50% 40%" alt="Charolas de tacos capeados para llevar, con col, pico de gallo y limón"></div>
             <div class="pstep__body">
               <span class="pstep__num">03</span>
               <h3 class="pstep__title"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg>Lo recibes</h3>
@@ -660,37 +702,37 @@
             <p class="eyebrow" data-scramble><span>03</span>Galería</p>
             <h2 class="sec-title" id="gallery-title" data-split>Tacos capeados <em>listos.</em></h2>
           </div>
-          <p class="sec-lead" data-reveal>Así salen de la cocina. Toca cualquier foto para verla en grande.</p>
+          <p class="sec-lead" data-reveal>Así salen de la cocina de Los Capes, en Los Mochis. Toca cualquier foto para verla en grande.</p>
         </header>
 
         <div class="gallery__grid">
           <figure class="gitem gitem--tall" data-reveal="clip">
             <button class="gitem__btn" type="button" data-lightbox="0" data-cursor="Ver" aria-label="Ampliar foto: charolas de tacos listas para llevar">
-              <img src="img/negocio/charolas-para-llevar.jpg" width="1085" height="1600" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 45%" alt="Tres charolas de tacos capeados con col, jitomate y limón, listas para llevar">
+              <img src="img/negocio/charolas-para-llevar.jpg" width="1085" height="1600" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 45%" alt="Tres charolas de tacos capeados con col, pico de gallo y limón, listas para llevar en Los Mochis">
             </button>
             <figcaption>Listos para llevar</figcaption>
           </figure>
           <figure class="gitem gitem--wide" data-reveal="clip" style="--d:1">
             <button class="gitem__btn" type="button" data-lightbox="1" data-cursor="Ver" aria-label="Ampliar foto: tacos de pescado capeado">
-              <img src="img/negocio/tacos-pescado.jpg" width="1400" height="1024" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 55%" alt="Dos tacos de pescado capeado con col, jitomate, cebolla y limón">
+              <img src="img/negocio/tacos-pescado.jpg" width="1400" height="1024" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 55%" alt="Dos tacos de pescado capeado con col, pico de gallo, aderezo y limón">
             </button>
             <figcaption>Con todo, al estilo Los Capes</figcaption>
           </figure>
           <figure class="gitem" data-reveal="clip" style="--d:2">
             <button class="gitem__btn" type="button" data-lightbox="2" data-cursor="Ver" aria-label="Ampliar foto: camarones capeados sobre tortilla">
-              <img src="img/negocio/camaron-capeado.jpg" width="1200" height="1218" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 55%" alt="Camarones capeados sobre tortilla con col, jitomate y limón">
+              <img src="img/negocio/camaron-capeado.jpg" width="1200" height="1218" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 55%" alt="Camarón capeado recién hecho sobre tortilla con totopos, col, pico de gallo y limón">
             </button>
             <figcaption>Camarón recién capeado</figcaption>
           </figure>
           <figure class="gitem" data-reveal="clip" style="--d:1">
             <button class="gitem__btn" type="button" data-lightbox="3" data-cursor="Ver" aria-label="Ampliar foto: dos tacos capeados con limón">
-              <img src="img/negocio/dos-tacos.jpg" width="1261" height="1300" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 45%" alt="Dos tacos capeados con col, jitomate y salsa, con limón">
+              <img src="img/negocio/dos-tacos.jpg" width="1261" height="1300" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 45%" alt="Dos tacos capeados con col, pico de gallo y aderezo, con limón">
             </button>
             <figcaption>Con todo y limón</figcaption>
           </figure>
           <figure class="gitem gitem--wide" data-reveal="clip" style="--d:2">
             <button class="gitem__btn" type="button" data-lightbox="4" data-cursor="Ver" aria-label="Ampliar foto: tacos de pescado capeado en un plato">
-              <img src="img/negocio/plato-de-lado.jpg" width="720" height="472" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 55%" alt="Tacos de pescado capeado con crema, col y limón en un plato">
+              <img src="img/negocio/plato-de-lado.jpg" width="720" height="472" loading="lazy" decoding="async" data-parallax-img style="object-position:50% 55%" alt="Tacos de pescado capeado con crema, col y limón, vistos de lado en un plato">
             </button>
             <figcaption>Bien servidos</figcaption>
           </figure>
@@ -732,6 +774,49 @@
     </section>
 
     <!-- ====================================================================
+         LOS MOCHIS (contenido para SEO local: "tacos capeados los mochis" y
+         "mariscos los mochis"). Reutiliza .service-grid y .cell, sin CSS nuevo.
+         ==================================================================== -->
+    <section class="section local-sec" id="los-mochis" aria-labelledby="local-title">
+      <div class="container">
+        <header class="sec-head">
+          <p class="eyebrow" data-scramble>Los Mochis, Sinaloa</p>
+          <h2 class="sec-title" id="local-title" data-split>Tacos capeados y mariscos en <em>Los Mochis.</em></h2>
+          <p class="sec-lead" data-reveal>Somos Los Capes: camarón y pescado capeados al momento para Los Mochis. Cada taco se capea cuando haces tu pedido, sin recalentar y sin hacerlo desde temprano.</p>
+        </header>
+
+        <div class="service-grid">
+          <article class="cell" data-reveal data-spot>
+            <div class="cell__head">
+              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-shrimp"/></svg></span>
+              <h3 class="cell__label">Tacos capeados en Los Mochis</h3>
+            </div>
+            <p class="cell__title">Camarón y pescado, al momento.</p>
+            <p class="cell__note">Nuestros tacos de camarón capeado y de pescado capeado se preparan cuando los pides. Elige sencillos o rellenos de queso, desde $35.</p>
+          </article>
+
+          <article class="cell" data-reveal style="--d:1" data-spot>
+            <div class="cell__head">
+              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-fish"/></svg></span>
+              <h3 class="cell__label">Mariscos en Los Mochis</h3>
+            </div>
+            <p class="cell__title">Tacos de mariscos para el antojo.</p>
+            <p class="cell__note">Si buscas mariscos en Los Mochis para comer rico y rápido, aquí tienes tacos de camarón y de pescado con col, pico de gallo y limón, y bebidas bien frías para acompañar.</p>
+          </article>
+
+          <article class="cell" data-reveal style="--d:2" data-spot>
+            <div class="cell__head">
+              <span class="cell__icon"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-moto"/></svg></span>
+              <h3 class="cell__label">A domicilio o para recoger</h3>
+            </div>
+            <p class="cell__title">Pide por WhatsApp o desde la página.</p>
+            <p class="cell__note">Atendemos de lunes y de miércoles a domingo, de 9:00 a 16:00 (martes cerrado). Pide a domicilio, recoge en sucursal o come en el local.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
          HORARIO
          ==================================================================== -->
     <section class="section hours-sec" id="horario" aria-labelledby="hours-title">
@@ -741,7 +826,7 @@
             <p class="eyebrow" data-scramble><span>04</span>Horario</p>
             <h2 class="sec-title" id="hours-title" data-split>Te esperamos seis días <em>a la semana.</em></h2>
           </div>
-          <p class="sec-lead" data-reveal>Capeamos desde temprano hasta la tarde. Los martes descansamos para volver con todo.</p>
+          <p class="sec-lead" data-reveal>Capeamos en Los Mochis desde temprano hasta la tarde. Los martes descansamos para volver con todo.</p>
         </header>
 
         <div class="hours-grid">
@@ -768,7 +853,7 @@
           </article>
 
           <article class="cell cell--photo" data-reveal style="--d:1">
-            <img src="img/negocio/camaron-capeado.jpg" width="1200" height="1218" loading="lazy" decoding="async" data-parallax-img alt="Camarones capeados recién hechos">
+            <img src="img/negocio/camaron-capeado.jpg" width="1200" height="1218" loading="lazy" decoding="async" data-parallax-img alt="Camarones capeados recién hechos en Los Mochis">
             <div class="cell__photo-copy">
               <span class="chip chip--glass"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-flame"/></svg>Al momento</span>
               <p>Capeado cuando haces tu pedido. Nunca antes.</p>
@@ -954,6 +1039,18 @@
             <summary><span>¿Puedo pedir con anticipación?</span><span class="faq__icon" aria-hidden="true"></span></summary>
             <div class="faq__answer"><p>Sí. Dinos a qué hora pasas y lo empezamos a preparar para que esté recién hecho cuando llegues.</p></div>
           </details>
+          <details class="faq__item" name="faq" data-reveal>
+            <summary><span>¿Dónde puedo comer tacos capeados en Los Mochis?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>En Los Capes, en Los Mochis, Sinaloa. Hacemos tacos de camarón y de pescado capeados al momento, sencillos o rellenos de queso. Los puedes pedir a domicilio, recoger en sucursal o comer en el local. Escríbenos por WhatsApp al 668 245 2744.</p></div>
+          </details>
+          <details class="faq__item" name="faq" data-reveal>
+            <summary><span>¿Cuánto cuesta un taco capeado en Los Mochis?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>En Los Capes el taco de pescado capeado cuesta $35 y el de camarón capeado $40. Si lo quieres relleno de queso, el de pescado cuesta $40 y el de camarón $45. Los lunes y jueves hay promo: 2 tacos de camarón por $65.</p></div>
+          </details>
+          <details class="faq__item" name="faq" data-reveal>
+            <summary><span>¿Hay mariscos a domicilio en Los Mochis?</span><span class="faq__icon" aria-hidden="true"></span></summary>
+            <div class="faq__answer"><p>Sí. Nuestros tacos de camarón y de pescado capeados se pueden pedir a domicilio en Los Mochis. Te confirmamos por WhatsApp el costo de envío y el tiempo de entrega. También puedes recogerlos en sucursal o comerlos en el local.</p></div>
+          </details>
         </div>
       </div>
     </section>
@@ -975,6 +1072,7 @@
 
           <ul class="contact__info" data-reveal>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></span><span><small>WhatsApp</small><a href="https://wa.me/526682452744" target="_blank" rel="noopener noreferrer">668 245 2744</a></span></li>
+            <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span><span><small>Ciudad</small>Los Mochis, Sinaloa</span></li>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg></span><span><small>Horario</small>9:00 a 16:00 · Martes cerrado</span></li>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-bag"/></svg></span><span><small>Entrega</small>Domicilio, recoger en sucursal o comer en el local</span></li>
             <li><span class="contact__ico"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-cash"/></svg></span><span><small>Pago</small>Efectivo</span></li>
@@ -1037,11 +1135,12 @@
       <div class="footer__col">
         <p class="footer__title">Visítanos</p>
         <ul>
+          <li>Los Mochis, Sinaloa</li>
           <li>Lunes, miércoles a domingo</li>
           <li>9:00 a 16:00</li>
           <li>Martes cerrado</li>
           <li>Pedido a domicilio</li><li>Recoger en sucursal</li><li>Comer en el local</li>
-          <!-- TODO: agregar dirección y redes sociales cuando el cliente las comparta. -->
+          <!-- TODO: agregar la dirección exacta cuando el cliente la comparta. -->
         </ul>
       </div>
 
@@ -1050,6 +1149,7 @@
         <ul>
           <li><a href="https://wa.me/526682452744" target="_blank" rel="noopener noreferrer">WhatsApp 668 245 2744</a></li>
           <li><a href="#menu">Armar mi pedido</a></li>
+          <li><a href="https://www.facebook.com/p/los-capes-61551611623002/" target="_blank" rel="noopener noreferrer">Facebook: Los Capes</a></li>
         </ul>
       </div>
     </div>
