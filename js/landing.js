@@ -263,4 +263,125 @@
       });
     });
   });
+
+  /* ------------------------------------------------------------------------
+     Calculadora "¿Cuánto gastas?" (solo en la página de tacos económicos)
+     Cada renglón del ticket trae sus datos en el HTML (data-id, data-price,
+     data-name). La promo 2×$65 se aplica a los tacos de camarón sencillos
+     (data-promo) los lunes y jueves; un interruptor permite simular esos días.
+     Los ejemplos con data-load llenan la cuenta con un toque.
+     ------------------------------------------------------------------------ */
+  safe(function () {
+    var root = qs("[data-calc]");
+    if (!root) return;
+
+    var PROMO_PAIR = 65;
+    var WA = "https://wa.me/526682452744";
+    var lines = qsa("[data-id]", root);
+    var qty = {};
+    lines.forEach(function (li) { qty[li.getAttribute("data-id")] = 0; });
+
+    var elSub = qs("[data-sub]", root);
+    var elDisc = qs("[data-disc]", root);
+    var rowDisc = qs("[data-disc-row]", root);
+    var elTotal = qs("[data-total]", root);
+    var elNote = qs("[data-calc-note]", root);
+    var elWa = qs("[data-calc-wa]", root);
+    var toggle = qs("[data-promo-toggle]", root);
+    var toggleText = qs("[data-promo-toggle-text]", root);
+
+    function realPromoDay() {
+      var parts = new Intl.DateTimeFormat("en-US", { timeZone: CONFIG.timeZone, weekday: "short" }).formatToParts(new Date());
+      var w = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[parts[0].value];
+      return CONFIG.promoWeekdays.indexOf(w) > -1;
+    }
+    var promoOn = realPromoDay();
+
+    function money(n) { return "$" + n; }
+
+    function render() {
+      var sub = 0;
+      var promoUnits = 0;
+      var chosen = [];
+
+      lines.forEach(function (li) {
+        var id = li.getAttribute("data-id");
+        var q = qty[id];
+        var price = parseInt(li.getAttribute("data-price"), 10);
+        var on = q > 0;
+        li.classList.toggle("is-on", on);
+        qs("[data-qty]", li).textContent = String(q);
+        var dec = qs("[data-act=\"dec\"]", li);
+        if (dec) dec.disabled = !on;
+        if (on) {
+          sub += q * price;
+          chosen.push(q + " " + li.getAttribute(q === 1 ? "data-name" : "data-plural"));
+        }
+        if (li.hasAttribute("data-promo")) promoUnits += q;
+      });
+
+      var pairs = Math.floor(promoUnits / 2);
+      var disc = promoOn ? pairs * (2 * 40 - PROMO_PAIR) : 0;
+      var total = sub - disc;
+
+      elSub.textContent = money(sub);
+      elDisc.textContent = "-" + money(disc);
+      rowDisc.hidden = disc === 0;
+      elTotal.textContent = money(total);
+
+      if (toggle) {
+        toggle.setAttribute("aria-checked", promoOn ? "true" : "false");
+        if (toggleText) toggleText.textContent = promoOn ? "Promo activa (lunes o jueves)" : "Simular lunes o jueves";
+      }
+
+      if (disc > 0) elNote.textContent = "¡La promo te ahorra " + money(disc) + "!";
+      else if (promoOn && promoUnits === 1) elNote.textContent = "Agrega otro taco de camarón sencillo y la promo se aplica.";
+      else if (!promoOn && promoUnits >= 2) elNote.textContent = "Lunes y jueves estos tacos te costarían menos con la promo.";
+      else elNote.textContent = "Pago en efectivo. El envío a domicilio no está incluido.";
+
+      var msg;
+      if (chosen.length) {
+        msg = "Hola Los Capes, quiero hacer este pedido:\n- " + chosen.join("\n- ") +
+          "\nTotal estimado: " + money(total) + (disc ? " (con promo 2×$65)" : "") + ". Pago en efectivo.";
+      } else {
+        msg = "Hola Los Capes, quiero hacer un pedido.";
+      }
+      elWa.href = WA + "?text=" + encodeURIComponent(msg);
+      elWa.classList.toggle("is-empty", chosen.length === 0);
+    }
+
+    root.addEventListener("click", function (e) {
+      var btn = e.target.closest && e.target.closest("[data-act]");
+      if (btn) {
+        var li = btn.closest("[data-id]");
+        var id = li.getAttribute("data-id");
+        var next = qty[id] + (btn.getAttribute("data-act") === "inc" ? 1 : -1);
+        qty[id] = Math.max(0, Math.min(20, next));
+        render();
+        return;
+      }
+      if (e.target.closest && e.target.closest("[data-promo-toggle]")) { promoOn = !promoOn; render(); return; }
+      if (e.target.closest && e.target.closest("[data-calc-reset]")) {
+        Object.keys(qty).forEach(function (k) { qty[k] = 0; });
+        render();
+      }
+    });
+
+    /* Ejemplos: llenan la cuenta con un toque y llevan al ticket */
+    qsa("[data-load]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        Object.keys(qty).forEach(function (k) { qty[k] = 0; });
+        btn.getAttribute("data-load").split(",").forEach(function (pair) {
+          var kv = pair.split(":");
+          if (qty.hasOwnProperty(kv[0])) qty[kv[0]] = parseInt(kv[1], 10) || 0;
+        });
+        var p = btn.getAttribute("data-promo");
+        if (p) promoOn = p === "on";
+        render();
+        root.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+      });
+    });
+
+    render();
+  });
 })();

@@ -443,6 +443,354 @@ body.lp { background: var(--bg); }
 .lp-visit .cell--photo img { object-position: 50% 40%; }
 
 /* --------------------------------------------------------------------------
+   Variante: historia con la composición invertida (texto a la izquierda).
+   El HTML trae primero el texto, así que en celular se lee igual de bien.
+   -------------------------------------------------------------------------- */
+.lp-story--flip .sec-title { font-size: clamp(2.1rem, 5.6vw, 3.6rem); }
+.lp-story--flip .lp-frame { rotate: 2deg; box-shadow: 9px 9px 0 var(--brand-2); }
+.lp-story--flip .lp-frame img { aspect-ratio: 5 / 4; }
+.lp-story--flip .lp-note { left: auto; right: -2%; rotate: -3deg; }
+
+/* --------------------------------------------------------------------------
+   Pizarrón de precios (reutiliza .board de la página principal)
+   -------------------------------------------------------------------------- */
+.lp-board { max-width: 980px; margin: 72px auto 0; }
+.lp-board-note {
+  max-width: 46rem;
+  margin: 32px auto 0;
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: var(--muted);
+  text-align: center;
+  text-wrap: pretty;
+}
+.lp-board-note a,
+.lp-vs__after a {
+  color: var(--brand-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.lp-board-note a:hover,
+.lp-vs__after a:hover { color: var(--ink); }
+
+/* --------------------------------------------------------------------------
+   Comparativa "versus": dos tarjetas con un sello VS al centro (sin tablas)
+   -------------------------------------------------------------------------- */
+.lp-vs { background: var(--bg-alt); }
+.lp-vs__grid { display: grid; gap: 0; max-width: 980px; margin-inline: auto; }
+.lp-vs__card {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding: 28px 24px 26px;
+  border: var(--border);
+  border-radius: var(--r-xl);
+  background: #fff;
+}
+.lp-vs__card--fish {
+  background: linear-gradient(180deg, #DDF3F6 0%, #fff 58%);
+  box-shadow: 6px 6px 0 var(--brand-deep);
+}
+.lp-vs__card--shrimp {
+  background: linear-gradient(180deg, #FFEACB 0%, #fff 58%);
+  box-shadow: 6px 6px 0 var(--gold-deep);
+}
+.lp-vs__head { display: flex; align-items: center; gap: 14px; }
+.lp-vs__head .cell__icon { width: 48px; height: 48px; }
+.lp-vs__card--shrimp .cell__icon { background: var(--gold); color: var(--ink); }
+.lp-vs__head h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; letter-spacing: -.035em; line-height: 1; }
+.lp-vs__list { display: grid; margin: 0; }
+.lp-vs__list > div { display: grid; gap: 2px; padding: 13px 0; border-top: 2px dashed var(--line-3); }
+.lp-vs__list dt { font-size: .86rem; font-weight: 600; color: var(--muted); }
+.lp-vs__list dd { margin: 0; font-family: var(--font-sign); font-size: 1.3rem; line-height: 1.2; color: var(--ink); }
+.lp-vs__list dd.is-text { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; line-height: 1.3; }
+
+.lp-vs__vs {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  width: 62px;
+  height: 62px;
+  margin-block: -22px;
+  border-radius: 50%;
+  border: var(--border);
+  background: var(--chile);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: var(--font-sign);
+  font-size: 1.15rem;
+  color: #fff;
+  rotate: -8deg;
+  animation: wiggle 6s ease-in-out infinite;
+}
+.lp-vs__after {
+  max-width: 46rem;
+  margin: 40px auto 0;
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (min-width: 760px) {
+  .lp-vs__grid { grid-template-columns: 1fr 1fr; gap: 34px; }
+  .lp-vs__card--fish { grid-column: 1; grid-row: 1; }
+  .lp-vs__card--shrimp { grid-column: 2; grid-row: 1; }
+  .lp-vs__vs { grid-column: 1 / -1; grid-row: 1; align-self: center; margin: 0; width: 72px; height: 72px; font-size: 1.3rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Página de precios: héroe con etiqueta colgante, menú completo, ticket
+   -------------------------------------------------------------------------- */
+.lp-js-only { display: none; }
+.js .lp-js-only { display: inline; }
+
+/* Etiqueta de precio que cuelga de un hilo y se mece */
+.lp-pricetag {
+  position: absolute;
+  z-index: 3;
+  left: -2%;
+  bottom: 2%;
+  width: 142px;
+  padding: 30px 12px 16px;
+  border: var(--border);
+  border-radius: 14px 14px 20px 20px;
+  background: #fff;
+  box-shadow: 4px 4px 0 var(--ink);
+  text-align: center;
+  transform-origin: 50% -34px;
+  animation: sway 5s ease-in-out infinite;
+}
+.lp-pricetag::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  margin-left: -6.5px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: var(--bg);
+}
+.lp-pricetag::after {
+  content: "";
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  width: 2px;
+  height: 56px;
+  margin-left: -1px;
+  background: var(--ink);
+}
+.lp-pricetag small { display: block; font-family: var(--font-hand); font-size: 1.2rem; font-weight: 700; line-height: .9; color: var(--chile); }
+.lp-pricetag b { display: block; font-family: var(--font-sign); font-weight: 400; font-size: 2.4rem; line-height: 1.05; color: var(--ink); }
+.lp-pricetag span { display: block; margin-top: 2px; font-size: .78rem; font-weight: 700; line-height: 1.25; color: var(--muted); }
+.lp-sticker--price.lp-sticker--promo b { font-size: 1rem; }
+.lp-sticker--price.lp-sticker--promo small { font-size: .95rem; }
+@media (min-width: 640px) { .lp-sticker--price.lp-sticker--promo b { font-size: 1.12rem; } }
+
+.lp-dishes--full { max-width: none; }
+.lp-menu .menu__group + .menu__group { margin-top: 84px; }
+.lp-menu .menu__group:first-of-type .menu__grid { max-width: none; }
+
+.lp-promo .promo__text a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--chile);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Calculadora: ejemplos + ticket */
+.lp-calc { background: var(--bg-alt); }
+.lp-calc__grid { display: grid; gap: 44px; align-items: start; }
+.lp-calc__note { max-width: 46rem; margin-top: 30px; font-size: 1.02rem; line-height: 1.7; color: var(--muted); }
+
+.lp-examples { display: grid; gap: 18px; }
+.lp-ex {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 16px;
+  align-items: center;
+  padding: 20px 18px 16px 20px;
+  border: var(--border);
+  border-radius: var(--r);
+  background: #fff;
+  box-shadow: 3px 3px 0 var(--brand-deep);
+  transition: transform .4s var(--ease-spring), box-shadow .3s;
+}
+.lp-ex:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--gold-deep); }
+.lp-ex__tag { grid-column: 1 / -1; font-family: var(--font-hand); font-size: 1.3rem; font-weight: 700; line-height: 1; color: var(--chile); }
+.lp-ex__text { font-size: 1.02rem; line-height: 1.55; color: var(--muted); }
+.lp-ex__text strong { color: var(--ink); }
+.lp-ex__total {
+  display: grid;
+  place-items: center;
+  min-width: 78px;
+  height: 78px;
+  padding: 0 8px;
+  border-radius: 50%;
+  border: var(--border);
+  background: var(--gold);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: var(--font-sign);
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--ink);
+  rotate: -8deg;
+}
+.lp-ex:nth-child(even) .lp-ex__total { background: var(--chile); color: #fff; rotate: 6deg; }
+.lp-ex__try {
+  grid-column: 1 / -1;
+  justify-self: start;
+  display: none;
+  padding: 4px 0 2px;
+  font-weight: 700;
+  font-size: .94rem;
+  color: var(--brand-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.js .lp-ex__try { display: inline-block; }
+.lp-ex__try:hover { color: var(--ink); }
+
+/* Ticket (solo con JS) */
+.lp-ticket { display: none; }
+.js .lp-ticket { display: block; }
+.lp-ticket {
+  position: relative;
+  overflow: hidden;
+  border: var(--border);
+  border-radius: var(--r-lg);
+  background: #FFF9E8;
+  box-shadow: var(--shadow-offset-gold);
+}
+.lp-ticket__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--brand);
+  color: #fff;
+  font-family: var(--font-sign);
+  font-size: .72rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.lp-ticket__head span:last-child { color: var(--gold-2); }
+.lp-ticket__body { padding: 6px 20px 22px; }
+.lp-group { padding: 16px 0 2px; font-family: var(--font-sign); font-size: .64rem; letter-spacing: .05em; text-transform: uppercase; color: var(--brand); }
+.lp-lines { display: grid; }
+.lp-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 2px dashed var(--line-3);
+}
+.lp-line__name { font-weight: 700; line-height: 1.25; transition: color .3s; }
+.lp-line__price { grid-column: 1; font-family: var(--font-sign); font-size: .8rem; color: var(--muted); }
+.lp-line .lp-qty { grid-column: 2; grid-row: 1 / span 2; }
+.lp-line.is-on .lp-line__name { color: var(--brand-ink); }
+.lp-qty { display: inline-flex; align-items: center; gap: 8px; }
+.lp-qty button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: var(--border);
+  background: #fff;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: background-color .25s, transform .25s var(--ease-spring), box-shadow .25s;
+}
+.lp-qty button:hover:not(:disabled) { background: var(--gold-2); }
+.lp-qty button:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--ink); }
+.lp-qty button:disabled { opacity: .35; cursor: default; box-shadow: none; }
+.lp-qty button .i { width: 16px; height: 16px; stroke-width: 2.6; }
+.lp-qty output { min-width: 1.5em; text-align: center; font-family: var(--font-sign); font-size: 1.05rem; }
+
+.lp-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: .92rem;
+  color: var(--muted);
+}
+.lp-switch__track {
+  position: relative;
+  flex: none;
+  width: 46px;
+  height: 26px;
+  border-radius: 999px;
+  border: var(--border);
+  background: #fff;
+  transition: background-color .3s;
+}
+.lp-switch__track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: transform .35s var(--ease-spring);
+}
+.lp-switch[aria-checked="true"] .lp-switch__track { background: var(--gold); }
+.lp-switch[aria-checked="true"] .lp-switch__track::after { transform: translateX(20px); }
+.lp-switch[aria-checked="true"] { color: var(--ink); }
+
+/* Corte del ticket */
+.lp-tear { position: relative; height: 0; margin: 20px -20px 0; border-top: 3px dashed var(--line-3); }
+.lp-tear::before,
+.lp-tear::after {
+  content: "";
+  position: absolute;
+  top: -13px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: var(--border);
+  background: var(--bg-alt);
+}
+.lp-tear::before { left: -12px; }
+.lp-tear::after { right: -12px; }
+
+.lp-sum { display: grid; gap: 8px; padding-top: 20px; }
+.lp-sum__row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 1rem; color: var(--muted); }
+.lp-sum__row strong { font-family: var(--font-sign); font-weight: 400; color: var(--ink); }
+.lp-sum__row--disc strong { color: var(--chile); }
+.lp-sum__row--total { align-items: center; padding-top: 6px; border-top: 2px solid var(--ink); font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--ink); }
+.lp-sum__row--total strong { font-size: clamp(2.3rem, 9vw, 3.2rem); line-height: 1; color: var(--chile); }
+.lp-ticket__note { margin-top: 10px; min-height: 2.8em; font-family: var(--font-hand); font-size: 1.25rem; font-weight: 700; line-height: 1.1; color: var(--ink); }
+.lp-ticket__actions { display: grid; gap: 10px; margin-top: 14px; }
+.lp-ticket__reset { justify-self: center; font-size: .9rem; font-weight: 600; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.lp-ticket__reset:hover { color: var(--ink); }
+
+@media (min-width: 640px) {
+  .lp-ex { padding: 22px 22px 18px 24px; }
+}
+@media (min-width: 960px) {
+  .lp-calc__grid { grid-template-columns: 1fr 1.02fr; gap: 56px; }
+  .js .lp-ticket { position: sticky; top: calc(var(--header-h) + 22px); }
+}
+
+/* --------------------------------------------------------------------------
    Seguir explorando
    -------------------------------------------------------------------------- */
 .lp-more .service-grid .cell { min-height: 0; }
